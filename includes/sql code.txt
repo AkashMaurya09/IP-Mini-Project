@@ -2,7 +2,7 @@ CREATE TABLE Admin
 (
   Admin_id INT(10) NOT NULL AUTO_INCREMENT,
   Admin_Name VARCHAR(100) NOT NULL,
-  Admin_Username VARCHAR(100) NOT NULL,
+  Admin_Email VARCHAR(100) NOT NULL,
   ADMIN_PASSWORD VARCHAR(100) NOT NULL,
   PRIMARY KEY (Admin_id)
 );
@@ -13,7 +13,7 @@ CREATE TABLE Trainer
   Trainer_Name VARCHAR(100) NOT NULL,
   Phone_Number INT(10) NOT NULL,
   Admin_id INT(10),
-  Trainer_Username VARCHAR(100) NOT NULL,
+  Trainer_Email VARCHAR(100) NOT NULL,
   Trainer_Password VARCHAR(100) NOT NULL,
   PRIMARY KEY (Trainer_id),
   FOREIGN KEY (Admin_id) REFERENCES Admin(Admin_id)
