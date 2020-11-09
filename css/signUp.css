@@ -13,6 +13,18 @@ i {
 .center img {
   width: 5%;
 }
+
+blockquote::before {
+    content: open-quote;
+  }
+  blockquote::after {
+    content: close-quote;
+  }
+  blockquote {
+      
+      color: grey;
+    quotes: "“" "”" "‘" "’";
+  }
 input {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;

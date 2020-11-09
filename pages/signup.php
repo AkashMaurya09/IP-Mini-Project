@@ -17,9 +17,13 @@
 
     <main>
         <div class="center">
-            <img src="../img/logo.png">
+            
             <h3>SIGN UP FOR<br></h3>
-            <span> GLORY</span>
+            <span> GLORY</span><br><br>
+            <img src="../img/logo.png">
+            <br><br>
+            <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores sed libero<br> unde esse soluta voluptates animi error reprehenderit porro!</blockquote>
+            <br>
             <form action="includes/signup.php" method="post">
                 <input type="text" name="email" placeholder="Email">
                 <br />
