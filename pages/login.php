@@ -1,5 +1,5 @@
 <?php 
-  require('header.php')
+  require('../components/basic/header.php')
 ?>
 
   <main>
@@ -9,6 +9,6 @@
     </form>
   </main>
 
-<?php 
-  require('footer.php')
+  <?php 
+  require('../components/basic/footer.php')
 ?>
