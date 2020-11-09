@@ -1,0 +1,157 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+
+html {
+    height: 100%;   
+}
+
+body {
+    background-color: #cfcfcf;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    background-color: #cfcfcf;
+    height: 100%;
+}
+
+.left {
+    flex: 1;
+    height: 70%;
+    background-color: white;
+    margin-right: 5px;
+}
+
+.right {
+    flex: 5;
+    height: 100%;
+    background-color: white;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.profileForm {
+    display: flex;
+    flex-direction: column;  
+}
+
+.profileButton {
+    background-color: white;
+    padding: 0.6rem;
+    border-width: 1px;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-color: #cfcfcf;
+}
+
+.fill {
+    background: #00F6FF;
+}
+
+.profileButton:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background: #00F6FF;
+}
+
+.top {
+    flex: 2;
+    /* background-color: red; */
+    padding:0 20px 0 20px;
+    display: flex;
+}
+
+.top > div {
+    background-color: black;
+}
+
+.top > p {
+    align-self: center;
+    justify-self: center;
+    margin-right: auto;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.top > input {
+    background-color: white;
+    align-self: center;
+    border-width: 1px;
+    padding: 0.6rem;
+}
+
+.top > input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background: #00F6FF;
+}
+
+.bottom {
+    flex: 10;
+}
+
+.editForm {
+    padding: 20px;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;   
+}   
+
+.group > input {
+    margin-top: 3px;
+    margin-bottom: 10px;
+    height: 30px;
+}
+
+.group > textarea {
+    margin-top: 3px;
+    margin-bottom: 10px;
+    height: 80px;
+    resize: initial;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    flex: 1;
+} 
+
+.roundImage {
+    max-height: 150px;
+    max-width: 150px;
+    border-radius: 50%;
+}
+
+.profileImage {
+    flex: 1;
+    align-self: center;
+    margin: 10px;
+}
+
+.profileDetail {
+    flex: 1;
+    align-self: flex-start;
+    margin: 10px;
+}
+
+.profileDetail > p {
+    padding: 5px;
+}
+
+.profileDetail > p > span {
+    font-weight: bold;
+}
