@@ -1,4 +1,6 @@
-
+<?php 
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +35,15 @@
           <a href="workouts.php" target="">Workout</a>
           <a href="contact.php" target="">Contacts</a>
           <a href="aboutus.php" target="">About Us</a>
-          <a href="login.php" target="">Login</a>
+          <?php 
+            if (isset($_SESSION["userName"])) {
+              echo "<a href='profile.php'>Profile</a>";
+              echo "<a href='includes/logout.inc.php'>Logout</a>";
+            }
+            else {
+              echo "<a href='signin.php'>Login</a>";
+            }
+          ?>
         </div>
 	</div>
 	  

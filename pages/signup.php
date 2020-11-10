@@ -24,7 +24,7 @@
             <br><br>
             <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores sed libero<br> unde esse soluta voluptates animi error reprehenderit porro!</blockquote>
             <br>
-            <form action="includes/signup.php" method="post">
+            <form action="includes/member_signup.inc.php" method="post">
                 <input type="text" name="email" placeholder="Email">
                 <br />
                 <input type="text" name="uname" placeholder="Username">
@@ -37,17 +37,42 @@
                 <br />
                 <input type="password" name="confirm-pwd" placeholder="Confirm Password">
                 <br />
-                <button type="submit">Register</button>
+                <button type="submit" name="submit">Register</button>
             </form>
-            <i>Already have an account?</i>
+            <a href="signIn.php">Already have an account?</i>
+            <?php 
+                if(isset($_GET["error"])) {
+                    if ($_GET["error"] == "emptyinput") {
+                        echo "<p> Fill all the fields";
+                    }
+                    else if ($_GET["error"] == "invalidusername") {
+                        echo "<p> Invalid Name </p>";
+                    }
+                    else if ($_GET["error"] == "invalidemail") {
+                        echo "<p> Invalid Email </p>";
+                    }
+                    else if ($_GET["error"] == "passworddontmatch") {
+                        echo "<p> Passwords do not match </p>";
+                    }
+                    else if ($_GET["error"] == "emailExists") {
+                        echo "<p> Email already exists. Try logging in </p>";
+                    }
+                    else if ($_GET["error"] == "stmtFailed") {
+                        echo "<p> Something went wrong </p>";
+                    }
+                    else if ($_GET["error"] == "none") {
+                        echo "<p> Congratulations you have signed up </p>";
+                    }  
+                    
+                 }
+            ?>
         </div>
     </main>
 
 
-
     <?php 
-  require('../components/basic/footer.php')
-?>
+         require('../components/basic/footer.php')
+    ?>
 </body>
 
 </html>

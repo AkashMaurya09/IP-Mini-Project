@@ -46,7 +46,7 @@ CREATE TABLE Member
   Phone_Number INT(10) NOT NULL,
   image  BLOB,
   Admin_id INT(10),
-  Member_Username VARCHAR(100) NOT NULL,
+  Member_Email VARCHAR(100) NOT NULL,
   Member_Password VARCHAR(100) NOT NULL,
   PRIMARY KEY (Member_id),
   FOREIGN KEY (Admin_id) REFERENCES Admin(Admin_id)
