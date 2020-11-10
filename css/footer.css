@@ -50,6 +50,7 @@ body{
 
 .footer-distributed .footer-left{
 	width: 30%;
+	margin: 0px;
 }
 
 .footer-distributed h3{
@@ -61,7 +62,9 @@ body{
 /* The company logo */
 
 .footer-distributed .footer-left img{
-	width: 30%;
+	width: 50%;
+	margin : 0;
+	padding :0;
 }
 
 .footer-distributed h3 span{
