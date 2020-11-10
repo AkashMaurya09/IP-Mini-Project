@@ -25,20 +25,30 @@
             <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores sed libero<br> unde esse
                 soluta voluptates animi error reprehenderit porro!</blockquote>
             <br>
-            <form action="includes/signup.php" method="post">
+            <form action="includes/member_login.inc.php" method="post">
                 <input type="text" name="email" placeholder="Email">
                 <br />
-
-
-
                 <input type="password" name="pwd" placeholder="Password">
                 <br />
-                <button type="submit">Sign In</button>
+                <button type="submit" name="submit">Sign In</button>
 
             </form>
 
             <br>
-            <i>Don't have an account?</i>
+            <a href="signup.php">Don't have an account?</a>
+            <?php 
+                if(isset($_GET["error"])) {
+                    if ($_GET["error"] == "emptyinput") {
+                        echo "<p> Fill all the fields";
+                    }
+                    else if ($_GET["error"] == "wronglogin") {
+                        echo "<p> Invalid Login Credentials </p>";
+                    }
+                    else if ($_GET["error"] == "wrongpassword") {
+                        echo "<p> Invalid Password </p>";
+                    }                    
+                }
+            ?>
         </div>
     </main>
 
