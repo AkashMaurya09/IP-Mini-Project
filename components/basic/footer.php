@@ -11,7 +11,7 @@
 	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="../css/footer.css">
 
-	<title>Responsive Footer</title>
+	<title>Footer</title>
 
 </head>
 	<body>
@@ -22,8 +22,8 @@
 		<footer class="footer footer-distributed">
 
 			<div class="footer-left">
-          <img src="img/logo.png">
-				<h3>Gym <span>Webiste</span></h3>
+          <img src="../img/logo_white.png">
+				<!-- <h3>Gym <span>Webiste</span></h3> -->
 
 				<p class="footer-links">
 					<a href="#">Home</a>
@@ -50,7 +50,7 @@
 				</div>
 				<div>
 					<i class="fa fa-envelope"></i>
-					<p><a href="mailto:support@eduonix.com">2018.devdatta.khoche@ves.ac.in</a></p>
+					<p><a href="mailto:2018.devdatta.khoche@ves.ac.in">2018.devdatta.khoche@ves.ac.in</a></p>
 				</div>
 			</div>
 			<div class="footer-right">

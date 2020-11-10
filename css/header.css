@@ -37,7 +37,11 @@
     float: right;
     font-size: 18px;
   }
-  
+  /* .nav-title img{
+    padding: 10px 10px 10px 10px;
+    width: 3%;
+    display: inline-block;
+  } */
   .nav > .nav-links > a {
     display: inline-block;
     padding: 13px 10px 13px 10px;

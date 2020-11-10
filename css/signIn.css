@@ -11,7 +11,7 @@ i {
   font-size: 12px;
 }
 .center img {
-  width: 5%;
+  width: 10%;
 }
 
 blockquote::before {
@@ -33,6 +33,7 @@ input {
   width: 250px;
   height: 30px;
   margin: 5px;
+  box-shadow: 9px 9px 2px 1px rgba(0, 0, 255, .2);
   padding-left: 10px;
   text-shadow: 20px;
   border-color: #c3c3c3;
