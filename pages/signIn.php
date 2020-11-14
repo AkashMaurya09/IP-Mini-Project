@@ -20,7 +20,7 @@
 
             <h3>SIGN IN FOR<br></h3>
             <span> GLORY</span><br><br>
-            <img src="../img/logo_yellow.png">
+            <img src="../img/logo/logo_yellow_vertical.png">
             <br><br>
             <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores sed libero<br> unde esse
                 soluta voluptates animi error reprehenderit porro!</blockquote>

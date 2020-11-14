@@ -22,7 +22,7 @@
 		<footer class="footer footer-distributed">
 
 			<div class="footer-left">
-          <img src="../img/logo_white.png">
+          <img src="../img/logo/logo_footer.png">
 				<!-- <h3>Gym <span>Webiste</span></h3> -->
 
 				<p class="footer-links">
@@ -35,7 +35,7 @@
 					<a href="#">Contact</a>
 				</p>
 
-				<p class="footer-company-name">© 2020 Internet Programming project ltd.</p>
+				<p class="footer-company-name">© 2020 Internet Programming project Ltd</p>
 			</div>
 
 			<div class="footer-center">
@@ -57,13 +57,13 @@
 				<p class="footer-company-about">
 					<span>About the company</span>
 					We offer training and skill based on varirety of workouts and provide specialisation in most parts of bodybuilding.</p>
-				<!-- <div class="footer-icons">
+				<div class="footer-icons">
 					<a href="#"><i class="fa fa-facebook"></i></a>
 					<a href="#"><i class="fa fa-twitter"></i></a>
 					<a href="#"><i class="fa fa-instagram"></i></a>
 					<a href="#"><i class="fa fa-linkedin"></i></a>
 					<a href="#"><i class="fa fa-youtube"></i></a>
-				</div> -->
+				</div>
 			</div>
 		</footer>
 	</body>
