@@ -9,7 +9,7 @@
 
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="../css/footer.css">
+	<link rel="stylesheet" href="/css/footer.css">
 
 	<title>Footer</title>
 
@@ -22,7 +22,7 @@
 		<footer class="footer footer-distributed">
 
 			<div class="footer-left">
-          <img src="../img/logo/logo_footer.png">
+          <img src="/img/logo/logo_footer.png">
 				<!-- <h3>Gym <span>Webiste</span></h3> -->
 
 				<p class="footer-links">
