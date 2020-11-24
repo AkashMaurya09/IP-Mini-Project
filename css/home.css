@@ -1,0 +1,323 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: #f5f5f5;
+}
+#main {
+  background-color: #f5f5f5;
+}
+
+blockquote::before {
+  content: open-quote;
+}
+blockquote::after {
+  content: close-quote;
+}
+blockquote {
+  font-family: monospace;
+  color: grey;
+  quotes: "“" "”" "‘" "’";
+}
+.Content-center {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.container-column-3 h2 {
+  font-weight: lighter;
+}
+.container-column-3 {
+  padding: 60px;
+  /* padd */
+  background-color: grey;
+  height: 250px;
+  width: 250px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.Content-center p {
+  color: grey;
+  font-family: monospace;
+  max-width: calc(30em * 0.5);
+}
+.column-3 {
+  float: left;
+  width: 33.3%;
+  padding: 10px;
+  height: auto;
+}
+
+.expert-button-style-black {
+  padding: 20px;
+  color: white;
+  background-color: black;
+
+  border-radius: 20px;
+  border: solid 1px;
+  box-shadow: 9px 9px 2px 1px rgba(0, 0, 255, 0.2);
+}
+
+.expert-button-style-white {
+  padding: 20px;
+  color: black;
+  background-color: white;
+
+  border-radius: 20px;
+  border: solid 1px;
+  box-shadow: 9px 9px 2px 1px rgba(0, 0, 255, 0.2);
+}
+.expert-center-button {
+  text-align: center;
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.expert-center-1 img {
+  /* padding: 30px; */
+  margin: 30px;
+  border-radius: 20px;
+  height: 250px;
+  width: 250px;
+}
+.expert-center-2 img {
+  margin: 30px;
+  border-radius: 20px;
+  height: 250px;
+  width: 250px;
+}
+
+.challenge-content-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Content-center-Stats {
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.expert-training-1 {
+  background-color: honeydew;
+}
+.expert-training-2 {
+  background-color: black;
+}
+.expert-center {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.expert-center-1 {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.expert-center-2 {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.expert-center-1 p {
+  padding-top: 20px;
+  letter-spacing: 3px;
+  line-height: 25px;
+  max-width: calc(30em * 0.9);
+  color: black;
+}
+.expert-center-2 p {
+  color: white;
+  letter-spacing: 3px;
+  line-height: 25px;
+  padding-top: 20px;
+  max-width: calc(30em * 0.9);
+}
+
+.expert-center-1 h2 {
+  padding-top: 20px;
+  font-weight: lighter;
+  color: black;
+}
+.expert-center-2 h2 {
+  font-weight: lighter;
+  color: white;
+  padding-top: 20px;
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: auto;
+}
+.Try-free-text {
+  position: relative;
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+#images {
+  text-align: center;
+  padding: 20px;
+}
+
+#images img {
+  border-radius: 20px;
+}
+
+.Try-free-heading {
+  color: #bdad20;
+  position: relative;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+
+.Try-free-heading2 {
+  color: #bdad20;
+  position: relative;
+  /* margin-top: 50px; */
+  margin-left: 100px;
+}
+
+.Try-free-Button {
+  border: 1px solid;
+  position: relative;
+  padding-top: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 20px;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+video {
+  border-radius: 3px;
+  border: 1px solid;
+}
+
+.Content-Class {
+  /* clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 calc(100% - 10vw)
+  ); */
+  background-color: black;
+  /* over */
+}
+
+#welcome-Text {
+  line-height: 25px;
+  letter-spacing: 3px;
+  display: inline-block;
+  margin: 30px;
+  text-align: center;
+  color: #d3d3d3;
+  max-width: calc(30em * 0.9);
+}
+
+#title-Welcome {
+  letter-spacing: 3px;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: 200;
+  color: #d3d3d3;
+}
+.Text-Content h1 {
+  padding-top: 10px;
+}
+.Text-Content p {
+  text-align: center;
+  font-weight: normal;
+  font-size: 15px;
+}
+.Text-Content a {
+  font-weight: bold;
+}
+.Text-Content {
+  padding: 60px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+.Workout-center {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+/* .Workout-center-heading{
+    text-align: center;
+    color: white; 
+} */
+
+.Our-Coaches {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 30px;
+}
+.dark-grey {
+  background-color: grey;
+}
+.grey {
+  background-color: #d3d3d3;
+}
+.Our-Coaches-P {
+  text-align: center;
+  margin-top: 20px;
+  /* max-width: 30ch; */
+}
+.Workout-center img {
+  border-radius: 25px;
+  width: 250px;
+  height: 250px;
+}
+
+.Workout-center p {
+  color: white;
+  max-width: calc(30em * 0.5);
+}
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid; */
+}
+
+.Sign-up-to-know-more {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img {
+    box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+  .column-3 {
+    width: 100%;
+  }
+}

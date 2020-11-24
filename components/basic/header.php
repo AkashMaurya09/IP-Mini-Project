@@ -31,8 +31,8 @@
         </div>
         
         <div class="nav-links">
-          <a href="/pages/home.php" target="">Home</a>
-          <a href="/pages/workouts.php" target="">Workout</a>
+          <a href="/pages/home/home.php" target="">Home</a>
+          <a href="/pages/workouts/workouts.php" target="">Workout</a>
           <a href="/pages/contact.php" target="">Contacts</a>
           <a href="/pages/aboutus.php" target="">About Us</a>
           <?php 
