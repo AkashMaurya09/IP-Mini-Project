@@ -237,7 +237,7 @@
 
         </div>
     </div>
-     -->
+    
 
     <?php 
   require('../../components/basic/footer.php')
