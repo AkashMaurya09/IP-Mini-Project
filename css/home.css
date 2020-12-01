@@ -80,12 +80,14 @@ blockquote {
 }
 .expert-center-1 img {
   /* padding: 30px; */
+  box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
   margin: 30px;
   border-radius: 20px;
   height: 250px;
   width: 250px;
 }
 .expert-center-2 img {
+  box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
   margin: 30px;
   border-radius: 20px;
   height: 250px;
@@ -169,11 +171,13 @@ blockquote {
 }
 
 #images {
+  box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
   text-align: center;
   padding: 20px;
 }
 
 #images img {
+  box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
   border-radius: 20px;
 }
 
@@ -286,6 +290,7 @@ video {
   /* max-width: 30ch; */
 }
 .Workout-center img {
+  box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
   border-radius: 25px;
   width: 250px;
   height: 250px;
@@ -308,9 +313,9 @@ video {
   justify-content: center;
   align-items: center;
 }
-img {
+/* img {
     box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
-}
+} */
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
