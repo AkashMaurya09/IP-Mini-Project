@@ -1,0 +1,41 @@
+create table awesome_users(user_id int,username varchar(200))
+
+begin transaction T3
+
+insert into awesome_users values(1,'Akash')
+insert into awesome_users values(2,'Dev')
+save transaction s1
+insert into awesome_users values(3,'srajan')
+save transaction s2
+insert into awesome_users values(4,'srajan2') 
+commit transaction T3
+select *from our_admins
+create table our_admins(admin_id int,age int)
+insert into our_admins values(1,20)
+select *from awesome_users with(updlock) where user_id=1
+select *from awesome_users with(NOLOCK) where user_id=1
+BEGIN TRAN
+SELECT 1 FROM awesome_users WITH (TABLOCKX)
+WAITFOR DELAY '00:00:10';
+ROLLBACK TRAN
+GO
+sp_lock
+select *from sys.dm_tran_locks
+SELECT resource_type, request_mode, resource_description
+FROM sys.dm_tran_locks
+WHERE resource_type <>'srajan';
+sys.dm_tran_locks
+grant update on users to Mylogin
+--101
+--T1 transfering 500 from account 101 102
+--T2 withdrawing 1000 from account 101
+--holdlock updlock
+begin transaction T1
+update our_admins with(ROWLOCK,XLOCK) set age=age-5 where admin_id=1
+update our_admins with(ROWLOCK,XLOCK) set age=age+500 where admin_id=1
+commit transaction T1
+
+begin transaction T1
+select *from Account with(TABLOCK,HOLDLOCK) where accno=1
+insert into Account values(2,5000)
+begin transaction T2

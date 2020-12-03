@@ -83,6 +83,7 @@ function createUser($conn, $name, $number, $admin_id, $email, $password) {
     }
 
     $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+    $image = "";
 
     mysqli_stmt_bind_param($stmt, "siiss", $name, $number, $admin_id, $email, $hashedPwd);
     mysqli_stmt_execute($stmt);
@@ -123,7 +124,7 @@ function loginUser($conn, $email, $password) {
         session_start();
         $_SESSION["userid"] = $emailExists["Member_id"];
         $_SESSION["userName"] = $emailExists["Member_Name"];
-        header("location:../home.php");
+        header("location:../home/home.php");
         exit(); 
     }
 }

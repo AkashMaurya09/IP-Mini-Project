@@ -38,10 +38,10 @@
           <?php 
             if (isset($_SESSION["userName"])) {
               echo "<a href='profile.php'>Profile</a>";
-              echo "<a href='includes/logout.inc.php'>Logout</a>";
+              echo "<a href='../includes/logout.inc.php'>Logout</a>";
             }
             else {
-              echo "<a href='signin.php'>Login</a>";
+              echo "<a href='../member/signin.php'>Login</a>";
             }
           ?>
         </div>
