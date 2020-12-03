@@ -39,11 +39,11 @@
                 <br />
                 <button type="submit" name="submit">Register</button>
             </form>
-            <a href="signIn.php">Already have an account?</i>
+            <a href="signIn.php">Already have an account?</a>
             <?php 
                 if(isset($_GET["error"])) {
                     if ($_GET["error"] == "emptyinput") {
-                        echo "<p> Fill all the fields";
+                        echo "<p> Fill all the fields</p>";
                     }
                     else if ($_GET["error"] == "invalidusername") {
                         echo "<p> Invalid Name </p>";

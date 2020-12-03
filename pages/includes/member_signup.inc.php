@@ -14,23 +14,23 @@ if (isset($_POST["submit"])) {
     require_once 'functions.inc.php';
 
     if (emptyInputSignup($email,$name,$number,$dob,$password,$confirm_password) != false) {
-        header("location:../signup.php?error=emptyinput");
+        header("location:../member/signup.php?error=emptyinput");
         exit();
     }
     if (invalidUsername($name) != false) {
-        header("location:../signup.php?error=invalidusername");
+        header("location:../member/signup.php?error=invalidusername");
         exit();
     }
     if (invalidEmail($email) != false) {
-        header("location:../signup.php?error=invalidemail");
+        header("location:../member/signup.php?error=invalidemail");
         exit();
     }
     if (pwdMatch($password,$confirm_password) != false) {
-        header("location:../signup.php?error=passworddontmatch");
+        header("location:../member/signup.php?error=passworddontmatch");
         exit();
     }
     if (emailExists($conn, $email) != false) {
-        header("location:../signup.php?error=emailExists");
+        header("location:../member/signup.php?error=emailExists");
         exit();
     }
 
@@ -38,6 +38,6 @@ if (isset($_POST["submit"])) {
 
 }
 else {
-    header("location:../signup.php");
+    header("location:../member/signup.php");
     exit();
 }

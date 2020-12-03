@@ -53,7 +53,7 @@ function emailExists($conn, $email) {
     $sql = "SELECT * from member WHERE Member_Email = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location:../signup.php?error=stmtFailed");
+        header("location:../member/signup.php?error=stmtFailed");
         exit();
     }
 
@@ -78,7 +78,7 @@ function createUser($conn, $name, $number, $admin_id, $email, $password) {
     $sql = "INSERT INTO member (Member_Name, Phone_Number, Admin_id, Member_Email, Member_Password) VALUES (?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location:../signup.php?error=insertFailed");
+        header("location:../member/signup.php?error=insertFailed");
         exit();
     }
 
@@ -91,7 +91,7 @@ function createUser($conn, $name, $number, $admin_id, $email, $password) {
 
     mysqli_stmt_close($stmt);
 
-    header("location:../signIn.php?error=none");
+    header("location:../member/signIn.php?error=none");
     exit();
 }
 
@@ -111,14 +111,14 @@ function loginUser($conn, $email, $password) {
     $emailExists = emailExists($conn, $email);
     
     if($emailExists === false) {
-        header("location:../signIn.php?error=wronglogin");
+        header("location:../member/signIn.php?error=wronglogin");
     }
 
     $passwordHashed = $emailExists["Member_Password"];
     $checkPwd = password_verify($password, $passwordHashed);
 
     if($checkPwd === false) {
-        header("location:../signIn.php?error=wrongpassword");
+        header("location:../member/signIn.php?error=wrongpassword");
     }
     elseif ($checkPwd === true) {
         session_start();
@@ -128,3 +128,5 @@ function loginUser($conn, $email, $password) {
         exit(); 
     }
 }
+
+

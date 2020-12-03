@@ -5,16 +5,16 @@ if(isset($_POST["submit"])) {
     $password = $_POST["pwd"];
 
     require_once 'dbh.inc.php';
-    require_once 'functions.inc.php';
+    require_once 'trainer_functions.inc.php';
 
     if (emptyInputLogin($email,$password) != false) {
-        header("location:../member/signIn.php?error=emptyinput");
+        header("location:../trainer/trainer_login.php?error=emptyinput");
         exit();
     }
 
-    loginUser($conn, $email, $password);
+    admin_loginUser($conn, $email, $password);
 }
 
 else {
-    header("location:../member/signIn.php");
+    header("location:../trainer/trainer_login.php");
 }

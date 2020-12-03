@@ -12,13 +12,13 @@
 
 <body>
     <?php 
-  require('../../components/basic/header.php')
-?>
+        require('../../components/basic/header.php')
+    ?>
 
     <main>
         <div class="center">
 
-            <h3>SIGN IN FOR<br></h3>
+            <h3>MEMBER SIGN IN FOR<br></h3>
             <span> GLORY</span><br><br>
             <img src="../../img/logo/logo_yellow_vertical.png">
             <br><br>
@@ -59,8 +59,8 @@
 
 
     <?php 
-  require('../../components/basic/footer.php')
-?>
+        require('../../components/basic/footer.php')
+    ?>
 </body>
 
 </html>
