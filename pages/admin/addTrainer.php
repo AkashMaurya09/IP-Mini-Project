@@ -43,7 +43,7 @@
           }
         ?>
         <div class="profileDetail">
-            <?php echo "<p><span>Name:</span> ". $row['Admin_Name'] ."</p>" ?>
+            <?php echo "<p><span>Name:</span> ". $row['Admin_Name'] . print_r($row) . "</p>" ?>
             <?php echo "<p><span>Email:</span> ". $row['Admin_Email']." </p>"?>
             <!-- <p><span>Phone Number:</span> 9967025541</p>
             <p><span>Video Count</span> 45</p> -->
@@ -86,8 +86,8 @@
                 <input type="number" name="number" placeholder="Phone Number" />
               </div>
               <div class="group col">
-                <label for="subtitle name">Admin Id</label>
-                <input type="number" name="admin_id" placeholder="Admin Id" />
+                <label for="subtitle name">Admin ID</label>
+                <input type="number" name="admin_id" value="<?php echo $row['Admin_id']; ?>"/>
               </div>
             </div>
             <div class="group">
