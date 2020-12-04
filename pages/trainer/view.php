@@ -26,9 +26,9 @@ include '../includes/dbh.inc.php';
         echo "<p><span>Video ID:</span> ". $row['Video_id'] . "</p>";
         echo "<p><span>Video Name:</span> ". $row['Video_Name'] . "</p>";
         echo "<p><span>Price:</span> ". $row['Price'] . "</p>";
+        echo "<p><span>Description:</span> ". $row['Description'] . "</p>";
         echo "<p><span>Trainer ID:</span> ". $row['Trainer_id'] . "</p>";
         echo "<video src='".$location."' controls width='320px' height='200px' >";
-        echo "<p><span>Description:</span> ". $row['Description'] . "</p>";
         echo "</div>";
         echo "<br>";        
      }

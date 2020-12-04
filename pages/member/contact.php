@@ -1,3 +1,6 @@
+<?php 
+  include_once '../includes/dbh.inc.php';  
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,12 +11,23 @@
 
     <link rel="stylesheet" href="/css/user/contact.css">
     <title>Contact</title>
+    <?php 
+        if(isset($_POST['submit'])){
+            $name = $_POST["name"];
+            $phoneNumber = $_POST["phone_number"];
+            $message = $_POST["message"];
+
+            $query = "INSERT INTO Contact(name,phone_number,message) VALUES('".$name."','".$phoneNumber."','".$message."');";
+            mysqli_query($conn,$query);
+            echo "Upload successfully.";
+        }
+    ?>
 </head>
 
 <body>
     <?php 
     require('../../components/basic/header.php')
-  ?>
+    ?>
 
     <div class="contact">
         <div class="top">
@@ -42,11 +56,11 @@
                     <div class="row">
                         <div class="left-middle">
                             <h1>Send Us A Message</h1>
-                            <form class="contactForm">
-                                <input type="text" placeholder="Name">
-                                <input type="text" placeholder="Phone Number">
-                                <textarea row="300" cols="20" placeholder="Message"></textarea>
-                                <input type="submit">
+                            <form class="contactForm" method="post">
+                                <input type="text" placeholder="Name" name="name">
+                                <input type="text" placeholder="Phone Number" name="phone_number">
+                                <textarea row="300" cols="20" placeholder="Message" name="message"></textarea>
+                                <input type="submit" name="submit">
                             </form>
                         </div>
                     </div>
