@@ -5,32 +5,31 @@ if (isset($_POST["submit"])) {
     $email = $_POST["email"];
     $name = $_POST["uname"];
     $number = $_POST["number"];
-    $dob = $_POST["dob"];
     $password = $_POST["pwd"];
     $confirm_password = $_POST["confirm-pwd"];
     $admin_id = $_POST["admin_id"];
 
-    require_once 'dbh.inc.php';
-    require_once 'functions.inc.php';
+    require_once '../dbh.inc.php';
+    require_once 'addTrainerfunctions.inc.php';
 
-    if (emptyInputSignup($email,$name,$number,$dob,$password,$confirm_password) != false) {
-        header("location:../member/signup.php?error=emptyinput");
+    if (emptyInputAddTrainer($email,$name,$number,$password,$confirm_password) != false) {
+        header("location:../../admin/addTrainer.php?error=emptyinput");
         exit();
     }
     if (invalidUsername($name) != false) {
-        header("location:../member/signup.php?error=invalidusername");
+        header("location:../../admin/addTrainer.php?error=invalidusername");
         exit();
     }
     if (invalidEmail($email) != false) {
-        header("location:../member/signup.php?error=invalidemail");
+        header("location:../../admin/addTrainer.php?error=invalidemail");
         exit();
     }
     if (pwdMatch($password,$confirm_password) != false) {
-        header("location:../member/signup.php?error=passworddontmatch");
+        header("location:../../admin/addTrainer.php?error=passworddontmatch");
         exit();
     }
     if (emailExists($conn, $email) != false) {
-        header("location:../member/signup.php?error=emailExists");
+        header("location:../../admin/addTrainer.php?error=emailExists");
         exit();
     }
 
@@ -38,6 +37,6 @@ if (isset($_POST["submit"])) {
 
 }
 else {
-    header("location:../member/signup.php");
+    header("location:../admin/trainerList.php");
     exit();
 }

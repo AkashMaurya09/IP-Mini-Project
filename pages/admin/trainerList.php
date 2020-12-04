@@ -1,3 +1,7 @@
+<?php 
+  include_once '../includes/dbh.inc.php';  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,11 +40,21 @@
             value="Logout"
           />
         </form>
+        <?php 
+          $admin_id = $_SESSION['admin_userid'];
+          $sql = "Select * from gymAdmin WHERE Admin_id = $admin_id"; 
+          $result = mysqli_query($conn,$sql);
+          $resultCheck = mysqli_num_rows($result);
+        
+          if ($resultCheck > 0) {
+            $row = mysqli_fetch_assoc($result);
+          }
+        ?>
         <div class="profileDetail">
-            <p><span>Name:</span> Srajan Shetty</p>
-            <p><span>Age:</span> 18</p>
-            <p><span>Phone Number:</span> 9967025541</p>
-            <p><span>Video Count</span> 45</p>
+            <?php echo "<p><span>Name:</span> ". $row['Admin_Name'] ."</p>" ?>
+            <?php echo "<p><span>Email:</span> ". $row['Admin_Email']." </p>"?>
+            <!-- <p><span>Phone Number:</span> 9967025541</p>
+            <p><span>Video Count</span> 45</p> -->
         </div>
         
         <div class="profileImage">
