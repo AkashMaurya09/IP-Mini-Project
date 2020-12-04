@@ -1,3 +1,6 @@
+<?php 
+  include_once '../includes/dbh.inc.php';  
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,11 +32,21 @@
             value="Logout"
           />
         </form>
+        <?php 
+          $admin_id = $_SESSION['admin_userid'];
+          $sql = "Select * from gymAdmin WHERE Admin_id = $admin_id"; 
+          $result = mysqli_query($conn,$sql);
+          $resultCheck = mysqli_num_rows($result);
+        
+          if ($resultCheck > 0) {
+            $row = mysqli_fetch_assoc($result);
+          }
+        ?>
         <div class="profileDetail">
-            <p><span>Name:</span> Srajan Shetty</p>
-            <p><span>Age:</span> 18</p>
-            <p><span>Phone Number:</span> 9967025541</p>
-            <p><span>Video Count</span> 45</p>
+            <?php echo "<p><span>Name:</span> ". $row['Admin_Name'] . print_r($row) . "</p>" ?>
+            <?php echo "<p><span>Email:</span> ". $row['Admin_Email']." </p>"?>
+            <!-- <p><span>Phone Number:</span> 9967025541</p>
+            <p><span>Video Count</span> 45</p> -->
         </div>
         
         <div class="profileImage">
@@ -73,8 +86,8 @@
                 <input type="number" name="number" placeholder="Phone Number" />
               </div>
               <div class="group col">
-                <label for="subtitle name">Admin Id</label>
-                <input type="number" name="admin_id" placeholder="Admin Id" />
+                <label for="subtitle name">Admin ID</label>
+                <input type="number" name="admin_id" value="<?php echo $row['Admin_id']; ?>"/>
               </div>
             </div>
             <div class="group">
@@ -91,6 +104,32 @@
             </div>
             <button type="submit" name="submit">Add Trainer</button>
           </form>
+          <?php 
+                if(isset($_GET["error"])) {
+                    if ($_GET["error"] == "emptyinput") {
+                        echo "<p> Fill all the fields</p>";
+                    }
+                    else if ($_GET["error"] == "invalidusername") {
+                        echo "<p> Invalid Name </p>";
+                    }
+                    else if ($_GET["error"] == "invalidemail") {
+                        echo "<p> Invalid Email </p>";
+                    }
+                    else if ($_GET["error"] == "passworddontmatch") {
+                        echo "<p> Passwords do not match </p>";
+                    }
+                    else if ($_GET["error"] == "emailExists") {
+                        echo "<p> Email already exists. Try logging in </p>";
+                    }
+                    else if ($_GET["error"] == "stmtFailed") {
+                        echo "<p> Something went wrong </p>";
+                    }
+                    else if ($_GET["error"] == "none") {
+                        echo "<p> Congratulations you have successfully added the trainer</p>";
+                    }  
+                    
+                 }
+            ?>
         </div>
       </div>
     </div>
