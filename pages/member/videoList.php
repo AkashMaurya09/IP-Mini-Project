@@ -27,21 +27,19 @@
                 <input type="submit" + class="profileButton" name="logout" value="Logout" />
             </form>
             <?php 
-          $memberid = $_SESSION['memberid'];
-          $sql = "Select * from Member WHERE Member_id = $memberid"; 
-          $result = mysqli_query($conn,$sql);
-          $resultCheck = mysqli_num_rows($result);
-        
-          if ($resultCheck > 0) {
-            $row = mysqli_fetch_assoc($result);
-          }
-        ?>
+                $memberid = $_SESSION['memberid'];
+                $sql = "Select * from Member WHERE Member_id = $memberid"; 
+                $result = mysqli_query($conn,$sql);
+                $resultCheck = mysqli_num_rows($result);
+                
+                if ($resultCheck > 0) {
+                    $row = mysqli_fetch_assoc($result);
+                }
+            ?>
             <div class="profileDetail">
                 <?php echo "<p><span>Name:</span> ". $row['Member_Name'] ."</p>" ?>
                 <?php echo "<p><span>Email:</span> ". $row['Member_Email']." </p>"?>
                 <?php echo "<p><span>Phone Number:</span> ". $row['Phone_Number']." </p>"?>
-                <!-- <p><span>Phone Number:</span> 9967025541</p>
-            <p><span>Video Count</span> 45</p> -->
             </div>
 
             <div class="profileImage">
@@ -60,29 +58,32 @@
                 </div>
 
                 <div class="trainerList">
-                    <?php 
-              $admin_id = $_SESSION['admin_userid'];
-              $sql = "Select * from trainer WHERE Admin_id = $admin_id"; 
-              $result = mysqli_query($conn,$sql);
-              $resultCheck = mysqli_num_rows($result);
-            ?>
+                <?php 
+                    $sql = "Select * from Workout"; 
+                    $result = mysqli_query($conn,$sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    
+                    if ($resultCheck > 0) {
+                        $workout = mysqli_fetch_assoc($result);
+                    }
+                ?> 
                     <?php 
                     if ($resultCheck > 0) {
                       $i = 0;
-                      while($row = mysqli_fetch_array($result)) {
+                      while($workout = mysqli_fetch_array($result)) {
+                        //   echo print_r($workout);
                         echo '
                         <div class="singleTrainer">
                             <img src="../../img/img_avatar.png" alt="Avatar">
                             <div class="detailContent">
-                                <p><span>Trainer Id:</span>' . $row['Trainer_id'] . '</p> 
-                                <p><span>Email:</span> '. $row['Trainer_Name'] . '</p>
-                                <p><span>Phone Number:</span>'. $row['Phone_Number'] .'</p>
+                                <p><span>Video Id:</span>' . $workout['Video_id'] . '</p> 
+                                <p><span>Video Name:</span> '. $workout['Video_Name'] . '</p>
+                                <p><span>Price:</span>'. $workout['Price'] .'</p>
                             </div>
                             <div class="vl"></div>
                             <div class="detailContent">
-                                <p><span>Admin Id:</span>'. $row['Admin_id'] .'</p>
-                                <p><span>Trainer Email</span>'. $row['Trainer_Email'] .'</p>
-                                <p><span>Video Count:</span>'. $row['Admin_id'] .'</p>
+                                <p><span>Trainer Id:</span>'. $workout['Trainer_id'] .'</p>
+                                <p><span>Description</span>'. $workout['Description'] .'</p>
                             </div>
     
                             <div class="dropdown">

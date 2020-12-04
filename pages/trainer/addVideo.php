@@ -15,6 +15,10 @@
  
     if(isset($_POST['but_upload'])){
        $maxsize = 524288000; // 5MB
+       $videoname = $_POST["video_name"];
+       $price = $_POST["price"];
+       $trainer_id = $_POST["trainer_id"];
+       $desc = $_POST["desc"];
  
        $name = $_FILES['file']['name'];
        $target_dir = "videos/";
@@ -36,7 +40,7 @@
             // Upload
             if(move_uploaded_file($_FILES['file']['tmp_name'],$target_file)){
               // Insert record
-              $query = "INSERT INTO videos(name,location) VALUES('".$name."','".$target_file."')";
+              $query = "INSERT INTO Workout(Video_Name,Price,Trainer_id,name,location,Description) VALUES('".$videoname."','".$price."','".$trainer_id."','".$name."','".$target_file."','".$desc."')";
 
               mysqli_query($conn,$query);
               echo "Upload successfully.";
@@ -81,18 +85,15 @@
           if ($resultCheck > 0) {
             $row = mysqli_fetch_assoc($result);
           }
-        ?>
-
+        ?>        
         
-        <div class="profileImage">
-            <img class="roundImage" src="../../img/img_avatar.png" alt="Avatar" >
-        </div>
         <div class="profileDetail">
             <?php echo "<p><span>Name:</span> ". $row['Trainer_Name'] . "</p>" ?>
             <?php echo "<p><span>Email:</span> ". $row['Trainer_Email']." </p>"?>
-
-            <!-- <p><span>Phone Number:</span> 9967025541</p>
-            <p><span>Video Count</span> 45</p> -->
+            <?php echo "<p><span>Phone Number:</span> ". $row['Phone_Number']." </p>"?>
+        </div>
+        <div class="profileImage">
+            <img class="roundImage" src="../../img/img_avatar.png" alt="Avatar" >
         </div>
         
       </div>
@@ -129,13 +130,14 @@
               </div>
             </div>
             <div class="group">
-              <label for="tag name">Tag Name</label>
-              <input type="text" />
+              <label for="tag name">Trainer ID</label>
+              <input type="text" name="trainer_id" value="<?php echo $row['Trainer_id']; ?>"/>
             </div>
             <div class="group">
               <label for="description">Description</label>
-              <textarea row="300" cols="20"></textarea>
+              <textarea row="300" cols="20" name="desc"></textarea>
             </div>
+            <input type='submit' value='Upload' name='but_upload'>
           </form>
         </div>
       </div>

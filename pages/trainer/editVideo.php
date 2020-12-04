@@ -1,3 +1,6 @@
+<?php 
+  include_once '../includes/dbh.inc.php';  
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,16 +33,26 @@
             value="Logout"
           />
         </form>
-        <div class="profileDetail">
-            <p><span>Name:</span> Srajan Shetty</p>
-            <p><span>Age:</span> 18</p>
-            <p><span>Phone Number:</span> 9967025541</p>
-            <p><span>Video Count</span> 45</p>
-        </div>
+        <?php 
+          $trainer_id = $_SESSION['trainer_userid'];
+          $sql = "Select * from trainer WHERE Trainer_id = $trainer_id"; 
+          $result = mysqli_query($conn,$sql);
+          $resultCheck = mysqli_num_rows($result);
         
+          if ($resultCheck > 0) {
+            $row = mysqli_fetch_assoc($result);
+          }
+        ?>
+        <div class="profileDetail">
+            <?php echo "<p><span>Name:</span> ". $row['Trainer_Name'] . "</p>" ?>
+            <?php echo "<p><span>Email:</span> ". $row['Trainer_Email']." </p>"?>
+            <?php echo "<p><span>Phone Number:</span> ". $row['Phone_Number']." </p>"?>
+        </div>
         <div class="profileImage">
             <img class="roundImage" src="../../img/img_avatar.png" alt="Avatar" >
         </div>
+        
+
         
       </div>
 
@@ -56,36 +69,33 @@
         </div>
         <hr style="margin: 0 20px 0 20px" />
         <div class="bottom">
-          <form class="editForm">
+        <form class="editForm" method="post" action="" enctype='multipart/form-data'>
             <div class="row">
               <div class="col group">
                 <label for="Workout Video">Workout Video</label>
-                <button class="profileButton fill">Upload Video</button>
-              </div>
-              <div class="col group">
-                <label for="title name">File Name</label>
-                <input type="text" />
+                <input type='file' name='file' />
               </div>
             </div>
 
             <div class="row">
               <div class="group col">
-                <label for="title name">Title Name</label>
-                <input type="text" />
+                <label for="title name">Video Name</label>
+                <input type="text" name="video_name"/>
               </div>
               <div class="group col">
-                <label for="subtitle name">Subtitle Name</label>
-                <input type="text" />
+                <label for="subtitle name">Price</label>
+                <input type="text" name="price"/>
               </div>
             </div>
             <div class="group">
-              <label for="tag name">Tag Name</label>
-              <input type="text" />
+              <label for="tag name">Trainer ID</label>
+              <input type="text" name="trainer_id" value="<?php echo $row['Trainer_id']; ?>"/>
             </div>
             <div class="group">
               <label for="description">Description</label>
-              <textarea row="300" cols="20"></textarea>
+              <textarea row="300" cols="20" name="desc"></textarea>
             </div>
+            <input type='submit' value='Upload' name='but_upload'>
           </form>
         </div>
       </div>
