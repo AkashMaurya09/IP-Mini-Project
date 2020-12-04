@@ -24,7 +24,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 5px;
 }
+
+.contact > hr { margin: 10px;}
+
+.top > h1,p { padding: 5px;}
 
 .row {
     display: flex;
@@ -72,13 +77,21 @@
 }
 
 .list {
-    background-color: black;
+    background-color: #404040;
     color: whitesmoke; 
     padding: 4px;
 }
 
 .list > p,h1,h4 {
     padding: 1px;
+}
+
+h1 {
+    font-weight: 100;
+}
+
+p {
+    font-weight: 5;
 }
 
 .list > hr{
