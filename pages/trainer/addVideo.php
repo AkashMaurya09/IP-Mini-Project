@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../css/trainer/editVideo.css" />
-    <link rel="stylesheet" href="../../css/common/header.css" />
-    <link rel="stylesheet" href="../../css/common/footer.css" />
+    
 
     <title>Edit Video</title>
   </head>
