@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/common/header.css">
     <title>Document</title>
 </head>
 <style>
@@ -31,10 +31,10 @@
         </div>
         
         <div class="nav-links">
-          <a href="/pages/home/home.php" target="">Home</a>
-          <a href="/pages/workouts/workouts.php" target="">Workout</a>
-          <a href="/pages/contact.php" target="">Contacts</a>
-          <a href="/pages/aboutus.php" target="">About Us</a>
+          <a href="/pages/user/home.php" target="">Home</a>
+          <a href="/pages/user/workouts.php" target="">Workout</a>
+          <a href="/pages/user/contact.php" target="">Contacts</a>
+          <a href="/pages/user/aboutus.php" target="">About Us</a>
           <?php 
             if (isset($_SESSION["userName"])) {
               echo "<a href='profile.php'>Profile</a>";

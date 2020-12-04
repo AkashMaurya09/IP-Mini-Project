@@ -59,8 +59,8 @@
 
 
     <?php 
-        require('../../components/basic/footer.php')
-    ?>
+  require('../../components/basic/footer.php')
+?>
 </body>
 
 </html>
