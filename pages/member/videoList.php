@@ -27,8 +27,8 @@
                 <input type="submit" + class="profileButton" name="logout" value="Logout" />
             </form>
             <?php 
-          $admin_id = $_SESSION['admin_userid'];
-          $sql = "Select * from gymAdmin WHERE Admin_id = $admin_id"; 
+          $memberid = $_SESSION['memberid'];
+          $sql = "Select * from Member WHERE Member_id = $memberid"; 
           $result = mysqli_query($conn,$sql);
           $resultCheck = mysqli_num_rows($result);
         
@@ -37,8 +37,9 @@
           }
         ?>
             <div class="profileDetail">
-                <?php echo "<p><span>Name:</span> ". $row['Admin_Name'] ."</p>" ?>
-                <?php echo "<p><span>Email:</span> ". $row['Admin_Email']." </p>"?>
+                <?php echo "<p><span>Name:</span> ". $row['Member_Name'] ."</p>" ?>
+                <?php echo "<p><span>Email:</span> ". $row['Member_Email']." </p>"?>
+                <?php echo "<p><span>Phone Number:</span> ". $row['Phone_Number']." </p>"?>
                 <!-- <p><span>Phone Number:</span> 9967025541</p>
             <p><span>Video Count</span> 45</p> -->
             </div>

@@ -10,6 +10,45 @@
     
 
     <title>Edit Video</title>
+    <?php
+    include '../includes/dbh.inc.php';
+ 
+    if(isset($_POST['but_upload'])){
+       $maxsize = 524288000; // 5MB
+ 
+       $name = $_FILES['file']['name'];
+       $target_dir = "videos/";
+       $target_file = $target_dir . $_FILES["file"]["name"];
+
+       // Select file type
+       $videoFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+       // Valid file extensions
+       $extensions_arr = array("mp4","avi","3gp","mov","mpeg");
+
+       // Check extension
+       if( in_array($videoFileType,$extensions_arr) ){
+ 
+          // Check file size
+          if(($_FILES['file']['size'] >= $maxsize) || ($_FILES["file"]["size"] == 0)) {
+            echo "File too large. File must be less than 5MB.";
+          }else{
+            // Upload
+            if(move_uploaded_file($_FILES['file']['tmp_name'],$target_file)){
+              // Insert record
+              $query = "INSERT INTO videos(name,location) VALUES('".$name."','".$target_file."')";
+
+              mysqli_query($conn,$query);
+              echo "Upload successfully.";
+            }
+          }
+
+       }else{
+          echo "Invalid file extension.";
+       }
+ 
+     } 
+     ?>
   </head>
   <body>
   
@@ -43,6 +82,7 @@
             $row = mysqli_fetch_assoc($result);
           }
         ?>
+
         
         <div class="profileImage">
             <img class="roundImage" src="../../img/img_avatar.png" alt="Avatar" >
@@ -50,6 +90,7 @@
         <div class="profileDetail">
             <?php echo "<p><span>Name:</span> ". $row['Trainer_Name'] . "</p>" ?>
             <?php echo "<p><span>Email:</span> ". $row['Trainer_Email']." </p>"?>
+
             <!-- <p><span>Phone Number:</span> 9967025541</p>
             <p><span>Video Count</span> 45</p> -->
         </div>
@@ -69,26 +110,22 @@
         </div>
         <hr style="margin: 0 20px 0 20px" />
         <div class="bottom">
-          <form class="editForm">
+          <form class="editForm" method="post" action="" enctype='multipart/form-data'>
             <div class="row">
               <div class="col group">
                 <label for="Workout Video">Workout Video</label>
-                <button class="profileButton fill">Upload Video</button>
-              </div>
-              <div class="col group">
-                <label for="title name">File Name</label>
-                <input type="text" />
+                <input type='file' name='file' />
               </div>
             </div>
 
             <div class="row">
               <div class="group col">
-                <label for="title name">Title Name</label>
-                <input type="text" />
+                <label for="title name">Video Name</label>
+                <input type="text" name="video_name"/>
               </div>
               <div class="group col">
-                <label for="subtitle name">Subtitle Name</label>
-                <input type="text" />
+                <label for="subtitle name">Price</label>
+                <input type="text" name="price"/>
               </div>
             </div>
             <div class="group">
@@ -109,3 +146,5 @@
     ?>
   </body>
 </html>
+
+<?php
