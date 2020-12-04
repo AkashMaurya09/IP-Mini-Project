@@ -54,7 +54,7 @@ function admin_loginUser($conn, $email, $password) {
         session_start();
         $_SESSION["admin_userid"] = $emailExists["Admin_Email"];
         // $_SESSION["admin_userName"] = $emailExists["Member_Name"];
-        header("location:../home/home.php");
+        header("location:../member/home.php");
         exit(); 
     }
 }

@@ -124,7 +124,7 @@ function loginUser($conn, $email, $password) {
         session_start();
         $_SESSION["userid"] = $emailExists["Member_id"];
         $_SESSION["userName"] = $emailExists["Member_Name"];
-        header("location:../home/home.php");
+        header("location:../member/home.php");
         exit(); 
     }
 }

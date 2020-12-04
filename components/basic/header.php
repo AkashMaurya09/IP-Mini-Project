@@ -31,10 +31,10 @@
         </div>
         
         <div class="nav-links">
-          <a href="/pages/user/home.php" target="">Home</a>
-          <a href="/pages/user/workouts.php" target="">Workout</a>
-          <a href="/pages/user/contact.php" target="">Contacts</a>
-          <a href="/pages/user/aboutus.php" target="">About Us</a>
+          <a href="/pages/member/home.php" target="">Home</a>
+          <a href="/pages/member/workouts.php" target="">Workout</a>
+          <a href="/pages/member/contact.php" target="">Contacts</a>
+          <a href="/pages/member/aboutus.php" target="">About Us</a>
           <?php 
             if (isset($_SESSION["userName"])) {
               echo "<a href='profile.php'>Profile</a>";
