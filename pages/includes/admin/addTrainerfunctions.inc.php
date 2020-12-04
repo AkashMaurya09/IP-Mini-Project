@@ -73,9 +73,9 @@ function emailExists($conn, $email) {
     mysqli_stmt_close($stmt);
 }
 
-function createUser($conn, $name, $number, $admin_id, $email, $password) {
+function createUser($conn, $name, $number, $admin_id, $email, $password,$imgContent) {
     //This statement is used to prevent SQL Injection
-    $sql = "INSERT INTO trainer (Trainer_Name, Phone_Number, Admin_id, Trainer_Email, Trainer_Password) VALUES (?, ?, ?, ?, ?);";
+    $sql = "INSERT INTO trainer (Trainer_Name, Phone_Number, Admin_id, Trainer_Email, Trainer_Password, Trainer_Image) VALUES (?, ?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location:../../admin/addTrainer.php?error=insertFailed");
@@ -85,7 +85,7 @@ function createUser($conn, $name, $number, $admin_id, $email, $password) {
     $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
     $image = "";
 
-    mysqli_stmt_bind_param($stmt, "siiss", $name, $number, $admin_id, $email, $hashedPwd);
+    mysqli_stmt_bind_param($stmt, "siissb", $name, $number, $admin_id, $email, $hashedPwd,$imgContent);
     mysqli_stmt_execute($stmt);
     // console_log($name);
 
