@@ -1,3 +1,6 @@
+<?php 
+  include_once '../includes/dbh.inc.php';  
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,15 +33,25 @@
             value="Logout"
           />
         </form>
-        <div class="profileDetail">
-            <p><span>Name:</span> Srajan Shetty</p>
-            <p><span>Age:</span> 18</p>
-            <p><span>Phone Number:</span> 9967025541</p>
-            <p><span>Video Count</span> 45</p>
-        </div>
+        <?php 
+          $trainer_id = $_SESSION['trainer_userid'];
+          $sql = "Select * from trainer WHERE Trainer_id = $trainer_id"; 
+          $result = mysqli_query($conn,$sql);
+          $resultCheck = mysqli_num_rows($result);
+        
+          if ($resultCheck > 0) {
+            $row = mysqli_fetch_assoc($result);
+          }
+        ?>
         
         <div class="profileImage">
             <img class="roundImage" src="../../img/img_avatar.png" alt="Avatar" >
+        </div>
+        <div class="profileDetail">
+            <?php echo "<p><span>Name:</span> ". $row['Trainer_Name'] . "</p>" ?>
+            <?php echo "<p><span>Email:</span> ". $row['Trainer_Email']." </p>"?>
+            <!-- <p><span>Phone Number:</span> 9967025541</p>
+            <p><span>Video Count</span> 45</p> -->
         </div>
         
       </div>

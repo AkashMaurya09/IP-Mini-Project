@@ -43,7 +43,7 @@
           }
         ?>
         <div class="profileDetail">
-            <?php echo "<p><span>Name:</span> ". $row['Admin_Name'] . print_r($row) . "</p>" ?>
+            <?php echo "<p><span>Name:</span> ". $row['Admin_Name'] . "</p>" ?>
             <?php echo "<p><span>Email:</span> ". $row['Admin_Email']." </p>"?>
             <!-- <p><span>Phone Number:</span> 9967025541</p>
             <p><span>Video Count</span> 45</p> -->
@@ -68,11 +68,12 @@
         </div>
         <hr style="margin: 0 20px 0 20px" />
         <div class="bottom">
-          <form class="editForm" action="../includes/admin/addTrainer.inc.php" method="post">
+          <form class="editForm" action="../includes/admin/addTrainer.inc.php" method="post" enctype="multipart/form-data">
             <div class="row">
               <div class="col group">
                 <label for="Workout Video">Trainer Image</label>
-                <button class="profileButton fill">Upload Image</button>
+                <input type="file" name="image"/>           
+                
               </div>
               <div class="col group">
                 <label for="title name">Name</label>
@@ -129,7 +130,7 @@
                     }  
                     
                  }
-            ?>
+          ?>
         </div>
       </div>
     </div>
