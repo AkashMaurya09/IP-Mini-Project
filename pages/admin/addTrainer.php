@@ -57,36 +57,41 @@
         </div>
         <hr style="margin: 0 20px 0 20px" />
         <div class="bottom">
-          <form class="editForm">
+          <form class="editForm" action="../includes/admin/addTrainer.inc.php" method="post">
             <div class="row">
               <div class="col group">
                 <label for="Workout Video">Trainer Image</label>
                 <button class="profileButton fill">Upload Image</button>
               </div>
               <div class="col group">
-                <label for="title name">First Name</label>
-                <input type="text" />
+                <label for="title name">Name</label>
+                <input type="text" name="uname" placeholder="Name" />
               </div>
             </div>
 
             <div class="row">
               <div class="group col">
-                <label for="title name">Last Name</label>
-                <input type="text" />
+                <label for="title name">Phone Number</label>
+                <input type="number" name="number" placeholder="Phone Number" />
               </div>
               <div class="group col">
-                <label for="subtitle name">Speciality</label>
-                <input type="text" />
+                <label for="subtitle name">Admin Id</label>
+                <input type="number" name="admin_id" placeholder="Admin Id" />
               </div>
             </div>
             <div class="group">
-              <label for="tag name">Tag Name</label>
-              <input type="text" />
+              <label for="tag name">Trainer Email</label>
+              <input type="text" name="email" placeholder="Email" />
             </div>
             <div class="group">
-              <label for="description">Email</label>
-              <input type="text" />
+              <label for="description">Trainer Password</label>
+              <input type="password" name="pwd" placeholder="Password" />
             </div>
+            <div class="group">
+              <label for="description">Confirm Trainer Password</label>
+              <input type="password" name="confirm-pwd" placeholder="Confirm Password"/>
+            </div>
+            <button type="submit" name="submit">Add Trainer</button>
           </form>
         </div>
       </div>
