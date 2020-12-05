@@ -5,9 +5,21 @@ include '../includes/dbh.inc.php';
 <html>
   <head>
     <style>
-    video{
-     float: left;
-    }
+      .Content-center{
+        text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+      }
+      .Content-center p{
+        /* color: grey; */
+    font-family: monospace;
+    max-width: calc(30em * 0.9);
+      }
+    video {
+  border-radius: 3px;
+  border: 1px solid;
+}
     </style>
   </head>
   <body>
@@ -22,15 +34,23 @@ include '../includes/dbh.inc.php';
         // echo print_r($row);
         $location = $row['location'];
         
-        echo "<div >";
-        echo "<p><span>Video ID:</span> ". $row['Video_id'] . "</p>";
-        echo "<p><span>Video Name:</span> ". $row['Video_Name'] . "</p>";
-        echo "<p><span>Price:</span> ". $row['Price'] . "</p>";
-        echo "<p><span>Description:</span> ". $row['Description'] . "</p>";
-        echo "<p><span>Trainer ID:</span> ". $row['Trainer_id'] . "</p>";
+        echo "<div class='Content-center'>";
         echo "<video src='".$location."' controls width='320px' height='200px' >";
         echo "</div>";
-        echo "<br>";        
+        // echo "<p><span>Video ID:</span> ". $row['Video_id'] . "</p>";
+        echo "<div class='Content-center'>";
+        echo "<p><span>Video Name:</span> ". $row['Video_Name'] . "</p>";
+        echo "</div>";
+        
+        // echo "<p><span>Price:</span> ". $row['Price'] . "</p>";
+        echo "<div class='Content-center'>";
+        echo "<p><span>Description:</span> ". $row['Description'] . "</p>";
+        echo "</div>";
+        // echo "<p><span>Trainer ID:</span> ". $row['Trainer_id'] . "</p>";
+        
+        
+        echo "<br>";   
+        break;     
      }
      ?>
  
