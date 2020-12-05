@@ -74,16 +74,20 @@
                         //   echo print_r($workout);
                         echo '
                         <div class="singleTrainer">
-                            <img src="../../img/img_avatar.png" alt="Avatar">
+                            <video controls>
+                                <source src="movie.mp4" type="video/mp4">
+                                <source src="movie.ogg" type="video/ogg">
+                                Your browser does not support the video tag.
+                            </video>
                             <div class="detailContent">
                                 <p><span>Video Id:</span>' . $workout['Video_id'] . '</p> 
                                 <p><span>Video Name:</span> '. $workout['Video_Name'] . '</p>
-                                <p><span>Price:</span>'. $workout['Price'] .'</p>
+                                
                             </div>
                             <div class="vl"></div>
                             <div class="detailContent">
+                                <p><span>Price:</span>'. $workout['Price'] .'</p>
                                 <p><span>Trainer Id:</span>'. $workout['Trainer_id'] .'</p>
-                                <p><span>Description</span>'. $workout['Description'] .'</p>
                             </div>
     
                             <div class="dropdown">

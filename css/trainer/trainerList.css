@@ -41,7 +41,7 @@
 
 .singleTrainer {
     height: 100px;
-    border-radius: 100px;
+    /* border-radius: 100px; */
     margin: 20px;
     border: 1px solid gray;
     display: flex;
@@ -58,6 +58,11 @@
 .singleTrainer > img {
     height: 100%;
     border-radius: 100%;
+}
+
+.singleTrainer > video {
+    height: 100%;
+    /* border-radius: 100%; */
 }
 
 .detailContent {
