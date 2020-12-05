@@ -1,0 +1,180 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif
+}
+#main {
+  background-color: #f5f5f5;
+  
+}
+
+.Center-start{
+    text-align: center;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.Center-start p{
+    color: grey;
+    font-family: monospace;
+    max-width: calc(30em * 0.5);
+}
+
+blockquote::before {
+    content: open-quote;
+  }
+  blockquote::after {
+    content: close-quote;
+  }
+  blockquote {
+      font-family: monospace;
+    color: grey;
+    quotes: "“" "”" "‘" "’";
+  }
+.Content-center{
+    text-align: center;
+    /* margin-top: 20px; */
+    display: flex;
+    justify-content: center;
+}
+.Content-center p{
+    color: grey;
+    font-family: monospace;
+    max-width: calc(30em * 0.5);
+}
+.column-3{
+    float: left;
+    width: 33.3%;
+    padding: 10px;
+    height: auto;  
+}
+
+/* .Coaches-img{
+    border-radius: 25px;
+    width: 300px;
+    height: 300px;
+} */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: auto;
+}
+ .expertise{
+     color:black;
+     margin: 50px;
+ }
+/* .Try-free-text{
+    position: relative;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+.Try-free-heading{
+    
+    position: relative;
+    margin-top: 50px;
+    margin-left: 100px;
+} */
+
+.Try-free-Button{
+    border: 1px solid;
+    /* position:relative; */
+    padding-top:20px;
+    padding-left:50px;
+    padding-right:50px;
+    padding-bottom:20px;
+    margin-bottom: 50px;
+    /* margin-left: 100px; */
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+video {
+  border-radius: 3px;
+  border: 1px solid;
+}
+
+.Content-Class{
+    background-color: black;
+    /* over */
+}
+.Text-Content h1{
+    padding: 10px;
+}
+.Text-Content p{
+    font-weight: normal;
+    font-size: 15px;
+}
+.Text-Content a{
+    font-weight: bold;    
+}
+.Text-Content{
+    padding-top: 20px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+.Workout-center {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+/* .Workout-center-heading{
+    text-align: center;
+    color: white; 
+} */
+
+.Our-Coaches{
+    text-align: center;
+    margin-top:40px ;
+    font-size: 30px;
+}
+
+.Our-Coaches-P{
+    text-align: center;
+    margin-top:20px ;
+    /* max-width: 30ch; */
+}
+.Workout-center img{
+    border-radius: 25px;
+    width: 250px;
+    height: 250px;
+    box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
+    margin-bottom: 50px;
+}
+.Workout-center h1{
+    color: white;
+    /* max-width: calc(30em * 0.5); */
+}
+.Workout-center p{
+    color: white;
+    max-width: calc(30em * 0.5);
+}
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid; */
+}
+
+.Sign-up-to-know-more{
+    padding-top: 20px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+  .column-3{
+    width: 100%;
+  }
+  
+}

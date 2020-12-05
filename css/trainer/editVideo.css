@@ -156,3 +156,33 @@ body {
 .profileDetail > p > span {
     font-weight: bold;
 }
+
+@media (max-width:600px) {
+    .left{
+        display: none;
+    }
+    .right{
+     margin : 0;
+    }
+    .row{
+        display: flex;
+        flex-direction: column;
+    }
+    .top{
+        
+        display: flex;
+        padding: 20;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .top > p{
+    margin-right: 0;
+    }
+    .top > input {
+        margin-right: 0 !important;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+
+  }
