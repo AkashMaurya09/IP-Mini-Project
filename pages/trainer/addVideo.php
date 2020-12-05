@@ -21,7 +21,7 @@
        $desc = $_POST["desc"];
  
        $name = $_FILES['file']['name'];
-       $target_dir = "videos/";
+       $target_dir = "../videos/";
        $target_file = $target_dir . $_FILES["file"]["name"];
 
        // Select file type

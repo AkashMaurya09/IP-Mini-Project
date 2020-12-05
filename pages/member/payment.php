@@ -1,3 +1,6 @@
+<?php
+include '../includes/dbh.inc.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,18 +10,23 @@
 </head>
 <body>
 
-<?php 
-    require('../../components/basic/header.php')
+  <?php 
+    require('../../components/basic/header.php');
   ?>
 
 
-  <?php
+  <?php  
+  $oneYearOn = date('Y-m-d',strtotime(date("Y-m-d", mktime()) . " + 1 year"));
     if(isset($_POST['submit'])) {
         $video_id = $_GET["Video_id"];
         $member_id = $_SESSION['memberid'];
-        $validity = 0; // insert some date like one year from todays data
+        $validity = $oneYearOn;
+        // insert some date like one year from todays data
         //insert into purchases
         // redirect to video page with video id
+        $query = "INSERT INTO purchased(Validity,Member_id,Video_id) VALUES('".$validity."','".$member_id."','".$video_id."');";
+        mysqli_query($conn,$query);
+        echo "Buy successfull.";
         header("location: ./videoPlay.php?Video_id=$video_id");
       } else {
         // else part
@@ -28,7 +36,10 @@
 
   <form method="post">
     <input type="submit" name="submit" value="Buy Now">
-    </form>
+    <?php
+      echo print_r($oneYearOn); 
+     ?>
+  </form>
   
 <?php 
         require('../../components/basic/footer.php')
