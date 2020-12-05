@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/css/trainer/trainerList.css" />
     <link rel="stylesheet" href="/css/trainer/editVideo.css" />
 
-    <title>Video List</title>
+    <title>My Video</title>
 </head>
 
 <body>
@@ -21,8 +21,8 @@
   ?>
 
     <?php
-       if(isset($_POST['myVideo'])) {
-            header("location: ./myVideo.php");
+       if(isset($_POST['videoList'])) {
+            header("location: ./videoList.php");
         } else {
         // else part
     }
@@ -31,7 +31,7 @@
     <div class="container">
         <div class="left profile">
             <form class="profileForm" method="post">
-                <input type="submit" class="profileButton" name="myVideo" value="My Video" />
+                <input type="submit" class="profileButton" name="videoList" value="Video List" />
                 <!-- <input type="submit" class="profileButton" name="dashboard" value="Dashboard" /> -->
                 <input type="submit" + class="profileButton" name="logout" value="Logout" />
             </form>
@@ -68,7 +68,7 @@
 
                 <div class="trainerList">
                     <?php 
-                        $sql = "SELECT * FROM Workout WHERE Video_id NOT IN (SELECT Video_id From purchases Where Member_id='$memberid')";
+                        $sql = "SELECT * FROM Workout WHERE Video_id IN (SELECT Video_id From purchases Where Member_id='$memberid')";
                          
                         $result = mysqli_query($conn,$sql);
                         $resultCheck = mysqli_num_rows($result);
@@ -95,10 +95,6 @@
                             </div>
     
                             <div class="dropdown">
-                                <button onclick="myFunction()" class="dropbtn">...</button>
-                                <div id="myDropdown" class="dropdown-content">
-                                     <a href="payment.php?Video_id='.$row['Video_id'].'">Buy Now</a>
-                                </div>
                             </div>
                         </div>
                         ';
@@ -116,10 +112,13 @@
     ?>
 
     <script>
+    /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
     function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
     }
 
+    // Close the dropdown menu if the user clicks outside of it
     window.onclick = function(event) {
         if (!event.target.matches('.dropbtn')) {
             var dropdowns = document.getElementsByClassName("dropdown-content");
