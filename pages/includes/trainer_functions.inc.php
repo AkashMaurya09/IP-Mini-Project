@@ -52,9 +52,9 @@ function admin_loginUser($conn, $email, $password) {
     }
     elseif ($checkPwd === true) {
         session_start();
-        $_SESSION["trainer_userid"] = $emailExists["Trainer_Name"];
+        $_SESSION["trainer_userid"] = $emailExists["Trainer_id"];
         // $_SESSION["admin_userName"] = $emailExists["Member_Name"];
-        header("location:../home/home.php");
+        header("location:../member/home.php");
         exit(); 
     }
 }

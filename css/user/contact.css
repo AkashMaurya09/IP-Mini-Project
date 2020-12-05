@@ -1,0 +1,122 @@
+/* .contact {
+    width: 100%;
+} */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#map {
+    width: 100%;
+    background-color: aqua;
+    margin: -10px 10px 10px 10px;
+    height: 250px;
+}
+
+
+.contact {
+    padding: 20px 20px 0px 20px;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.contact > hr { margin: 10px;}
+
+.top > h1,p { padding: 5px;}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.left-top {
+    width: 100%;
+    padding: 10px;
+}
+
+.left-middle {
+    width: 100%;
+    padding: 10px;
+}
+
+.left-bottom {
+    width: 100%;
+    padding: 10px;
+}
+
+.right-bottom {
+    width: 100%;
+    padding: 10px;
+}
+
+.right-top {
+    width: 100%;
+    padding: 10px;
+}
+
+.contactForm > input[type='text'] {
+    width: 100%;
+    margin: 2px;
+    padding: 2px;
+}
+
+.contactForm > input[type='submit'] {
+    display: flex;
+    justify-content: center;
+    margin:auto;
+    width: 30%;
+    height: 30px;
+}
+
+.list {
+    background-color: #404040;
+    color: whitesmoke; 
+    padding: 4px;
+}
+
+.list > p,h1,h4 {
+    padding: 1px;
+}
+
+h1 {
+    font-weight: 100;
+}
+
+p {
+    font-weight: 5;
+}
+
+.list > hr{
+    color: grey;
+}
+
+.contactForm > textarea {
+    width: 100%;
+    height: 40px;
+    resize: initial;
+    margin: 2px;
+    padding: 2px;
+}
+
+@media screen and (max-width: 600px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .list > hr{
+        display: none;
+    }
+
+    #map {
+        width: auto;
+    }   
+}
+  

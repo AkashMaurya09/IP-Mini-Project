@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/common/header.css">
-    <title>Document</title>
+    <title>Gym</title>
 </head>
 <style>
 
@@ -36,8 +36,10 @@
           <a href="/pages/member/contact.php" target="">Contacts</a>
           <a href="/pages/member/aboutus.php" target="">About Us</a>
           <?php 
-            if (isset($_SESSION["userName"])) {
+            if (isset($_SESSION["memberid"])) {
               echo "<a href='profile.php'>Profile</a>";
+              echo "<a href='../../pages/member/videoList.php'>Video List</a>";
+              echo "<a href='../../pages/trainer/view.php'>Video View</a>";
               echo "<a href='../includes/logout.inc.php'>Logout</a>";
             }
             elseif (isset($_SESSION["admin_userid"])) {

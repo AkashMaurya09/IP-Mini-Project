@@ -122,7 +122,7 @@ function loginUser($conn, $email, $password) {
     }
     elseif ($checkPwd === true) {
         session_start();
-        $_SESSION["userid"] = $emailExists["Member_id"];
+        $_SESSION["memberid"] = $emailExists["Member_id"];
         $_SESSION["userName"] = $emailExists["Member_Name"];
         header("location:../member/home.php");
         exit(); 

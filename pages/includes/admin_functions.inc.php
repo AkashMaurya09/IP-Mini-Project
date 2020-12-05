@@ -52,8 +52,8 @@ function admin_loginUser($conn, $email, $password) {
     }
     elseif ($checkPwd === true) {
         session_start();
-        $_SESSION["admin_userid"] = $emailExists["Admin_Email"];
-        // $_SESSION["admin_userName"] = $emailExists["Member_Name"];
+        $_SESSION["admin_userid"] = $emailExists["Admin_id"];
+        $_SESSION["admin_userName"] = $emailExists["Admin_Name"];
         header("location:../member/home.php");
         exit(); 
     }

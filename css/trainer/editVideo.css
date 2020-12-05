@@ -186,3 +186,26 @@ body {
     }
 
   }
+
+.submitGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.submitGroup > p {
+    text-align: center;
+}
+
+.submitGroup > input {
+    justify-self: center;
+    background-color: #00F6FF;
+    align-self: center;
+    border-width: 1px;
+    padding: 0.6rem;
+}
+
+.submitGroup > input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background: white;
+}
