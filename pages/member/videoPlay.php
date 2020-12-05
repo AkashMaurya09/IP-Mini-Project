@@ -20,6 +20,10 @@
     require('../../components/basic/header.php')
   ?>
 
+  <?php
+    $video_id = $_GET['Video_id'];
+  ?>
+
     <div class="container">
         <div class="left profile">
             <form class="profileForm">
