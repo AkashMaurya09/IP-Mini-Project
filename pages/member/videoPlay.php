@@ -9,6 +9,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/user/videoPlay.css" />
+    <link rel="stylesheet" href="/css/user/comments.css" />
 
     <title>Video List</title>
 </head>
@@ -93,7 +94,54 @@
                     </div>
                 </div>
             </div>
+            <div>
+                <div class="Comments-Section">
+                    <div class="Content-Center">
+                        <p id="Comments-heading">Comments</p>
+                    </div>
+                </div>
+                <div class="add-comment">
+
+                    <textarea placeholder="Your Comment goes here...." rows="5" name="comment[text]" id="comment_text"
+                        cols=20 class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list"
+                        aria-haspopup="true"></textarea>
+
+                    <div class="button_base b07_3d_double_roll">
+                        <div>Publish Comment</div>
+                        <div>Publish Comment</div>
+                        <div>Publish Comment</div>
+                        <div>Publish Comment</div>
+                    </div>
+                </div>
+            </div>
+            <div class="Comments-Section">
+                    <div class="Content-Center">
+                        <p id="Comments-heading">What did others say...</p>
+
+                    </div>
+                </div>
+
+                <div class="comment-card">
+                    
+                <img src="https://picsum.photos/300/300" />
+                    <p ic="username">  Devdatta Khoche</p>
+                    <div class="comment">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore officia aliquid reiciendis sit, odio maxime dignissimos laborum repellat magni tempore hic. Explicabo sit blanditiis ipsum, natus pariatur accusamus tenetur quo.</p>
+                    </div>
+                    <p class="time">Bet 5 days ago</p>
+                </div>
+                <div class="comment-card">
+                    
+                    <img src="https://picsum.photos/300/300" />
+                        <p ic="username">  Devdatta Khoche</p>
+                        <div class="comment">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore officia aliquid reiciendis sit, odio maxime dignissimos laborum repellat magni tempore hic. Explicabo sit blanditiis ipsum, natus pariatur accusamus tenetur quo.</p>
+                        </div>
+                        <p class="time">Bet 5 days ago</p>
+                    </div>
         </div>
+        
+                
     </div>
 
     <?php 

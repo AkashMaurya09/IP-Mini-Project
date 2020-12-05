@@ -1,0 +1,317 @@
+.Comments-Section{
+    border-top: 1px solid black;
+    border-bottom:1px solid black; 
+}
+
+#Comments-heading{
+    margin: 10px;
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+}
+
+.add-comment{
+    max-width: 90%;
+    margin : 40px;
+    /* border : 1px solid; */
+    border-radius: 10px;
+    
+}
+
+/* .add-comment:hover{
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+} */
+
+textarea{
+    width: 100%;
+    height: auto;
+    border: none;
+    background-color: #d3d3d3;
+    border-radius: 10px;
+    /* margin-top: 10px; */
+    /* margin-left: 50px; */
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 rgba(80, 28, 28, 0.07);
+    border-color: -moz-use-text-color #FFFFFF #FFFFFF -moz-use-text-color;
+    border-image: none;
+    border-radius: 6px 6px 6px 6px;
+    border-style: none solid solid none;
+    border-width: medium 1px 1px medium;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) inset;
+    color: #555555;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1em;
+    line-height: 1.4em;
+    padding: 5px 8px;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    resize: vertical;
+}
+
+textarea:hover{
+    border: none;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.textarea:focus{
+    
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.back {
+    width: 33%;
+    height: 200px;
+    /* float: left; */
+    background-color: #eeeeee;
+    border: 10px;
+    border-color: #ffffff;
+    border-style: solid;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    counter-increment: bc;
+    padding: 0px 5px 5px 5px;
+}
+
+
+.preserve-3d {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+.back:before {
+    /* content: counter(bc) "_"; */
+    position: absolute;
+    padding: 10px;
+}
+
+@media screen and (max-width: 1260px) {
+    .back {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .back {
+        width: 100%;
+    }
+}
+
+.button_base {
+    margin: 0;
+    border: 0;
+    font-size: 18px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -100px;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-user-select: none;
+    cursor: default;
+}
+
+.button_base:hover {
+    cursor: pointer;
+}
+.b07_3d_double_roll {
+    perspective: 500px;
+    -webkit-perspective: 500px;
+    -moz-perspective: 500px;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.b07_3d_double_roll div {
+    position: absolute;
+    text-align: center;
+    padding: 10px;
+    border: #000000 solid 1px;
+    pointer-events: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.b07_3d_double_roll div:nth-child(1) {
+    color: #000000;
+    background-color: #ffffff;
+    z-index: 0;
+    width: 100%;
+    height: 50px;
+    clip: rect(0px, 100px, 50px, 0px);
+    position: absolute;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    transform: rotateX(0deg);
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform-origin: 50% 50% -25px;
+    -webkit-transform-origin: 50% 50% -25px;
+    -moz-transform-origin: 50% 50% -25px;
+}
+
+.b07_3d_double_roll div:nth-child(2) {
+    color: #000000;
+    background-color: #000000;
+    z-index: -1;
+    width: 100%;
+    height: 50px;
+    clip: rect(0px, 100px, 50px, 0px);
+    position: absolute;
+    transform: rotateX(90deg);
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    transform-origin: 50% 50% -25px;
+    -webkit-transform-origin: 50% 50% -25px;
+    -moz-transform-origin: 50% 50% -25px;
+}
+
+.b07_3d_double_roll div:nth-child(3) {
+    color: #000000;
+    background-color: #ffffff;
+    z-index: 0;
+    width: 100%;
+    height: 50px;
+    clip: rect(0px, 200px, 50px, 100px);
+    position: absolute;
+    transition: all 0.2s ease 0.1s;
+    -webkit-transition: all 0.2s ease 0.1s;
+    -moz-transition: all 0.2s ease 0.1s;
+    transform: rotateX(0deg);
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform-origin: 50% 50% -25px;
+    -webkit-transform-origin: 50% 50% -25px;
+    -moz-transform-origin: 50% 50% -25px;
+}
+
+.b07_3d_double_roll div:nth-child(4) {
+    color: #000000;
+    background-color: #000000;
+    z-index: -1;
+    width: 100%;
+    height: 50px;
+    clip: rect(0px, 200px, 50px, 100px);
+    position: absolute;
+    transform: rotateX(-90deg);
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    transition: all 0.2s ease 0.1s;
+    -webkit-transition: all 0.2s ease 0.1s;
+    -moz-transition: all 0.2s ease 0.1s;
+    transform-origin: 50% 50% -25px;
+    -webkit-transform-origin: 50% 50% -25px;
+    -moz-transform-origin: 50% 50% -25px;
+}
+
+.b07_3d_double_roll:hover div:nth-child(1) {
+    background-color: #000000;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    transform: rotateX(-90deg);
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+}
+
+.b07_3d_double_roll:hover div:nth-child(2) {
+    color: #ffffff;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    transform: rotateX(0deg);
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+}
+
+.b07_3d_double_roll:hover div:nth-child(3) {
+    background-color: #000000;
+    transition: all 0.2s ease 0.1s;
+    -webkit-transition: all 0.2s ease 0.1s;
+    -moz-transition: all 0.2s ease 0.1s;
+    transform: rotateX(90deg);
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+}
+
+.b07_3d_double_roll:hover div:nth-child(4) {
+    color: #ffffff;
+    transition: all 0.2s ease 0.1s;
+    -webkit-transition: all 0.2s ease 0.1s;
+    -moz-transition: all 0.2s ease 0.1s;
+    transform: rotateX(0deg);
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+}
+.comment-card{
+    position: relative;
+    display: inline-block;
+    margin:30px;
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
+    0 5px 15px 0 rgba(0, 0, 0, 0.08) !important;
+}
+.comment-card p{
+    letter-spacing: 2px;
+    font-family: cursive;
+    margin-left: 20px;
+    padding-top: 15px;
+    display: inline;
+    vertical-align: middle;
+}
+.comment-card img{
+    vertical-align: middle;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 75%;
+    height :50px;
+}
+.time {
+    padding-bottom: 10px;
+    padding-right: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: small;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+.comment{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.comment p{
+    letter-spacing: 2px;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 50px;
+    color: grey;
+    font-family: system-ui;
+    max-width: 60ch;
+}
+
+@media screen and (max-width: 600px) {
+    .comment p{
+        letter-spacing: 2px;
+        line-height: 20px;
+        margin: 0;
+        padding: 0;
+        padding-bottom: 50px;
+        color: grey;
+        font-family: system-ui;
+        max-width: 30ch;
+    }   
+  }
