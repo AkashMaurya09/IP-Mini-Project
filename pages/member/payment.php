@@ -19,6 +19,7 @@
         $validity = 0; // insert some date like one year from todays data
         //insert into purchases
         // redirect to video page with video id
+        header("location: ./videoPlay.php?Video_id=$video_id");
       } else {
         // else part
     }

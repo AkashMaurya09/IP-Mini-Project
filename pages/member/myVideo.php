@@ -78,6 +78,7 @@
                       $i = 0;
                       while($row = mysqli_fetch_assoc($result)) {
                         echo '
+                        <a href="/">
                         <div class="singleTrainer">
                             <video controls>
                                 <source src="movie.mp4" type="video/mp4">
@@ -97,7 +98,7 @@
                             <div class="dropdown">
                             </div>
                         </div>
-                        ';
+                        </a>';
                         $i = $i + 1;
                       }
                     }
