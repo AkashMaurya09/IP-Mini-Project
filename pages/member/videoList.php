@@ -68,7 +68,7 @@
 
                 <div class="trainerList">
                     <?php 
-                        $sql = "SELECT * FROM Workout WHERE Video_id NOT IN (SELECT Video_id From purchased Where Member_id='$memberid')";
+                        $sql = "SELECT * FROM Workout WHERE Video_id NOT IN (SELECT Video_id From purchases Where Member_id='$memberid')";
                          
                         $result = mysqli_query($conn,$sql);
                         $resultCheck = mysqli_num_rows($result);

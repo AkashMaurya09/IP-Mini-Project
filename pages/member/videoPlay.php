@@ -61,7 +61,7 @@ include_once '../includes/dbh.inc.php';
                     Your browser does not support the video tag.
                 </video> -->
                     <?php
-                    $fetchVideos = mysqli_query($conn, "SELECT * FROM Workout where Video_id=(SELECT Video_id from purchased where Member_id= $memberid);");
+                    $fetchVideos = mysqli_query($conn, "SELECT * FROM Workout where Video_id=(SELECT Video_id from purchases where Member_id= $memberid);");
                     while ($row = mysqli_fetch_array($fetchVideos)) {
                         $location = $row['location'];
 
@@ -74,7 +74,7 @@ include_once '../includes/dbh.inc.php';
                 <div class="Content-Center">
                     <div class="video-details">
                         <?php
-                        $fetchVideos = mysqli_query($conn, "SELECT * FROM Workout where Video_id=(SELECT Video_id from purchased where Member_id= $memberid);");
+                        $fetchVideos = mysqli_query($conn, "SELECT * FROM Workout where Video_id=(SELECT Video_id from purchases where Member_id= $memberid);");
                         while ($row = mysqli_fetch_array($fetchVideos)) {
                             $location = $row['location'];
 

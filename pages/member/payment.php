@@ -24,7 +24,7 @@ include '../includes/dbh.inc.php';
         // insert some date like one year from todays data
         //insert into purchases
         // redirect to video page with video id
-        $query = "INSERT INTO purchased(Validity,Member_id,Video_id) VALUES('".$validity."','".$member_id."','".$video_id."');";
+        $query = "INSERT INTO purchases(Validity,Member_id,Video_id) VALUES('".$validity."','".$member_id."','".$video_id."');";
         mysqli_query($conn,$query);
         echo "Buy successfull.";
         header("location: ./videoPlay.php?Video_id=$video_id");
