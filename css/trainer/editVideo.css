@@ -185,8 +185,8 @@ input:focus {
 } 
 
 .roundImage {
-    max-height: 150px;
-    max-width: 150px;
+    height: 150px;
+    width: 150px;
     border-radius: 50%;
 }
 
