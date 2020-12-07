@@ -57,41 +57,44 @@
                 <form class="editForm" action="../includes/admin/addTrainer.inc.php" method="post"
                     enctype="multipart/form-data">
                     <div class="row">
+
                         <div class="col group">
                             <label for="Workout Video">Trainer Image</label>
                             <input type="file" name="image" />
-
                         </div>
+
                         <div class="col group">
-                            <label for="title name">Name</label>
-                            <input type="text" name="uname" placeholder="Name" />
+                            <label id="Name" for="title name">Name</label>
+                            <input id="typedInput" type="text" name="uname" placeholder="Name" />
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="group col">
                             <label for="title name">Phone Number</label>
-                            <input type="number" name="number" placeholder="Phone Number" />
+                            <input id="typedInput" type="tel" name="number"
+                                placeholder="Phone Number" />
                         </div>
                         <div class="group col">
                             <label for="subtitle name">Admin ID</label>
-                            <input type="number" name="admin_id" value="<?php echo $row['Admin_id']; ?>" />
+                            <input id="typedInput" type="number" name="admin_id"
+                                value="<?php echo $row['Admin_id']; ?>" />
                         </div>
                     </div>
                     <div class="group">
                         <label for="tag name">Trainer Email</label>
-                        <input type="text" name="email" placeholder="Email" />
+                        <input id="typedInput" type="text" name="email" placeholder="Email" />
                     </div>
                     <div class="group">
                         <label for="description">Trainer Password</label>
-                        <input type="password" name="pwd" placeholder="Password" />
+                        <input id="typedInput" type="password" name="pwd" placeholder="Password" />
                     </div>
                     <div class="group">
                         <label for="description">Confirm Trainer Password</label>
-                        <input type="password" name="confirm-pwd" placeholder="Confirm Password" />
+                        <input id="typedInput" type="password" name="confirm-pwd" placeholder="Confirm Password" />
                     </div>
                     <div class="submitGroup">
-                      <input type="submit" name="submit" value="Add Trainer">
+                        <input type="submit" name="submit" value="Add Trainer">
                     </div>
                 </form>
                 <?php 
