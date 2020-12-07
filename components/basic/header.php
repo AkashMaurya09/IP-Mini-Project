@@ -37,9 +37,9 @@
           <a href="/pages/member/aboutus.php" target="">About Us</a>
           <?php 
             if (isset($_SESSION["memberid"])) {
-              echo "<a href='profile.php'>Profile</a>";
               echo "<a href='../../pages/member/videoList.php'>Video List</a>";
               echo "<a href='../../pages/trainer/view.php'>Video View</a>";
+              echo "<a href='../../pages/member/editMember.php'>Profile</a>";
               echo "<a href='../includes/logout.inc.php'>Logout</a>";
             }
             elseif (isset($_SESSION["admin_userid"])) {

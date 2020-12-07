@@ -1,7 +1,7 @@
 <?php
 
 function emptyInputLogin($email, $password) {
-    $result;
+
     if (empty($email) || empty($password)) {
         //if true then redirect the user to signup page
         $result = true;

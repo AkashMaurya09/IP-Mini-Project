@@ -49,7 +49,7 @@ function pwdMatch($password,$confirm_password) {
 function emailExists($conn, $email) {
     //This statement is used to prevent SQL Injection
     $sql = "SELECT * from member WHERE Member_Email = ?;";
-    $stmt = mysqli_stmt_init($conn);
+    $stmt = mysqli_stmt_init($conn);    
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location:../member/signup.php?error=stmtFailed");
         exit();

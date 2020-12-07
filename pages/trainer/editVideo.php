@@ -49,7 +49,7 @@
             <?php echo "<p><span>Phone Number:</span> ". $row['Phone_Number']." </p>"?>
         </div>
         <div class="profileImage">
-            <img class="roundImage" src="../../img/img_avatar.png" alt="Avatar" >
+          <?php echo"<img class='roundImage' src=' ". $row['location'] ."' alt='Avatar' >" ?>
         </div>
         
 
@@ -95,7 +95,7 @@
               <label for="description">Description</label>
               <textarea row="300" cols="20" name="desc"></textarea>
             </div>
-            <input type='submit' value='Upload' name='but_upload'>
+            <input type='submit' value='Upload' name='edit_video'>
           </form>
         </div>
       </div>
