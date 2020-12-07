@@ -1,7 +1,7 @@
 <?php
 
 function emptyInputAddTrainer($email,$username,$number,$password,$confirm_password) {
-    $result;
+
     if (empty($email) || empty($username) || empty($number) || empty($password) || empty($confirm_password)) {
         //if true then redirect the user to signup page
         $result = true;
@@ -13,7 +13,7 @@ function emptyInputAddTrainer($email,$username,$number,$password,$confirm_passwo
 }
 
 function invalidUsername($name) {
-    $result;
+
     if ( !preg_match("/^[a-zA-Z]*$/", $name) ) {
         //if true then redirect the user to signup page
         $result = true;
@@ -25,7 +25,7 @@ function invalidUsername($name) {
 }
 
 function invalidEmail($email) {
-    $result;
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         //if true then redirect the user to signup page
         $result = true;
@@ -37,7 +37,7 @@ function invalidEmail($email) {
 }
 
 function pwdMatch($password,$confirm_password) {
-    $result;
+
     if ($password !== $confirm_password) {
         //if true then redirect the user to signup page
         $result = true;
@@ -73,9 +73,9 @@ function emailExists($conn, $email) {
     mysqli_stmt_close($stmt);
 }
 
-function createUser($conn, $name, $number, $admin_id, $email, $password,$imgContent) {
+function createUser($conn, $name, $number, $admin_id, $email, $password) {
     //This statement is used to prevent SQL Injection
-    $sql = "INSERT INTO trainer (Trainer_Name, Phone_Number, Admin_id, Trainer_Email, Trainer_Password, Trainer_Image) VALUES (?, ?, ?, ?, ?, ?);";
+    $sql = "INSERT INTO trainer (Trainer_Name, Phone_Number, Admin_id, Trainer_Email, Trainer_Password) VALUES (?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location:../../admin/addTrainer.php?error=insertFailed");
@@ -83,9 +83,10 @@ function createUser($conn, $name, $number, $admin_id, $email, $password,$imgCont
     }
 
     $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
-    $image = "";
+    // $name = "null";
+    // $location = "null";
 
-    mysqli_stmt_bind_param($stmt, "siissb", $name, $number, $admin_id, $email, $hashedPwd,$imgContent);
+    mysqli_stmt_bind_param($stmt, "siiss", $name, $number, $admin_id, $email, $hashedPwd);
     mysqli_stmt_execute($stmt);
     // console_log($name);
 

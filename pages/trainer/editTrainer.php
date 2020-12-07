@@ -7,27 +7,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../css/trainer/editVideo.css" />
-    
 
-    <title>Edit Video</title>
-    <?php
- 
-    if(isset($_POST['but_upload'])){
+      <title>Edit Trainer</title>
+
+      
+  </head>
+  <body>
+  
+  <?php 
+    require('../../components/basic/header.php');
+      if(isset($_POST['edit_trainer'])){
        $maxsize = 524288000; // 5MB
-       $videoname = $_POST["video_name"];
-       $price = $_POST["price"];
-       $trainer_id = $_POST["trainer_id"];
-       $desc = $_POST["desc"];
+       $trainername = $_POST["uname"];
+       $number = $_POST["number"];
+       $trainerid = $_POST["trainer_id"];
+       $email = $_POST["email"];
  
        $name = $_FILES['file']['name'];
-       $target_dir = "../videos/";
+       $target_dir = "../profileImage/";
        $target_file = $target_dir . $_FILES["file"]["name"];
 
        // Select file type
        $videoFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
        // Valid file extensions
-       $extensions_arr = array("mp4","avi","3gp","mov","mpeg");
+       $extensions_arr = array("gif","png","jpg","jpeg");
 
        // Check extension
        if( in_array($videoFileType,$extensions_arr) ){
@@ -39,7 +43,7 @@
             // Upload
             if(move_uploaded_file($_FILES['file']['tmp_name'],$target_file)){
               // Insert record
-              $query = "INSERT INTO Workout(Video_Name,Price,Trainer_id,name,location,Description) VALUES('".$videoname."','".$price."','".$trainer_id."','".$name."','".$target_file."','".$desc."')";
+              $query = "UPDATE trainer SET Trainer_Name='$trainername',Phone_Number='$number',name='$name',location='$target_file',Trainer_Email='$email' where Trainer_id='$trainerid';";
 
               mysqli_query($conn,$query);
               echo "Upload successfully.";
@@ -51,12 +55,6 @@
        }
  
      } 
-     ?>
-  </head>
-  <body>
-  
-  <?php 
-    require('../../components/basic/header.php')
   ?>
 
     <div class="container">
@@ -99,7 +97,7 @@
 
       <div class="right">
         <div class="top">
-          <p>Add Your Video</p>
+          <p>Add Trainer Details</p>
           <input
             style="margin-right: 20px"
             type="submit"
@@ -110,34 +108,68 @@
         </div>
         <hr style="margin: 0 20px 0 20px" />
         <div class="bottom">
-          <form class="editForm" method="post" action="" enctype='multipart/form-data'>
+        <form class="editForm" method="post" action="" enctype='multipart/form-data'>
             <div class="row">
               <div class="col group">
-                <label for="Workout Video">Workout Video</label>
+                <label for="Workout Video">Trainer Image</label>
                 <input type='file' name='file' />
+              </div>
+              <div class="col group">
+                <label for="title name">Name</label>
+                <input type="text" name="uname" placeholder="Name" value="<?php echo $row['Trainer_Name']; ?>"/>
               </div>
             </div>
 
             <div class="row">
               <div class="group col">
-                <label for="title name">Video Name</label>
-                <input type="text" name="video_name"/>
+                <label for="title name">Phone Number</label>
+                <input type="number" name="number" placeholder="Phone Number" value="<?php echo $row['Phone_Number']; ?>"/>
               </div>
               <div class="group col">
-                <label for="subtitle name">Price</label>
-                <input type="text" name="price"/>
+                <label for="subtitle name">Trainer ID</label>
+                <input type="number" name="trainer_id" value="<?php echo $row['Trainer_id']; ?>"/>
               </div>
             </div>
             <div class="group">
-              <label for="tag name">Trainer ID</label>
-              <input type="text" name="trainer_id" value="<?php echo $row['Trainer_id']; ?>"/>
+              <label for="tag name">Trainer Email</label>
+              <input type="text" name="email" placeholder="Email" value="<?php echo $row['Trainer_Email']; ?>"/>
+            </div>
+            <!-- <div class="group">
+              <label for="description">Trainer Password</label>
+              <input type="password" name="pwd" placeholder="Password" />
             </div>
             <div class="group">
-              <label for="description">Description</label>
-              <textarea row="300" cols="20" name="desc"></textarea>
-            </div>
-            <input type='submit' value='Upload' name='but_upload'>
+              <label for="description">Confirm Trainer Password</label>
+              <input type="password" name="confirm-pwd" placeholder="Confirm Password"/>
+            </div> -->
+            <button type="submit" name="edit_trainer" value="Upload">Edit Trainer Details</button>
           </form>
+          <?php 
+                if(isset($_GET["error"])) {
+                    if ($_GET["error"] == "emptyinput") {
+                        echo "<p> Fill all the fields</p>";
+                    }
+                    else if ($_GET["error"] == "invalidusername") {
+                        echo "<p> Invalid Name </p>";
+                    }
+                    else if ($_GET["error"] == "invalidemail") {
+                        echo "<p> Invalid Email </p>";
+                    }
+                    else if ($_GET["error"] == "passworddontmatch") {
+                        echo "<p> Passwords do not match </p>";
+                    }
+                    else if ($_GET["error"] == "emailExists") {
+                        echo "<p> Email already exists. Try logging in </p>";
+                    }
+                    else if ($_GET["error"] == "stmtFailed") {
+                        echo "<p> Something went wrong </p>";
+                    }
+                    else if ($_GET["error"] == "none") {
+                        echo "<p> Congratulations you have successfully added the trainer</p>";
+                    }  
+                    
+                 }
+          ?>
         </div>
       </div>
     </div>
@@ -147,5 +179,3 @@
     ?>
   </body>
 </html>
-
-<?php

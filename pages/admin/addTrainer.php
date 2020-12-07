@@ -75,7 +75,7 @@
                         </div>
                         <div class="group col">
                             <label for="subtitle name">Admin ID</label>
-                            <input disabled type="number" name="admin_id" value="<?php echo $row['Admin_id']; ?>" />
+                            <input type="number" name="admin_id" value="<?php echo $row['Admin_id']; ?>" />
                         </div>
                     </div>
                     <div class="group">
