@@ -10,11 +10,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/trainer/trainerList.css" />
     <link rel="stylesheet" href="/css/trainer/editVideo.css" />
+    <link rel="stylesheet" href="/css/user/videoList.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <title>Video List</title>
 </head>
 
 <body>
+<script>
+
+        $(document).ready(function() {
+            $(".disabled").attr('controls', false);
+        })
+        
+        function played(id){
+            console.log("hello world");
+            var element = document.getElementById(id);
+            console.log(element);
+            element.onplay = function(){
+                element.pause();
+                alert("You haven't bought this video"); 
+            }
+        }
+
+    </script>
 
     <?php 
     require('../../components/basic/header.php')
@@ -32,9 +51,9 @@
         <div class="left profile">
             <form class="profileForm" method="post">
                 <input type="submit" class="profileButton" name="myVideo" value="My Video" />
-                <!-- <input type="submit" class="profileButton" name="dashboard" value="Dashboard" /> -->
-                <input type="submit" + class="profileButton" name="logout" value="Logout" />
+                <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />
             </form>
+            <hr>
             <?php 
                 $memberid = $_SESSION['memberid'];
                 $sql = "Select * from Member WHERE Member_id = $memberid"; 
@@ -46,9 +65,8 @@
                 }
             ?>
             <div class="profileDetail">
-                <?php echo "<p><span>Name:</span> ". $row['Member_Name'] ."</p>" ?>
-                <?php echo "<p><span>Email:</span> ". $row['Member_Email']." </p>"?>
-                <?php echo "<p><span>Phone Number:</span> ". $row['Phone_Number']." </p>"?>
+                <?php echo "<p> ". $row['Member_Name'] ."</p>" ?>
+                <?php echo "<p>". $row['Member_Email']." </p>"?>
             </div>
 
             <div class="profileImage">
@@ -61,8 +79,8 @@
             <div>
                 <div>
                     <form class="searchArea">
+                        <label>Search</label>
                         <input type="text" placeholder="  Search Video" name="searchVideo">
-                        <!-- <input type="submit" value="Add Video" name="addTrainer"> -->
                     </form>
                 </div>
 
@@ -79,26 +97,16 @@
                       while($row = mysqli_fetch_assoc($result)) {
                         echo '
                         <div class="singleTrainer">
-                            <video controls>
-                                <source src="movie.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
+                            <video class="disabled" src="'. $row['location'] .'" controls width="320px" height="200px">
                             </video>
                             <div class="detailContent">
-                                <p><span>Video Id:</span>' . $row['Video_id'] . '</p> 
-                                <p><span>Video Name:</span> '. $row['Video_Name'] . '</p>
-                                
+                                <p>' . $row['Video_Name'] . '</p> 
+                                <p class="tag">#Weights #5minutes</p> 
+                                <p class="description">'. $row['Description'] . '</p>
                             </div>
-                            <div class="vl"></div>
-                            <div class="detailContent">
-                                <p><span>Price:</span>'. $row['Price'] .'</p>
-                                <p><span>Trainer Id:</span>'. $row['Trainer_id'] .'</p>
-                            </div>
-    
-                            <div class="dropdown">
-                                <button onclick="myFunction()" class="dropbtn">...</button>
-                                <div id="myDropdown" class="dropdown-content">
-                                     <a href="payment.php?Video_id='.$row['Video_id'].'">Buy Now</a>
-                                </div>
+                            <div class="buyVideoButton">
+                                <button>&#8377;'. $row['Price'] . '</button>
+                                <button onClick="location.href=\'http://localhost/pages/member/payment.php?Video_id='.$row["Video_id"].'\'">Buy Now</button>
                             </div>
                         </div>
                         ';
@@ -111,28 +119,10 @@
         </div>
     </div>
 
+
     <?php 
         require('../../components/basic/footer.php')
     ?>
-
-    <script>
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
-    </script>
 </body>
 
 </html>

@@ -62,7 +62,13 @@
 }
 
 .singleTrainer > video {
-    height: 100%;
+    border-radius: 7px;
+    height: 100px;
+    width: 175px;
+}
+
+.singleTrainer > video:focus {
+    outline: none;
 }
 
 .singleTrainerButton {

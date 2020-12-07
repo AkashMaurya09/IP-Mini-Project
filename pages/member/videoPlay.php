@@ -65,7 +65,7 @@ include_once '../includes/dbh.inc.php';
                     while ($row = mysqli_fetch_array($fetchVideos)) {
                         $location = $row['location'];
 
-                        echo "<div >";
+                        echo "<div class='Content-Center videoStyle'>";
                         echo "<video src='" . $location . "' controls width='320px' height='200px' >";
                         echo "</div>";
                     }

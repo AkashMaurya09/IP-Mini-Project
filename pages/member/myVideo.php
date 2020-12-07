@@ -10,12 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/trainer/trainerList.css" />
     <link rel="stylesheet" href="/css/trainer/editVideo.css" />
+    <link rel="stylesheet" href="/css/user/videoList.css" />
 
     <title>My Video</title>
 </head>
 
 <body>
-
     <?php 
     require('../../components/basic/header.php')
   ?>
@@ -32,9 +32,9 @@
         <div class="left profile">
             <form class="profileForm" method="post">
                 <input type="submit" class="profileButton" name="videoList" value="Video List" />
-                <!-- <input type="submit" class="profileButton" name="dashboard" value="Dashboard" /> -->
-                <input type="submit" + class="profileButton" name="logout" value="Logout" />
+                <input type="submit" + class="profileButton" name="logout" id="bottom-curve" value="Logout" />
             </form>
+            <hr>
             <?php 
                 $memberid = $_SESSION['memberid'];
                 $sql = "Select * from Member WHERE Member_id = $memberid"; 
@@ -46,9 +46,8 @@
                 }
             ?>
             <div class="profileDetail">
-                <?php echo "<p><span>Name:</span> ". $row['Member_Name'] ."</p>" ?>
-                <?php echo "<p><span>Email:</span> ". $row['Member_Email']." </p>"?>
-                <?php echo "<p><span>Phone Number:</span> ". $row['Phone_Number']." </p>"?>
+                <?php echo "<p>". $row['Member_Name'] ."</p>" ?>
+                <?php echo "<p>". $row['Member_Email']." </p>"?>
             </div>
 
             <div class="profileImage">
@@ -61,15 +60,14 @@
             <div>
                 <div>
                     <form class="searchArea">
+                        <label>Search</label>
                         <input type="text" placeholder="  Search Video" name="searchVideo">
-                        <!-- <input type="submit" value="Add Video" name="addTrainer"> -->
                     </form>
                 </div>
 
                 <div class="trainerList">
                     <?php 
-                        $sql = "SELECT * FROM Workout WHERE Video_id IN (SELECT Video_id From purchases Where Member_id='$memberid')";
-                         
+                        $sql = "SELECT * FROM Workout WHERE Video_id IN (SELECT Video_id From purchases Where Member_id='$memberid')"; 
                         $result = mysqli_query($conn,$sql);
                         $resultCheck = mysqli_num_rows($result);
                      ?>
@@ -78,27 +76,20 @@
                       $i = 0;
                       while($row = mysqli_fetch_assoc($result)) {
                         echo '
-                        <a href="/">
                         <div class="singleTrainer">
-                            <video controls>
-                                <source src="movie.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
+                            <video src="'. $row['location'] .'" controls width="320px" height="200px">
                             </video>
                             <div class="detailContent">
-                                <p><span>Video Id:</span>' . $row['Video_id'] . '</p> 
-                                <p><span>Video Name:</span> '. $row['Video_Name'] . '</p>
-                                
+                                <p>' . $row['Video_Name'] . '</p> 
+                                <p class="tag">#Weights #5minutes</p> 
+                                <p class="description">'. $row['Description'] . '</p>
                             </div>
-                            <div class="vl"></div>
-                            <div class="detailContent">
-                                <p><span>Price:</span>'. $row['Price'] .'</p>
-                                <p><span>Trainer Id:</span>'. $row['Trainer_id'] .'</p>
-                            </div>
-    
-                            <div class="dropdown">
+                            <div class="playVideoButton">
+                                <button class="invisible"></button>
+                                <button onClick="location.href=\'http://localhost/pages/member/videoPlay.php?Video_id='.$row["Video_id"].'\'">Play Now</button>
                             </div>
                         </div>
-                        </a>';
+                        ';
                         $i = $i + 1;
                       }
                     }
@@ -111,28 +102,6 @@
     <?php 
         require('../../components/basic/footer.php')
     ?>
-
-    <script>
-    /* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    // Close the dropdown menu if the user clicks outside of it
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
-    </script>
 </body>
 
 </html>
