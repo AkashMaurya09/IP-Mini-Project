@@ -1,30 +1,35 @@
 .searchArea {  
     display: flex;
-    justify-content: space-evenly;
-    padding: 20px;
+    justify-content: space-between;
+    padding: 0px 20px;
 }
+ 
+.searchArea > label{  
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: medium;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 
 .searchArea > input {
     background-color: white;
     align-self: center;
     justify-self: center;
     border-width: 1px;
-    height: 30px;
     border-radius: 30px;
+    margin: 5px 0px;
+    height: 40px;
 }
 
 .searchArea > input:focus {
     outline: none;
 }
 
-.searchArea > input[type="text"] {
-    width: 40%;
-}
-
 .searchArea > input[type="submit"] {
     background-color: black;
     color: white;
-    width: 20%;
 }
 
 .searchArea > input[type="submit"]:focus {
@@ -34,43 +39,109 @@
 }
 
 .trainerList {
-    padding: 40px;
     display: flex;
     flex-direction: column;
 }
 
 .singleTrainer {
-    height: 100px;
-    /* border-radius: 100px; */
-    margin: 20px;
-    border: 1px solid gray;
     display: flex;
-    /* flex-direction: row; */
-    justify-content: space-between;
-    box-shadow: beige;
+    justify-content: start;
+    border-bottom:1.5px solid #d3d3d3;
+    padding: 15px;
+    flex-direction: row;
 }
 
-.vl {
-    align-self: center;
-    border-left: 1px solid gray;
-    height: 100px;
+.singleTrainer:first-child {
+    border-top:1.5px solid #d3d3d3;
 }
 
 .singleTrainer > img {
-    height: 100%;
-    /* border-radius: 100%; */
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
 }
 
 .singleTrainer > video {
     height: 100%;
-    /* border-radius: 100%; */
 }
 
+.singleTrainerButton {
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 5px;
+}
+
+.singleTrainerButton > button {
+    margin: 2px;
+    padding: 10px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    font-size: medium;
+}
+
+.singleTrainerButton > button:nth-child(1) {
+    border: none;
+    border-radius: 3px;
+    background: transparent;
+    color: grey;
+}
+
+.singleTrainerButton > button:nth-child(1):focus {
+    outline: none;
+}
+
+.singleTrainerButton > button:nth-child(2):focus {
+    outline: none;
+}
+
+
+.singleTrainerButton > button:nth-child(1):hover {
+    transition: all 0.2s linear;
+    background-color: #d3d3d3;
+}
+
+
+.singleTrainerButton > button:nth-child(2) {
+    border: 1px solid #d73a49;
+    border-radius: 30px;
+    background-color: white;
+    color: #d73a49;
+}
+
+.singleTrainerButton > button:nth-child(2):hover {
+    background-color: #d73a49;
+    color: white;
+    transition: all 0.2s linear;
+}
+
+
 .detailContent {
+    margin-left: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    
+}
+
+.detailContent > p:nth-child(1) {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    font-size: large;
+    color: #595959;
+}
+
+.detailContent > p:nth-child(2) {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif;
+    font-weight: 100;
+    font-size: small;
+    color: #9b9b9b;
+}
+
+.detailContent > p:nth-child(3) {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif;
+    font-weight: 100;
+    font-size: small;
+    color: #9b9b9b;
 }
 
 a {
@@ -78,50 +149,18 @@ a {
     color: black;
 }
 
-/* Dropdown Button */
-.dropbtn {
-    background-color: #fff;
-    color: black;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
-    margin-right: 3rem;
-  }
+  @media (max-width:600px) {
+    .singleTrainer{
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .singleTrainerButton {
+        margin: unset;
+    }
 
-  
-  /* Dropdown button on hover & focus */
-  .dropbtn:hover, .dropbtn:focus {
-    background-color: #fff;
-    outline: none;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 10px 12px;  
-    text-decoration: none;
-    display: block;
-  }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #fff}
-  
-  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-  .show {display:block;}
+    .detailContent {
+        margin: 3px 0 3px 0;
+        text-align: center;
+    }
+}

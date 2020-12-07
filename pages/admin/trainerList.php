@@ -46,8 +46,6 @@
             <div class="profileDetail">
                 <?php echo "<p> ". $row['Admin_Name'] ."</p>" ?>
                 <?php echo "<p> ". $row['Admin_Email']." </p>"?>
-                <!-- <p><span>Phone Number:</span> 9967025541</p>
-            <p><span>Video Count</span> 45</p> -->
             </div>
 
             <div class="profileImage">
@@ -60,8 +58,8 @@
             <div>
                 <div>
                     <form class="searchArea">
+                        <label>Search</label>
                         <input type="text" placeholder="  Search Trainer" name="searchTrainer">
-                        <input type="submit" value="Add Trainer" name="addTrainer">
                     </form>
                 </div>
 
@@ -80,24 +78,15 @@
                         <div class="singleTrainer">
                             <img src="../../img/img_avatar.png" alt="Avatar">
                             <div class="detailContent">
-                                <p><span>Trainer Id:</span>' . $row['Trainer_id'] . '</p> 
-                                <p><span>Email:</span> '. $row['Trainer_Name'] . '</p>
-                                <p><span>Phone Number:</span>'. $row['Phone_Number'] .'</p>
+                                <p>' . $row['Trainer_Name'] . '</p> 
+                                <p> '. $row['Trainer_Email'] . '</p>
+                                <p>'. $row['Phone_Number'] .'</p>
                             </div>
-                            <div class="vl"></div>
-                            <div class="detailContent">
-                                <p><span>Admin Id:</span>'. $row['Admin_id'] .'</p>
-                                <p><span>Trainer Email</span>'. $row['Trainer_Email'] .'</p>
-                                <p><span>Video Count:</span>'. $row['Admin_id'] .'</p>
+                            <div class="singleTrainerButton">
+                                <button>Edit</button>
+                                <button>Delete</button>
                             </div>
-    
-                            <div class="dropdown">
-                                <button onclick="myFunction()" class="dropbtn">...</button>
-                                <div id="myDropdown" class="dropdown-content">
-                                    <a href="#">Edit Details</a>
-                                    <a href="#">Remove Trainer</a>
-                                </div>
-                            </div>
+                            
                         </div>
                         ';
                         $i = $i + 1;
