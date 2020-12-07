@@ -88,6 +88,19 @@ body {
     padding: 20px 20px 0 20px;
     display: flex;
 }
+#typedInput{
+    padding: 20px 20px 20px 20px;
+    /* text-indent: 15px; */
+    background-color:#f7f7f7;
+    border: none;
+    border-bottom: 2px solid #d3d3d3;
+}
+
+#typedInput:focus {
+    transform: scale(1.5,1.5);
+    transition: 00.3s ease-in;
+    border-bottom: 2px solid #6582c0;
+    outline: none;
 }
 
 .top > div {

@@ -63,32 +63,33 @@
 
                         </div>
                         <div class="col group">
-                            <label for="title name">Name</label>
-                            <input type="text" name="uname" placeholder="Name" />
+                            
+                            <input id ="typedInput"type="text" name="uname" placeholder="Name" />
+                            <label  id="Name" >Name</label>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="group col">
                             <label for="title name">Phone Number</label>
-                            <input type="number" name="number" placeholder="Phone Number" />
+                            <input id ="typedInput"pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" type="tel" name="number" placeholder="Phone Number" />
                         </div>
                         <div class="group col">
                             <label for="subtitle name">Admin ID</label>
-                            <input disabled type="number" name="admin_id" value="<?php echo $row['Admin_id']; ?>" />
+                            <input id ="typedInput"disabled type="number" name="admin_id" value="<?php echo $row['Admin_id']; ?>" />
                         </div>
                     </div>
                     <div class="group">
                         <label for="tag name">Trainer Email</label>
-                        <input type="text" name="email" placeholder="Email" />
+                        <input id ="typedInput"type="text" name="email" placeholder="Email" />
                     </div>
                     <div class="group">
                         <label for="description">Trainer Password</label>
-                        <input type="password" name="pwd" placeholder="Password" />
+                        <input id ="typedInput"type="password" name="pwd" placeholder="Password" />
                     </div>
                     <div class="group">
                         <label for="description">Confirm Trainer Password</label>
-                        <input type="password" name="confirm-pwd" placeholder="Confirm Password" />
+                        <input id ="typedInput"type="password" name="confirm-pwd" placeholder="Confirm Password" />
                     </div>
                     <div class="submitGroup">
                       <input type="submit" name="submit" value="Add Trainer">
