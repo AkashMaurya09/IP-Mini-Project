@@ -22,8 +22,9 @@
         <div class="left profile">
             <form class="profileForm">
                 <input type="submit" class="profileButton" name="upload" value="Your Upload" />
-                <input type="submit" + class="profileButton" name="logout" value="Logout" />
+                <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />
             </form>
+            <hr>
             <?php 
           $admin_id = $_SESSION['admin_userid'];
           $sql = "Select * from gymAdmin WHERE Admin_id = $admin_id"; 
@@ -35,8 +36,8 @@
           }
         ?>
             <div class="profileDetail">
-                <?php echo "<p><span>Name:</span> ". $row['Admin_Name'] . "</p>" ?>
-                <?php echo "<p><span>Email:</span> ". $row['Admin_Email']." </p>"?>
+                <?php echo "<p>". $row['Admin_Name'] . "</p>" ?>
+                <?php echo "<p>". $row['Admin_Email']." </p>"?>
             </div>
 
             <div class="profileImage">
