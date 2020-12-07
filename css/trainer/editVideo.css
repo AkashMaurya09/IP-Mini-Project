@@ -10,10 +10,10 @@ body {
 }
 
 .container {
+    padding: 0 100px;
     display: flex;
     flex-direction: row;
     background-color: #f3f2ef;
-    /* height: 100%; */
     min-height: 700px;
 }
 
@@ -219,6 +219,9 @@ input:focus {
 }
 
 @media (max-width:600px) {
+    .container {
+        padding: 0;
+    }
     .left{
         display: none;
     }

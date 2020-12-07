@@ -18,10 +18,16 @@
     require('../../components/basic/header.php')
   ?>
 
+    <?php
+    if(isset($_POST['yourTrainer'])){
+        header("Location: ./trainerList.php");
+    }
+  ?>
+
     <div class="container">
         <div class="left profile">
-            <form class="profileForm">
-                <input type="submit" class="profileButton" name="upload" value="Your Upload" />
+            <form class="profileForm" method="post">
+                <input type="submit" class="profileButton" name="yourTrainer" value="Your Trainers" />
                 <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />
             </form>
             <hr>
