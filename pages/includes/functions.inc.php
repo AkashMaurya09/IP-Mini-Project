@@ -1,7 +1,6 @@
 <?php
 
 function emptyInputSignup($email,$username,$number,$dob,$password,$confirm_password) {
-    $result;
     if (empty($email) || empty($username) || empty($number) || empty($dob) || empty($password) || empty($confirm_password)) {
         //if true then redirect the user to signup page
         $result = true;
@@ -13,7 +12,6 @@ function emptyInputSignup($email,$username,$number,$dob,$password,$confirm_passw
 }
 
 function invalidUsername($name) {
-    $result;
     if ( !preg_match("/^[a-zA-Z]*$/", $name) ) {
         //if true then redirect the user to signup page
         $result = true;
@@ -25,7 +23,7 @@ function invalidUsername($name) {
 }
 
 function invalidEmail($email) {
-    $result;
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         //if true then redirect the user to signup page
         $result = true;
@@ -37,7 +35,7 @@ function invalidEmail($email) {
 }
 
 function pwdMatch($password,$confirm_password) {
-    $result;
+
     if ($password !== $confirm_password) {
         //if true then redirect the user to signup page
         $result = true;
@@ -96,7 +94,7 @@ function createUser($conn, $name, $number, $admin_id, $email, $password) {
 }
 
 function emptyInputLogin($email, $password) {
-    $result;
+
     if (empty($email) || empty($password)) {
         //if true then redirect the user to signup page
         $result = true;

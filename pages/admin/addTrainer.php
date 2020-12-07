@@ -83,7 +83,7 @@
                         </div>
                         <div class="group col">
                             <label for="subtitle name">Admin ID</label>
-                            <input id="typedInput" disabled type="number" name="admin_id"
+                            <input id="typedInput" type="number" name="admin_id"
                                 value="<?php echo $row['Admin_id']; ?>" />
                         </div>
                     </div>

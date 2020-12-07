@@ -50,6 +50,7 @@
             elseif (isset($_SESSION["trainer_userid"])) {
               echo "<a href='../../pages/trainer/addVideo.php'>Add Video</a>";
               echo "<a href='../../pages/trainer/editVideo.php'>Edit Video</a>";
+              echo "<a href='../../pages/trainer/editTrainer.php'>Profile</a>";
               echo "<a href='../includes/logout.inc.php'>Logout</a>";
             }
             else {
