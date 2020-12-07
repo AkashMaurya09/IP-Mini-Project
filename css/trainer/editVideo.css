@@ -88,18 +88,17 @@ body {
     padding: 20px 20px 0 20px;
     display: flex;
 }
-#typedInput{
+
+input{
     padding: 20px 20px 20px 20px;
-    /* text-indent: 15px; */
-    background-color:#f7f7f7;
     border: none;
-    border-bottom: 2px solid #d3d3d3;
+    border: 1.5px solid #d3d3d3;
 }
 
-#typedInput:focus {
-    transform: scale(1.5,1.5);
-    transition: 00.3s ease-in;
-    border-bottom: 2px solid #6582c0;
+input:focus {
+    transform: scale(1.001,1.001);
+    transition: all 00.5s;
+    border: 1.5px solid #6582c0;
     outline: none;
 }
 
@@ -113,7 +112,6 @@ body {
     margin-right: auto;
     font-size: xx-large;
     font-weight: 100;
-
 }
 
 .top > input {
@@ -143,10 +141,31 @@ body {
     margin: 10px;   
 }   
 
+.group > label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: medium;
+}
+
 .group > input {
     margin-top: 3px;
     margin-bottom: 10px;
     height: 30px;
+}
+
+.group > input[type="file"] {
+    cursor: pointer;
+    outline: none;
+}
+
+.group > input[type="file"]:before {
+    content: "Select Your File";
+    text-align: center;
+
+}
+
+.group > input[type=file]::-webkit-file-upload-button {
+    visibility: hidden;
 }
 
 .group > textarea {
@@ -240,10 +259,20 @@ body {
 
 .submitGroup > input {
     justify-self: center;
-    background-color: #00F6FF;
+    background-color: #000000;
+    color: white;
     align-self: center;
     border-width: 1px;
-    padding: 0.6rem;
+    padding: 1rem;
+    border-radius: 7px;
+    border: 1px solid black;
+}
+
+.submitGroup > input:hover {
+    transform: scale(1.05, 1.05);
+    transition: all 0.3s ease-in;
+    background-color: white;
+    color: black;
 }
 
 .submitGroup > input:focus {
