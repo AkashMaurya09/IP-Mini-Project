@@ -92,7 +92,7 @@
             <?php echo "<p><span>Phone Number:</span> ". $row['Phone_Number']." </p>"?>
         </div>
         <div class="profileImage">
-            <img class="roundImage" src="../../img/img_avatar.png" alt="Avatar" >
+          <?php echo"<img class='roundImage' src=' ". $row['location'] ."' alt='Avatar' >" ?>
         </div>
         
       </div>

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../css/trainer/editVideo.css" />
 
-      <title>Edit Trainer</title>
+      <title>Edit Member</title>
 
       
   </head>
@@ -16,11 +16,11 @@
   
   <?php 
     require('../../components/basic/header.php');
-      if(isset($_POST['edit_trainer'])){
+      if(isset($_POST['edit_member'])){
        $maxsize = 524288000; // 510MB
-       $trainername = $_POST["uname"];
+       $membername = $_POST["uname"];
        $number = $_POST["number"];
-       $trainerid = $_POST["trainer_id"];
+       $memberid = $_POST["member_id"];
        $email = $_POST["email"];
  
        $name = $_FILES['file']['name'];
@@ -43,10 +43,10 @@
             // Upload
             if(move_uploaded_file($_FILES['file']['tmp_name'],$target_file)){
               // Insert record
-              $query = "UPDATE trainer SET Trainer_Name='$trainername',Phone_Number='$number',name='$name',location='$target_file',Trainer_Email='$email' where Trainer_id='$trainerid';";
+              $query = "UPDATE member SET Member_Name='$membername',Phone_Number='$number',name='$name',location='$target_file',Member_Email='$email' where Member_id='$memberid';";
 
               mysqli_query($conn,$query);
-              header("location:../trainer/editTrainer.php?error=updateSuccess");
+              header("location:../member/editMember.php?error=updateSuccess");
             }
           }
 
@@ -74,8 +74,8 @@
           />
         </form>
         <?php 
-          $trainer_id = $_SESSION['trainer_userid'];
-          $sql = "Select * from trainer WHERE Trainer_id = $trainer_id"; 
+          $member_id = $_SESSION['memberid'];
+          $sql = "Select * from member WHERE Member_id = $member_id"; 
           $result = mysqli_query($conn,$sql);
           $resultCheck = mysqli_num_rows($result);
         
@@ -85,8 +85,8 @@
         ?>        
         
         <div class="profileDetail">
-            <?php echo "<p><span>Name:</span> ". $row['Trainer_Name'] . "</p>" ?>
-            <?php echo "<p><span>Email:</span> ". $row['Trainer_Email']." </p>"?>
+            <?php echo "<p><span>Name:</span> ". $row['Member_Name'] . "</p>" ?>
+            <?php echo "<p><span>Email:</span> ". $row['Member_Email']." </p>"?>
             <?php echo "<p><span>Phone Number:</span> ". $row['Phone_Number']." </p>"?>
         </div>
         <div class="profileImage">
@@ -111,12 +111,12 @@
         <form class="editForm" method="post" action="" enctype='multipart/form-data'>
             <div class="row">
               <div class="col group">
-                <label for="Workout Video">Trainer Image</label>
+                <label for="Workout Video">Member Image</label>
                 <input type='file' name='file' />
               </div>
               <div class="col group">
                 <label for="title name">Name</label>
-                <input type="text" name="uname" placeholder="Name" value="<?php echo $row['Trainer_Name']; ?>"/>
+                <input type="text" name="uname" placeholder="Name" value="<?php echo $row['Member_Name']; ?>"/>
               </div>
             </div>
 
@@ -126,13 +126,13 @@
                 <input type="number" name="number" placeholder="Phone Number" value="<?php echo $row['Phone_Number']; ?>"/>
               </div>
               <div class="group col">
-                <label for="subtitle name">Trainer ID</label>
-                <input type="number" name="trainer_id" value="<?php echo $row['Trainer_id']; ?>"/>
+                <label for="subtitle name">Member ID</label>
+                <input type="number" name="member_id" value="<?php echo $row['Member_id']; ?>"/>
               </div>
             </div>
             <div class="group">
-              <label for="tag name">Trainer Email</label>
-              <input type="text" name="email" placeholder="Email" value="<?php echo $row['Trainer_Email']; ?>"/>
+              <label for="tag name">Member Email</label>
+              <input type="text" name="email" placeholder="Email" value="<?php echo $row['Member_Email']; ?>"/>
             </div>
             <!-- <div class="group">
               <label for="description">Trainer Password</label>
@@ -142,7 +142,7 @@
               <label for="description">Confirm Trainer Password</label>
               <input type="password" name="confirm-pwd" placeholder="Confirm Password"/>
             </div> -->
-            <button type="submit" name="edit_trainer" value="Upload">Edit Trainer Details</button>
+            <button type="submit" name="edit_member" value="Upload">Edit Member Details</button>
           </form>
           <?php 
                 if(isset($_GET["error"])) {
