@@ -95,7 +95,7 @@
               <label for="description">Description</label>
               <textarea row="300" cols="20" name="desc"></textarea>
             </div>
-            <input type='submit' value='Upload' name='edit_video'>
+            <input type='submit' value='Edit Video' name='edit_video'>
           </form>
         </div>
       </div>

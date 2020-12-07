@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2020 at 04:18 PM
+-- Generation Time: Dec 07, 2020 at 05:59 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -24,15 +24,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comments`
+-- Table structure for table `comment`
 --
 
-CREATE TABLE `comments` (
-  `Comments` varchar(500) NOT NULL,
-  `timestamp` date NOT NULL,
+CREATE TABLE `comment` (
+  `comment_id` int(11) NOT NULL,
+  `userComment` varchar(500) NOT NULL,
+  `timestamp` datetime NOT NULL,
   `Member_id` int(10) NOT NULL,
   `Video_id` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`comment_id`, `userComment`, `timestamp`, `Member_id`, `Video_id`) VALUES
+(4, 'Hello\r\n', '2020-12-07 05:41:38', 20, 1),
+(13, 'This is an awesome video', '2020-12-07 05:49:30', 20, 1),
+(14, 'Order mai aayega sab', '2020-12-07 05:58:43', 20, 1);
 
 -- --------------------------------------------------------
 
@@ -114,7 +124,7 @@ CREATE TABLE `purchases` (
 --
 
 INSERT INTO `purchases` (`Validity`, `Member_id`, `Video_id`) VALUES
-('2021-12-06', 20, 1);
+('2021-12-04', 20, 1);
 
 -- --------------------------------------------------------
 
@@ -204,11 +214,10 @@ CREATE TABLE `workout_tags` (
 --
 
 --
--- Indexes for table `comments`
+-- Indexes for table `comment`
 --
-ALTER TABLE `comments`
-  ADD PRIMARY KEY (`Member_id`,`Video_id`),
-  ADD KEY `Video_id` (`Video_id`);
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`comment_id`);
 
 --
 -- Indexes for table `gymadmin`
@@ -262,6 +271,12 @@ ALTER TABLE `workout_tags`
 --
 
 --
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
 -- AUTO_INCREMENT for table `gymadmin`
 --
 ALTER TABLE `gymadmin`
@@ -294,13 +309,6 @@ ALTER TABLE `workout`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `comments`
---
-ALTER TABLE `comments`
-  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`Member_id`) REFERENCES `member` (`Member_id`),
-  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`Video_id`) REFERENCES `workout` (`Video_id`);
 
 --
 -- Constraints for table `member`

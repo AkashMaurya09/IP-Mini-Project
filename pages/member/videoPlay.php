@@ -11,7 +11,8 @@ include_once '../includes/dbh.inc.php';
     <link rel="stylesheet" href="/css/user/videoPlay.css" />
     <link rel="stylesheet" href="/css/user/comments.css" />
 
-    <title>Video List</title>
+    <title>Your Workout Video</title>
+
 </head>
 
 <body>
@@ -47,7 +48,7 @@ include_once '../includes/dbh.inc.php';
             </div>
 
             <div class="profileImage">
-                <?php echo"<img class='roundImage' src=' ". $row['location'] ."' alt='Avatar' >" ?>
+                <?php echo "<img class='roundImage' src=' " . $row['location'] . "' alt='Avatar' >" ?>
             </div>
 
         </div>
@@ -65,7 +66,7 @@ include_once '../includes/dbh.inc.php';
                     while ($row = mysqli_fetch_array($fetchVideos)) {
                         $location = $row['location'];
 
-                        echo "<div >";
+                        echo "<div class='Content-Center videoStyle'>";
                         echo "<video src='" . $location . "' controls width='320px' height='200px' >";
                         echo "</div>";
                     }
@@ -75,13 +76,14 @@ include_once '../includes/dbh.inc.php';
                     <div class="video-details">
                         <?php
                         $fetchVideos = mysqli_query($conn, "SELECT * FROM Workout where Video_id=(SELECT Video_id from purchases where Member_id= $memberid);");
-                        while ($row = mysqli_fetch_array($fetchVideos)) {
-                            $location = $row['location'];
+                        while ($_videoRow = mysqli_fetch_array($fetchVideos)) {
+                            $location = $_videoRow['location'];
+                            $videoid = $_videoRow['Video_id'];
 
-                            // echo "<h2>". print_r($row) ."</h2>";                                
-                            echo "<h2>" . $row['Video_Name'] . "</h2>";
+                            // echo "<h2>". print_r($_videoRow) ."</h2>";                                
+                            echo "<h2>" . $_videoRow['Video_Name'] . "</h2>";
                             echo "<p id='Desc'>Descpription</p>";
-                            echo "<h2>" . $row['Description'] . "</h2>";
+                            echo "<h2>" . $_videoRow['Description'] . "</h2>";
                             echo "<p id='Tags'>Tags</p>";
                             echo "<span id='Video-Tags'>#Full Body #Myworkout</span>";
                             echo "<p id='Tags'>Valid till : 20-Dec-2020</p>";
@@ -90,24 +92,31 @@ include_once '../includes/dbh.inc.php';
                     </div>
                 </div>
             </div>
+            <!-- ---------------------Add Comments-------------------------- -->
             <div>
                 <div class="Comments-Section">
                     <div class="Content-Center">
                         <p id="Comments-heading">Comments</p>
                     </div>
                 </div>
+                <?php
+                if (isset($_POST["add_comment"])) {
+                    $name = $_POST["comment"];
+                    $date = date("Y-m-d h:i:s");
+                    $query = "INSERT INTO comment(userComment,timestamp,Member_id,Video_id) VALUES('" . $name . "','" . $date . "','" . $memberid . "','" . $videoid . "')";
+
+                    mysqli_query($conn, $query);
+                }
+                ?>
                 <div class="add-comment">
-
-                    <textarea placeholder="Your Comment goes here...." rows="5" name="comment[text]" id="comment_text" cols=20 class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
-
-                    <div class="button_base b07_3d_double_roll">
-                        <div>Publish Comment</div>
-                        <div>Publish Comment</div>
-                        <div>Publish Comment</div>
-                        <div>Publish Comment</div>
-                    </div>
+                    <form method="post" action="">
+                        <textarea required placeholder="Your Comment goes here...." rows="5" name="comment" id="comment_text" cols=20 class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
+                        <input type='submit' value='Add Comment' name='add_comment'>
+                    </form>
                 </div>
             </div>
+            <!-- ---------------------Display Comments-------------------------- -->
+
             <div class="Comments-Section">
                 <div class="Content-Center">
                     <p id="Comments-heading">What did others say...</p>
@@ -115,24 +124,30 @@ include_once '../includes/dbh.inc.php';
                 </div>
             </div>
 
-            <div class="comment-card">
+            <?php
+            $comment_query = mysqli_query($conn, "SELECT * FROM comment ORDER BY timestamp DESC;");
+            while ($comment = mysqli_fetch_assoc($comment_query)) {
+                $id = $comment['Member_id'];
+                $sql = "Select * from Member WHERE Member_id = $id";
+                $result = mysqli_query($conn, $sql);
+                $resultCheck = mysqli_num_rows($result);
+    
+                if ($resultCheck > 0) {
+                    $memberId = mysqli_fetch_assoc($result);
+                }
 
-                <img src="https://picsum.photos/300/300" />
-                <p ic="username"> Devdatta Khoche</p>
-                <div class="comment">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore officia aliquid reiciendis sit, odio maxime dignissimos laborum repellat magni tempore hic. Explicabo sit blanditiis ipsum, natus pariatur accusamus tenetur quo.</p>
-                </div>
-                <p class="time">Bet 5 days ago</p>
-            </div>
-            <div class="comment-card">
+                // echo "<h2>" . print_r($memberId) . "</h2>";
+                echo "<div class='comment-card'>";
+                    echo "<img src='". $memberId['location']."' />";
+                    echo "<p ic='username'> ". $memberId['Member_Name'] ."</p>";
+                    echo "<div class='comment'>";
+                    echo "<p>". $comment['userComment'] ."</p>";
+                echo "</div>";
+                echo "<p class='time'>". $comment['timestamp'] ."</p>";
+                echo "</div>";
+            }
+            ?>
 
-                <img src="https://picsum.photos/300/300" />
-                <p ic="username"> Devdatta Khoche</p>
-                <div class="comment">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore officia aliquid reiciendis sit, odio maxime dignissimos laborum repellat magni tempore hic. Explicabo sit blanditiis ipsum, natus pariatur accusamus tenetur quo.</p>
-                </div>
-                <p class="time">Bet 5 days ago</p>
-            </div>
         </div>
 
 
