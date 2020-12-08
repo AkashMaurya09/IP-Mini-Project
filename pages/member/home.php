@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="/css/user/home.css">
     <title>Document</title>
-    
+
 </head>
 
 <body>
@@ -18,19 +18,15 @@
     <div id='main'>
         <div class="row">
             <div class="column ">
-                <h1 class="Try-free-heading">WELCOME FIRST</h1>
-                <h1 class="Try-free-heading2"> CLASS IS FREE</h1>
-                <p class="Try-free-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae obcaecati enim
-                    suscipit neque minima a harum est sequi labore repellat?</p>
-                <button class="Try-free-Button">About us</button>
-                <button class="Try-free-Button">Contact Us</button>
-                <!-- <button class = "Try-free-Button">Hello</button> -->
+                <h1 class="Try-free-heading">WELCOME TO</h1>
+                <h1 class="Try-free-heading2">BEAST FACTOR</h1>
+                <p class="Try-free-text">The last three or four reps is what makes the muscle grow. This area of pain
+                    divides a champion from someone who is not a champion</p>
+                <button class="Try-free-Button" id="button-1" onClick="location.href='./aboutus.php'">About us</button>
+                <button class="Try-free-Button" id="button-2" onClick="location.href='./contact.php'">Contact Us</button>
             </div>
             <div class="column video">
-
                 <img src="../../img/logo/logo_yellow_vertical.png" alt="">
-
-
             </div>
         </div>
 
@@ -51,9 +47,7 @@
             </p>
             <h3 id="title-Welcome">WELCOME TO BEAST FACTORY</h3>
             <p id="welcome-Text">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus ab quis quia dolorum corporis nobis
-                nemo, molestias dignissimos nisi distinctio assumenda minima quidem earum impedit. Distinctio suscipit
-                sequi possimus temporibus? Dicta a ullam nobis odit velit incidunt repellat illum mollitia!
+            EQUIPMENT OF INTERNATIONAL STANDARDS | OUR REACH – 150 GYMS AND GROWING | TRANSFER FACILITY | CERTIFIED TRAINERS QUICK RESULT PROGRAM | INNOVATIVE PROGRAMS –GROUP EX CLASSES (E.G. BOLLYWOOD, POWER YOGA, ZUMBA, KICK BOXING, STEP-UP CLASS)
             </p>
         </div>
 
@@ -85,12 +79,12 @@
                     <h2>Expert Training</h2><br>
                 </div>
                 <div class="expert-center-1">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, explicabo! Repellat odio quas
-                        assumenda nostrum distinctio consequuntur sint id. Beatae suscipit eos vitae! Velit incidunt
-                        totam modi quasi a culpa.</p>
+                    <p>You’re not alone—many people show the drive, determination, and consistent effort, but don’t
+                        reach their goals. If this sounds familiar, the next logical step is usually to find an educated
+                        personal trainer with proven experience</p>
                 </div>
                 <div class="expert-center-button">
-                    <button class="expert-button-style-black">
+                    <button class="expert-button-style-black" onClick="location.href='./workouts.php'">
                         Our Trainers
                     </button>
                 </div>
@@ -109,13 +103,11 @@
                         <h2>Workouts</h2><br>
                     </div>
                     <div class="expert-center-2">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, explicabo! Repellat odio
-                            quas assumenda nostrum distinctio consequuntur sint id. Beatae suscipit eos vitae! Velit
-                            incidunt totam modi quasi a culpa.</p>
+                        <p>Working out with Whitney Simmons is like having your bestie right there with you. We’re big fans of Whit’s personal mantra, “It’s a beautiful day to be alive.” Indeed, it is, especially when you’ve got this full-body workout you can do in your pj’s.</p>
 
                     </div>
                     <div class="expert-center-button">
-                        <button class="expert-button-style-white">
+                        <button class="expert-button-style-white" onClick="location.href='./workouts.php'">
                             Our Trainers
                         </button>
                     </div>
@@ -124,12 +116,9 @@
                     <div class="expert-center-2">
                         <img src="https://picsum.photos/300/300" alt="">
                     </div>
-
                 </div>
             </div>
-
         </div>
-
         <div>
             <h2 class="Our-Coaches">
                 Associated Gyms
@@ -180,14 +169,16 @@
             </div>
         </div>
     </div>
-    
+
     <div class="Sign-up-to-know-more">
         <h1>Challenge Yourself</h1>
 
     </div>
     <div class="Sign-up-to-know-more">
-        <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores sed libero<br> unde esse
-            soluta voluptates animi error reprehenderit porro!</blockquote>
+        <blockquote>The last three or four reps is what makes the muscle grow. This area of pain divides a champion from
+            someone who is not a champion
+
+        </blockquote>
 
     </div>
     <div class="row">
@@ -197,13 +188,11 @@
 
             </div> -->
             <div class="Content-center">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit sit asperiores excepturi
-                    beatae architecto minus tempore officia sequi illo iste autem vero debitis consequatur
-                    deleniti ipsum ipsam, qui, veniam accusamus. Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Similique iste possimus modi nemo distinctio atque deleniti nobis quae voluptatum eos,
-                    quibusdam sit voluptate explicabo perferendis molestiae ducimus quia eligendi fugit.
+                <p>Instead of punching in your usual routine on a cardio machine, push yourself further by programming
+                    in short bouts of vigorous exercise. When you know the higher-intensity exercise has an end in
+                    sight, you tend to work harder, boosting calorie burn and speeding up results. It works whether you
+                    want to lose weight or get in better shape.
             </div>
-
         </div>
         <div class="column-3">
 
@@ -212,11 +201,11 @@
 
             <!-- </div> -->
             <div class="Content-center">
-                - <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit sit asperiores excepturi
-                    beatae architecto minus tempore officia sequi illo iste autem vero debitis consequatur
-                    deleniti ipsum ipsam, qui, veniam accusamus. Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Similique iste possimus modi nemo distinctio atque deleniti nobis quae voluptatum eos,
-                    quibusdam sit voluptate explicabo perferendis molestiae ducimus quia eligendi fugit.
+                <p>Not only does standing around between toning exercises eat up valuable gym time, it can make your
+                    workouts less effective. To rev up your weight-room routine, try training on a circuit. This
+                    combination of cardio and resistance training forces you to work harder by putting more demand on
+                    your muscles and raising your heart rate
+                </p>
             </div>
 
         </div>
@@ -228,16 +217,14 @@
 
             <!-- </div> -->
             <div class="Content-center">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit sit asperiores excepturi
-                    beatae architecto minus tempore officia sequi illo iste autem vero debitis consequatur
-                    deleniti ipsum ipsam, qui, veniam accusamus. Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Similique iste possimus modi nemo distinctio atque deleniti nobis quae voluptatum eos,
-                    quibusdam sit voluptate explicabo perferendis molestiae ducimus quia eligendi fugit.
+                <p>Most people simply won't do it. They've never trained to have a resilient mindset. We are all
+                    inherently fearful, lazy, and ignorant. Some might see that as depressing. I find it inspiring. To
+                    me it's the secret to success.Some might see that as depressing. I find it inspiring. To
+                    me it's the secret to success.</p>
             </div>
-
         </div>
     </div>
-    
+
 
     <?php 
   require('../../components/basic/footer.php')

@@ -3,6 +3,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,28 +15,29 @@
 
 
 </style>
+
 <body>
-    <div class="nav">
+    <nav class="nav">
         <input type="checkbox" id="nav-check">
         <div class="nav-header">
-          <div class="nav-title">
-          <img src="/img/logo/logo_yellow_horizontal.png">
-          </div>
+            <div class="nav-title">
+                <img src="/img/logo/logo_yellow_horizontal.png">
+            </div>
         </div>
         <div class="nav-btn">
-          <label for="nav-check">
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
+            <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
         </div>
-        
+
         <div class="nav-links">
-          <a href="/pages/member/home.php" target="">Home</a>
-          <a href="/pages/member/workouts.php" target="">Workout</a>
-          <a href="/pages/member/contact.php" target="">Contacts</a>
-          <a href="/pages/member/aboutus.php" target="">About Us</a>
-          <?php 
+            <a href="/pages/member/home.php" target="">Home</a>
+            <a href="/pages/member/workouts.php" target="">Workout</a>
+            <a href="/pages/member/contact.php" target="">Contacts</a>
+            <a href="/pages/member/aboutus.php" target="">About Us</a>
+            <?php 
             if (isset($_SESSION["memberid"])) {
               echo "<a href='../../pages/member/videoList.php'>Dashboard</a>";
               echo "<a href='../includes/logout.inc.php'>Logout</a>";
@@ -53,10 +55,9 @@
             }
           ?>
         </div>
-	</div>
-	  
-     
-</body>
-</html>
+    </nav>
 
- 
+
+</body>
+
+</html>
