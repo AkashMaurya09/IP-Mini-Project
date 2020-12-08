@@ -88,7 +88,7 @@
                             </div>
                             <div class="playVideoButton">
                                 <button class="invisible"></button>
-                                <button onClick="location.href=\'http://localhost/pages/member/videoPlay.php?Video_id='.$row["Video_id"].'\'">Play Now</button>
+                                <button onClick="location.href=\'http:/pages/member/videoPlay.php?Video_id='.$row["Video_id"].'\'">Play Now</button>
                             </div>
                         </div>
                         ';

@@ -108,7 +108,7 @@
                             </div>
                             <div class="buyVideoButton">
                                 <button>&#8377;'. $row['Price'] . '</button>
-                                <button onClick="location.href=\'http://localhost/pages/member/payment.php?Video_id='.$row["Video_id"].'\'">Buy Now</button>
+                                <button onClick="location.href=\'http:/pages/member/payment.php?Video_id='.$row["Video_id"].'\'">Buy Now</button>
                             </div>
                         </div>
                         ';
