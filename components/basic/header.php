@@ -38,7 +38,6 @@
           <?php 
             if (isset($_SESSION["memberid"])) {
               echo "<a href='../../pages/member/videoList.php'>Dashboard</a>";
-              echo "<a href='../../pages/member/editMember.php'>Profile</a>";
               echo "<a href='../includes/logout.inc.php'>Logout</a>";
             }
             elseif (isset($_SESSION["admin_userid"])) {

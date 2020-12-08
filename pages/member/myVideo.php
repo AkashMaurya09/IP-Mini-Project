@@ -21,17 +21,19 @@
   ?>
 
     <?php
-       if(isset($_POST['videoList'])) {
+        if(isset($_POST['videoList'])) {
             header("location: ./videoList.php");
-        } else {
-        // else part
-    }
+        }
+        if(isset($_POST['myProfile'])) {
+            header("location: ./editMember.php");
+        }
   ?>
 
     <div class="container">
         <div class="left profile">
             <form class="profileForm" method="post">
                 <input type="submit" class="profileButton" name="videoList" value="Video List" />
+                <input type="submit" class="profileButton" name="myProfile" value="My Profile" />
                 <input type="submit" + class="profileButton" name="logout" id="bottom-curve" value="Logout" />
             </form>
             <hr>
