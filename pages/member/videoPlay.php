@@ -8,6 +8,7 @@ include_once '../includes/dbh.inc.php';
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/trainer/editVideo.css" />
     <link rel="stylesheet" href="/css/user/videoPlay.css" />
     <link rel="stylesheet" href="/css/user/comments.css" />
 
@@ -29,8 +30,9 @@ include_once '../includes/dbh.inc.php';
         <div class="left profile">
             <form class="profileForm">
                 <input type="submit" class="profileButton" name="dashboard" value="Dashboard" />
-                <input type="submit" + class="profileButton" name="logout" value="Logout" />
+                <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />
             </form>
+            <hr>
             <?php
             $memberid = $_SESSION['memberid'];
             $sql = "Select * from Member WHERE Member_id = $memberid";
@@ -42,9 +44,8 @@ include_once '../includes/dbh.inc.php';
             }
             ?>
             <div class="profileDetail">
-                <?php echo "<p><span>Name:</span> " . $row['Member_Name'] . "</p>" ?>
-                <?php echo "<p><span>Email:</span> " . $row['Member_Email'] . " </p>" ?>
-                <?php echo "<p><span>Phone Number:</span> " . $row['Phone_Number'] . " </p>" ?>
+                <?php echo "<p>" . $row['Member_Name'] . "</p>" ?>
+                <?php echo "<p>" . $row['Member_Email'] . " </p>" ?>
             </div>
 
             <div class="profileImage">
@@ -67,7 +68,7 @@ include_once '../includes/dbh.inc.php';
                         $location = $row['location'];
 
                         echo "<div class='Content-Center videoStyle'>";
-                        echo "<video src='" . $location . "' controls width='320px' height='200px' >";
+                        echo "<video src='" . $location . "' controls >";
                         echo "</div>";
                     }
                     ?>

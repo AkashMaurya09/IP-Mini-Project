@@ -83,8 +83,8 @@
                                 <p>'. $row['Phone_Number'] .'</p>
                             </div>
                             <div class="singleTrainerButton">
-                                <button>Edit</button>
-                                <button>Delete</button>
+                                <button onClick="location.href=\'./editTrainer.php?Trainer_id='.$row["Trainer_id"].'\'">Edit</button>
+                                <button >Delete</button>
                             </div>
                             
                         </div>

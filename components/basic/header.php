@@ -37,20 +37,15 @@
           <a href="/pages/member/aboutus.php" target="">About Us</a>
           <?php 
             if (isset($_SESSION["memberid"])) {
-              echo "<a href='../../pages/member/videoList.php'>Video List</a>";
-              echo "<a href='../../pages/trainer/view.php'>Video View</a>";
-              echo "<a href='../../pages/member/editMember.php'>Profile</a>";
+              echo "<a href='../../pages/member/videoList.php'>Dashboard</a>";
               echo "<a href='../includes/logout.inc.php'>Logout</a>";
             }
             elseif (isset($_SESSION["admin_userid"])) {
-              echo "<a href='../../pages/admin/addTrainer.php'>Add Trainer</a>";
-              echo "<a href='../../pages/admin/trainerList.php'>Trainer List</a>";
+              echo "<a href='../../pages/admin/trainerList.php'>Dashboard</a>";
               echo "<a href='../includes/logout.inc.php'>Logout</a>";
             }
             elseif (isset($_SESSION["trainer_userid"])) {
-              echo "<a href='../../pages/trainer/addVideo.php'>Add Video</a>";
-              echo "<a href='../../pages/trainer/editVideo.php'>Edit Video</a>";
-              echo "<a href='../../pages/trainer/editTrainer.php'>Profile</a>";
+              echo "<a href='../../pages/trainer/trainerVideoList.php'>Dashboard</a>";
               echo "<a href='../includes/logout.inc.php'>Logout</a>";
             }
             else {

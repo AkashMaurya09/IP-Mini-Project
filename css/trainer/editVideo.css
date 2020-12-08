@@ -171,8 +171,16 @@ input:focus {
 .group > textarea {
     margin-top: 3px;
     margin-bottom: 10px;
-    height: 80px;
+    padding: 20px 20px 20px 20px;
+    border: 1.5px solid #d3d3d3;
     resize: initial;
+}
+
+textarea:focus {
+    transform: scale(1.001,1.001);
+    transition: all 00.5s;
+    border: 1.5px solid #6582c0;
+    outline: none;
 }
 
 .row {
@@ -185,8 +193,8 @@ input:focus {
 } 
 
 .roundImage {
-    max-height: 150px;
-    max-width: 150px;
+    height: 150px;
+    width: 150px;
     border-radius: 50%;
 }
 

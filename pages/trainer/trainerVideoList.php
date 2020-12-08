@@ -11,35 +11,55 @@
     <link rel="stylesheet" href="/css/trainer/trainerList.css" />
     <link rel="stylesheet" href="/css/trainer/editVideo.css" />
     <link rel="stylesheet" href="/css/user/videoList.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <title>My Video</title>
+    <title>Video List</title>
 </head>
 
 <body>
+<script>
+
+        $(document).ready(function() {
+            $(".disabled").attr('controls', false);
+        })
+        
+        function played(id){
+            console.log("hello world");
+            var element = document.getElementById(id);
+            console.log(element);
+            element.onplay = function(){
+                element.pause();
+                alert("You haven't bought this video"); 
+            }
+        }
+
+    </script>
+
     <?php 
     require('../../components/basic/header.php')
   ?>
 
     <?php
-        if(isset($_POST['videoList'])) {
-            header("location: ./videoList.php");
-        }
+        if(isset($_POST['addVideo'])) {
+            header("location: ./addVideo.php");
+        } 
+
         if(isset($_POST['myProfile'])) {
-            header("location: ./editMember.php");
-        }
+            header("location: ./editTrainer.php");
+        } 
   ?>
 
     <div class="container">
         <div class="left profile">
             <form class="profileForm" method="post">
-                <input type="submit" class="profileButton" name="videoList" value="Video List" />
+                <input type="submit" class="profileButton" name="addVideo" value="Add Video" />
                 <input type="submit" class="profileButton" name="myProfile" value="My Profile" />
-                <input type="submit" + class="profileButton" name="logout" id="bottom-curve" value="Logout" />
+                <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />
             </form>
             <hr>
             <?php 
-                $memberid = $_SESSION['memberid'];
-                $sql = "Select * from Member WHERE Member_id = $memberid"; 
+                $trainer_id = $_SESSION['trainer_userid'];
+                $sql = "Select * from trainer WHERE Trainer_id = $trainer_id"; 
                 $result = mysqli_query($conn,$sql);
                 $resultCheck = mysqli_num_rows($result);
                 
@@ -48,8 +68,8 @@
                 }
             ?>
             <div class="profileDetail">
-                <?php echo "<p>". $row['Member_Name'] ."</p>" ?>
-                <?php echo "<p>". $row['Member_Email']." </p>"?>
+                <?php echo "<p> ". $row['Trainer_Name'] ."</p>" ?>
+                <?php echo "<p>". $row['Trainer_Email']." </p>"?>
             </div>
 
             <div class="profileImage">
@@ -69,7 +89,7 @@
 
                 <div class="trainerList">
                     <?php 
-                        $sql = "SELECT * FROM Workout WHERE Video_id IN (SELECT Video_id From purchases Where Member_id='$memberid')"; 
+                        $sql = "SELECT * FROM Workout WHERE Trainer_id='$trainer_id'";
                         $result = mysqli_query($conn,$sql);
                         $resultCheck = mysqli_num_rows($result);
                      ?>
@@ -79,16 +99,16 @@
                       while($row = mysqli_fetch_assoc($result)) {
                         echo '
                         <div class="singleTrainer">
-                            <video src="'. $row['location'] .'" controls width="320px" height="200px">
+                            <video class="disabled" src="'. $row['location'] .'" controls width="320px" height="200px">
                             </video>
                             <div class="detailContent">
                                 <p>' . $row['Video_Name'] . '</p> 
                                 <p class="tag">#Weights #5minutes</p> 
                                 <p class="description">'. $row['Description'] . '</p>
                             </div>
-                            <div class="playVideoButton">
-                                <button class="invisible"></button>
-                                <button onClick="location.href=\'http://localhost/pages/member/videoPlay.php?Video_id='.$row["Video_id"].'\'">Play Now</button>
+                            <div class="singleTrainerButton">
+                                <button onClick="location.href=\'./editVideo.php?Video_id='.$row["Video_id"].'\'">Edit</button>
+                                <button >Delete</button>
                             </div>
                         </div>
                         ';
@@ -100,6 +120,7 @@
             </div>
         </div>
     </div>
+
 
     <?php 
         require('../../components/basic/footer.php')
