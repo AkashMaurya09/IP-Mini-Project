@@ -12,27 +12,28 @@
     <link rel="stylesheet" href="/css/trainer/editVideo.css" />
     <link rel="stylesheet" href="/css/user/videoList.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src = "\js\searchScript.js"></script>
+    
 
     <title>Video List</title>
 </head>
 
 <body>
 <script>
-
-        $(document).ready(function() {
-            $(".disabled").attr('controls', false);
-        })
-        
-        function played(id){
-            console.log("hello world");
-            var element = document.getElementById(id);
-            console.log(element);
-            element.onplay = function(){
-                element.pause();
-                alert("You haven't bought this video"); 
+        $(document).ready(function(  ) {
+            $.ajax({
+            type: "POST",
+            url: "http://localhost/pages/includes/search.inc.php",
+            data: {
+                search: "Everything"
+            },
+            success: function(html) {
+                $("#display").html(html).show();
+                $(".disabled").attr('controls', false);
             }
-        }
-
+        });
+    })
+    
     </script>
 
     <?php 
@@ -82,10 +83,9 @@
                 <div>
                     <form class="searchArea">
                         <label>Search</label>
-                        <input type="text" placeholder="  Search Video" name="searchVideo">
+                        <input type="text" placeholder="Search Video"  id = "search" name="searchVideo">
                     </form>
                 </div>
-
                 <div class="trainerList">
                     <?php 
                         $sql = "SELECT * FROM Workout WHERE Video_id NOT IN (SELECT Video_id From purchases Where Member_id='$memberid')";
@@ -116,11 +116,18 @@
                       }
                     }
                   ?>
+                    <div id="display"></div>   
                 </div>
             </div>
         </div>
     </div>
 
+    <script>
+        $(window).ready(function(){
+            var id=$(".disabled").attr('controls', false);
+            console.log(id);
+        });
+    </script>
 
     <?php 
         require('../../components/basic/footer.php')
