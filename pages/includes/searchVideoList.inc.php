@@ -6,7 +6,6 @@
 ?>
 <?php
 if (isset($_POST['search'])) {
-//Search box value assigning to $Name variable.
 if($_POST['search'] == "Everything"){
     $memberid = $_SESSION['memberid'];
     $sql = "SELECT * FROM Workout WHERE Video_id NOT IN (SELECT Video_id From purchases Where Member_id='$memberid')";
@@ -60,6 +59,13 @@ else{
           ';
           $i = $i + 1;
         }
+      }
+      else{
+        echo '
+        <div class="singleTrainer">
+            <h5>No Matching Labels</h5>
+        </div>
+        ';
       } 
 }
 }
