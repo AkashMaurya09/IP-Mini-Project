@@ -1,5 +1,5 @@
-<?php 
-  include_once '../includes/dbh.inc.php';  
+<?php
+include_once '../includes/dbh.inc.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,47 +12,69 @@
 </head>
 
 <body>
+    <?php
+require('../../components/basic/header.php');
+  if (isset($_POST['edit_trainer'])) {
+    $maxsize = 524288000; // 510MB
+    $trainername = $_POST["uname"];
+    $number = $_POST["number"];
+    $trainerid = $_POST["trainer_id"];
+    $email = $_POST["email"];
 
-    <?php 
-    require('../../components/basic/header.php');
-      if(isset($_POST['edit_trainer'])){
-       $maxsize = 524288000; // 510MB
-       $trainername = $_POST["uname"];
-       $number = $_POST["number"];
-       $trainerid = $_POST["trainer_id"];
-       $email = $_POST["email"];
- 
-       $name = $_FILES['file']['name'];
-       $target_dir = "../profileImage/";
-       $target_file = $target_dir . $_FILES["file"]["name"];
+    $name = $_FILES['file']['name'];
+    $target_dir = "../profileImage/";
+    $target_file = $target_dir . $_FILES["file"]["name"];
 
-       // Select file type
-       $videoFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    // Select file type
+    $videoFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-       // Valid file extensions
-       $extensions_arr = array("gif","png","jpg","jpeg");
+    // Valid file extensions
+    $extensions_arr = array("gif", "png", "jpg", "jpeg");
+    if (empty($trainername) and empty($number) and empty($trainerid) and empty($email) and empty($name)) {
+      header("location:../trainer/editTrainer.php?error=emptyinput");
+      exit();
+    } else {
+      // Check extension
+      if (in_array($videoFileType, $extensions_arr)) {
 
-       // Check extension
-       if( in_array($videoFileType,$extensions_arr) ){
- 
-          // Check file size
-          if(($_FILES['file']['size'] >= $maxsize) || ($_FILES["file"]["size"] == 0)) {
-            echo "File too large. File must be less than 5MB.";
-          }else{
-            // Upload
-            if(move_uploaded_file($_FILES['file']['tmp_name'],$target_file)){
-              // Insert record
-              $query = "UPDATE trainer SET Trainer_Name='$trainername',Phone_Number='$number',name='$name',location='$target_file',Trainer_Email='$email' where Trainer_id='$trainerid';";
+        // Check file size
+        if (($_FILES['file']['size'] >= $maxsize) || ($_FILES["file"]["size"] == 0)) {
+          echo "File too large. File must be less than 5MB.";
+        } else {
+          // Upload
+          if (move_uploaded_file($_FILES['file']['tmp_name'], $target_file)) {
+            // Insert record
+            $query = "UPDATE trainer SET Trainer_Name='$trainername',Phone_Number='$number',name='$name',location='$target_file',Trainer_Email='$email' where Trainer_id='$trainerid';";
 
-              mysqli_query($conn,$query);
-              header("location:../trainer/editTrainer.php?error=updateSuccess");
-            }
+            mysqli_query($conn, $query);
+            header("location:../trainer/editTrainer.php?error=updateSuccess");
           }
-       }else{
-          echo "Invalid file extension.";
-       }
- 
-     } 
+        }
+      } else {
+        header("location:../trainer/editTrainer.php?error=filechoose");
+      }
+    }
+  }
+    if (isset($_POST["edit_password"])) {
+      $trainer_id = $_SESSION['trainer_userid'];
+      $password = $_POST["pwd"];
+      $confirmpassword = $_POST["confirm-pwd"];
+      if (empty($password) || empty($confirmpassword)) {
+        header("location:../trainer/editTrainer.php?error=emptypwdinput");
+        exit();
+      } else {
+        if ($password !== $confirmpassword) {
+          header("location:../trainer/editTrainer.php?error=pwdmatcherror");
+          exit();
+        } else {
+          $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+          $pwdquery = "UPDATE trainer SET Trainer_Password='$hashedPwd' where trainer_id = '$trainer_id';";
+          mysqli_query($conn, $pwdquery);
+          header("location:../trainer/editTrainer.php?error=pwdsuccess");
+          exit();
+        }
+      }
+    }
 
      if(isset($_POST['addVideo'])){
       header("Location: ./addVideo.php");
@@ -66,21 +88,21 @@
     <div class="container">
         <div class="left profile">
             <form class="profileForm" method="post">
-              <input type="submit" class="profileButton" name="myVideo" value="My Video" />
+                <input type="submit" class="profileButton" name="myVideo" value="My Video" />
                 <input type="submit" class="profileButton" name="addVideo" value="Add Video" />
                 <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />
             </form>
             <hr>
             <?php 
-          $trainer_id = $_SESSION['trainer_userid'];
-          $sql = "Select * from trainer WHERE Trainer_id = $trainer_id"; 
-          $result = mysqli_query($conn,$sql);
-          $resultCheck = mysqli_num_rows($result);
-        
-          if ($resultCheck > 0) {
-            $row = mysqli_fetch_assoc($result);
-          }
-        ?>
+                $trainer_id = $_SESSION['trainer_userid'];
+                $sql = "Select * from trainer WHERE Trainer_id = $trainer_id"; 
+                $result = mysqli_query($conn,$sql);
+                $resultCheck = mysqli_num_rows($result);
+              
+                if ($resultCheck > 0) {
+                  $row = mysqli_fetch_assoc($result);
+                }
+            ?>
 
             <div class="profileDetail">
                 <?php echo "<p>". $row['Trainer_Name'] . "</p>" ?>
@@ -89,7 +111,6 @@
             <div class="profileImage">
                 <?php echo"<img class='roundImage' src=' ". $row['location'] ."' alt='Avatar' >" ?>
             </div>
-
         </div>
 
         <div class="right">
@@ -127,32 +148,52 @@
                         <input type="text" name="email" placeholder="Email"
                             value="<?php echo $row['Trainer_Email']; ?>" />
                     </div>
-                    <!-- <div class="group">
-              <label for="description">Trainer Password</label>
-              <input type="password" name="pwd" placeholder="Password" />
-            </div>
-            <div class="group">
-              <label for="description">Confirm Trainer Password</label>
-              <input type="password" name="confirm-pwd" placeholder="Confirm Password"/>
-            </div> -->
+                    <div class="group">
+                        <label for="description">Trainer Password</label>
+                        <input type="password" name="pwd" placeholder="Password" />
+                    </div>
+                    <div class="group">
+                        <label for="description">Confirm Trainer Password</label>
+                        <input type="password" name="confirm-pwd" placeholder="Confirm Password" />
+                    </div>
                     <div class="submitGroup">
                         <input type="submit" name="edit_trainer" value="Save">
                     </div>
                 </form>
-                <?php 
-                if(isset($_GET["error"])) {
+                <?php
+                  if (isset($_GET["error"])) {
                     if ($_GET["error"] == "updateSuccess") {
                         echo "<p>Update Successfull</p>";
-                    } 
-                 }
+                  }
+                    if ($_GET["error"] == "filechoose") {
+                      echo "<p>Please select your profile image</p>";
+                  }
+                    if ($_GET["error"] == "emptyinput") {
+                      echo "<p>Please fill all the fields</p>";
+                  }
+                } 
+            ?>
+
+                <?php
+              if (isset($_GET["error"])) {
+              if ($_GET["error"] == "pwdmatcherror") {
+                echo "<p>Passwords do not match</p>";
+              }
+              if ($_GET["error"] == "pwdsuccess") {
+                echo "<p>Password changed successfully</p>";
+              }
+              if ($_GET["error"] == "emptypwdinput") {
+                echo "<p>Password cannot be empty</p>";
+              }
+            }
           ?>
             </div>
         </div>
-    </div>
+          </div>
 
-    <?php 
-        require('../../components/basic/footer.php')
-    ?>
+        <?php
+  require('../../components/basic/footer.php')
+  ?>
 </body>
 
 </html>
