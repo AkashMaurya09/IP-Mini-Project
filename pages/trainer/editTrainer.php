@@ -30,7 +30,7 @@ include_once '../includes/dbh.inc.php';
 
     // Valid file extensions
     $extensions_arr = array("gif", "png", "jpg", "jpeg");
-    if (empty($trainername) and empty($number) and empty($trainerid) and empty($email) and empty($name)) {
+    if (empty($trainername) || empty($number) || empty($trainerid) || empty($email) || empty($name)) {
       header("location:../trainer/editTrainer.php?error=emptyinput");
       exit();
     } else {
