@@ -19,10 +19,21 @@
     require('../../components/basic/header.php')
   ?>
 
+  <?php
+    if(isset($_POST['addTrainer'])){
+        header("Location: ./addTrainer.php");
+    }
+
+    if(isset($_POST['yourTrainer'])){
+        header("Location: ./trainerList.php");
+    }
+  ?>
+
     <div class="container">
         <div class="left profile">
             <form class="profileForm">
-                <input type="submit" class="profileButton" name="upload" value="Your Upload" />
+                <input type="submit" class="profileButton" name="addTrainer" value="Add Trainer" />
+                <input type="submit" class="profileButton" name="yourTrainer" value="Your Trainers" />
                 <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />
             </form>
             <hr>
@@ -37,23 +48,18 @@
           }
         ?>
             <div class="profileDetail">
-                <?php echo "<p>". $row['Admin_Name']. print_r($row)."</p>" ?>
+                <?php echo "<p>". $row['Admin_Name']."</p>" ?>
                 <?php echo "<p>". $row['Admin_Email']." </p>"?>
-                <!-- <p><span>Phone Number:</span> 9967025541</p>
-            <p><span>Video Count</span> 45</p> -->
             </div>
 
             <div class="profileImage">
                 <img class="roundImage" src="../../img/img_avatar.png" alt="Avatar">
             </div>
-
         </div>
 
         <div class="right">
             <div class="top">
                 <p>Add Trainer Details</p>
-                <input style="margin-right: 20px" type="submit" value="Cancel" name="cancel" />
-                <input type="submit" value="Save" name="save" />
             </div>
             <hr style="margin: 0 20px 0 20px" />
             <div class="bottom">
@@ -94,7 +100,9 @@
                         <label for="description">Confirm Trainer Password</label>
                         <input type="password" name="confirm-pwd" placeholder="Confirm Password" />
                     </div>
-                    <button type="submit" name="submit">Add Trainer</button>
+                    <div class="submitGroup">
+                        <input type="submit" name="submit" value="Add Trainer">
+                    </div>
                 </form>
                 <?php 
                 if(isset($_GET["error"])) {
