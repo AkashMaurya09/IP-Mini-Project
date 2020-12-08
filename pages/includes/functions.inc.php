@@ -81,7 +81,6 @@ function createUser($conn, $name, $number, $admin_id, $email, $password) {
     }
 
     $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
-    $image = "";
 
     mysqli_stmt_bind_param($stmt, "siiss", $name, $number, $admin_id, $email, $hashedPwd);
     mysqli_stmt_execute($stmt);
