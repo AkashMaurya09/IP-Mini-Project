@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/css/trainer/editVideo.css" />
     <link rel="stylesheet" href="/css/user/videoList.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src = "\js\searchScript.js"></script>
+    <script src = "\js\searchVideoList.js"></script>
     
 
     <title>Video List</title>
@@ -23,7 +23,7 @@
         $(document).ready(function(  ) {
             $.ajax({
             type: "POST",
-            url: "http://localhost/pages/includes/search.inc.php",
+            url: "../includes/searchVideoList.inc.php",
             data: {
                 search: "Everything"
             },
