@@ -13,8 +13,9 @@
 
 <body>
 
-    <?php 
-    require('../../components/basic/header.php')
+<?php 
+    require('../../components/basic/header.php');
+    $video_id = $_GET['Video_id'];
   ?>
 
   <?php

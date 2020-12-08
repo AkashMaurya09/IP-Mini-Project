@@ -24,7 +24,6 @@ include_once '../includes/dbh.inc.php';
 
     <?php
     $video_id = $_GET['Video_id'];
-    echo print_r($video_id);
     ?>
 
     <div class="container">
