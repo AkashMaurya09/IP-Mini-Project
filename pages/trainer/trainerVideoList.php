@@ -107,7 +107,7 @@
                                 <p class="description">'. $row['Description'] . '</p>
                             </div>
                             <div class="singleTrainerButton">
-                                <button onClick="location.href=\'http://localhost/pages/trainer/editVideo.php?Video_id='.$row["Video_id"].'\'">Edit</button>
+                                <button onClick="location.href=\'./editVideo.php?Video_id='.$row["Video_id"].'\'">Edit</button>
                                 <button >Delete</button>
                             </div>
                         </div>

@@ -5,15 +5,15 @@ include_once '../includes/dbh.inc.php';
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../css/trainer/editVideo.css" />
-    <title>Edit Trainer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../css/trainer/editVideo.css" />
+  <title>Edit Trainer</title>
 </head>
 
 <body>
-    <?php
-require('../../components/basic/header.php');
+  <?php
+  require('../../components/basic/header.php');
   if (isset($_POST['edit_trainer'])) {
     $maxsize = 524288000; // 510MB
     $trainername = $_POST["uname"];
@@ -55,143 +55,155 @@ require('../../components/basic/header.php');
       }
     }
   }
-    if (isset($_POST["edit_password"])) {
-      $trainer_id = $_SESSION['trainer_userid'];
-      $password = $_POST["pwd"];
-      $confirmpassword = $_POST["confirm-pwd"];
-      if (empty($password) || empty($confirmpassword)) {
-        header("location:../trainer/editTrainer.php?error=emptypwdinput");
+  if (isset($_POST["edit_password"])) {
+    $trainer_id = $_SESSION['trainer_userid'];
+    $password = $_POST["pwd"];
+    $confirmpassword = $_POST["confirm-pwd"];
+    if (empty($password) || empty($confirmpassword)) {
+      header("location:../trainer/editTrainer.php?error=emptypwdinput");
+      exit();
+    } else {
+      if ($password !== $confirmpassword) {
+        header("location:../trainer/editTrainer.php?error=pwdmatcherror");
         exit();
       } else {
-        if ($password !== $confirmpassword) {
-          header("location:../trainer/editTrainer.php?error=pwdmatcherror");
-          exit();
-        } else {
-          $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
-          $pwdquery = "UPDATE trainer SET Trainer_Password='$hashedPwd' where trainer_id = '$trainer_id';";
-          mysqli_query($conn, $pwdquery);
-          header("location:../trainer/editTrainer.php?error=pwdsuccess");
-          exit();
-        }
+        $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+        $pwdquery = "UPDATE trainer SET Trainer_Password='$hashedPwd' where trainer_id = '$trainer_id';";
+        mysqli_query($conn, $pwdquery);
+        header("location:../trainer/editTrainer.php?error=pwdsuccess");
+        exit();
       }
     }
+  }
 
-     if(isset($_POST['addVideo'])){
-      header("Location: ./addVideo.php");
-     }
+  if (isset($_POST['addVideo'])) {
+    header("Location: ./addVideo.php");
+  }
 
-     if(isset($_POST['myVideo'])){
-      header("Location: ./trainerVideoList.php");
-     }
+  if (isset($_POST['myVideo'])) {
+    header("Location: ./trainerVideoList.php");
+  }
   ?>
 
-    <div class="container">
-        <div class="left profile">
-            <form class="profileForm" method="post">
-                <input type="submit" class="profileButton" name="myVideo" value="My Video" />
-                <input type="submit" class="profileButton" name="addVideo" value="Add Video" />
-                <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />
-            </form>
-            <hr>
-            <?php 
-                $trainer_id = $_SESSION['trainer_userid'];
-                $sql = "Select * from trainer WHERE Trainer_id = $trainer_id"; 
-                $result = mysqli_query($conn,$sql);
-                $resultCheck = mysqli_num_rows($result);
-              
-                if ($resultCheck > 0) {
-                  $row = mysqli_fetch_assoc($result);
-                }
-            ?>
+  <div class="container">
+    <div class="left profile">
+      <form class="profileForm" method="post">
+        <input type="submit" class="profileButton" name="myVideo" value="My Video" />
+        <input type="submit" class="profileButton" name="addVideo" value="Add Video" />
+        <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />
+      </form>
+      <hr>
+      <?php
+      $trainer_id = $_SESSION['trainer_userid'];
+      $sql = "Select * from trainer WHERE Trainer_id = $trainer_id";
+      $result = mysqli_query($conn, $sql);
+      $resultCheck = mysqli_num_rows($result);
 
-            <div class="profileDetail">
-                <?php echo "<p>". $row['Trainer_Name'] . "</p>" ?>
-                <?php echo "<p>". $row['Trainer_Email']." </p>"?>
-            </div>
-            <div class="profileImage">
-                <?php echo"<img class='roundImage' src=' ". $row['location'] ."' alt='Avatar' >" ?>
-            </div>
-        </div>
+      if ($resultCheck > 0) {
+        $row = mysqli_fetch_assoc($result);
+      }
+      ?>
 
-        <div class="right">
-            <div class="top">
-                <p>Edit Your Details</p>
-            </div>
-            <hr style="margin: 0 20px 0 20px" />
-            <div class="bottom">
-                <form class="editForm" method="post" action="" enctype='multipart/form-data'>
-                    <div class="row">
-                        <div class="col group">
-                            <label for="Workout Video">Trainer Image</label>
-                            <input type='file' name='file' />
-                        </div>
-                        <div class="col group">
-                            <label for="title name">Name</label>
-                            <input type="text" name="uname" placeholder="Name"
-                                value="<?php echo $row['Trainer_Name']; ?>" />
-                        </div>
-                    </div>
+      <div class="profileDetail">
+        <?php echo "<p>" . $row['Trainer_Name'] . "</p>" ?>
+        <?php echo "<p>" . $row['Trainer_Email'] . " </p>" ?>
+      </div>
+      <div class="profileImage">
+        <?php echo "<img class='roundImage' src=' " . $row['location'] . "' alt='Avatar' >" ?>
+      </div>
+    </div>
 
-                    <div class="row">
-                        <div class="group col">
-                            <label for="title name">Phone Number</label>
-                            <input type="number" name="number" placeholder="Phone Number"
-                                value="<?php echo $row['Phone_Number']; ?>" />
-                        </div>
-                        <div class="group col">
-                            <label for="subtitle name">Trainer ID</label>
-                            <input type="number" name="trainer_id" value="<?php echo $row['Trainer_id']; ?>" />
-                        </div>
-                    </div>
-                    <div class="group">
-                        <label for="tag name">Trainer Email</label>
-                        <input type="text" name="email" placeholder="Email"
-                            value="<?php echo $row['Trainer_Email']; ?>" />
-                    </div>
-                    <div class="group">
-                        <label for="description">Trainer Password</label>
-                        <input type="password" name="pwd" placeholder="Password" />
-                    </div>
-                    <div class="group">
-                        <label for="description">Confirm Trainer Password</label>
-                        <input type="password" name="confirm-pwd" placeholder="Confirm Password" />
-                    </div>
-                    <div class="submitGroup">
-                        <input type="submit" name="edit_trainer" value="Save">
-                    </div>
-                </form>
-                <?php
-                  if (isset($_GET["error"])) {
-                    if ($_GET["error"] == "updateSuccess") {
-                        echo "<p>Update Successfull</p>";
-                  }
-                    if ($_GET["error"] == "filechoose") {
-                      echo "<p>Please select your profile image</p>";
-                  }
-                    if ($_GET["error"] == "emptyinput") {
-                      echo "<p>Please fill all the fields</p>";
-                  }
-                } 
-            ?>
-
-                <?php
-              if (isset($_GET["error"])) {
-              if ($_GET["error"] == "pwdmatcherror") {
-                echo "<p>Passwords do not match</p>";
-              }
-              if ($_GET["error"] == "pwdsuccess") {
-                echo "<p>Password changed successfully</p>";
-              }
-              if ($_GET["error"] == "emptypwdinput") {
-                echo "<p>Password cannot be empty</p>";
-              }
-            }
-          ?>
+    <div class="right">
+      <div class="top">
+        <p>Edit Your Details</p>
+      </div>
+      <hr style="margin: 0 20px 0 20px" />
+      <div class="bottom">
+        <form class="editForm" method="post" action="" enctype='multipart/form-data'>
+          <div class="row">
+            <div class="col group">
+              <label for="Workout Video">Trainer Image</label>
+              <input type='file' name='file' />
             </div>
-        </div>
+            <div class="col group">
+              <label for="title name">Name</label>
+              <input type="text" name="uname" placeholder="Name" value="<?php echo $row['Trainer_Name']; ?>" />
+            </div>
           </div>
 
+          <div class="row">
+            <div class="group col">
+              <label for="title name">Phone Number</label>
+              <input type="number" name="number" placeholder="Phone Number" value="<?php echo $row['Phone_Number']; ?>" />
+            </div>
+            <div class="group col">
+              <label for="subtitle name">Trainer ID</label>
+              <input type="number" name="trainer_id" value="<?php echo $row['Trainer_id']; ?>" />
+            </div>
+          </div>
+          <div class="group">
+            <label for="tag name">Trainer Email</label>
+            <input type="text" name="email" placeholder="Email" value="<?php echo $row['Trainer_Email']; ?>" />
+          </div>
+          <div class="submitGroup">
+            <input type="submit" name="edit_trainer" value="Save">
+          </div>
+          <div class="group">
+            <label for="description">Trainer Password</label>
+            <input type="password" name="pwd" placeholder="Password" />
+          </div>
+          <div class="group">
+            <label for="description">Confirm Trainer Password</label>
+            <input type="password" name="confirm-pwd" placeholder="Confirm Password" />
+          </div>
+          <div class="submitGroup">
+            <input type="submit" name="edit_password" value="Save">
+          </div>
+        </form>
         <?php
+        if (isset($_GET["error"])) {
+          if ($_GET["error"] == "updateSuccess") {
+            echo "  <div class='group'>
+                    <label style='color:green' for='description'>Details Update Successfully</label>
+                    </div>  ";
+          }
+          if ($_GET["error"] == "filechoose") {
+            echo "  <div class='group'>
+                    <label style='color:red' for='description'>Please select your profile Image</label>
+                    </div>  ";
+          }
+          if ($_GET["error"] == "emptyinput") {
+            echo "  <div class='group'>
+                    <label style='color:red' for='description'>Please fill all the fields</label>
+                    </div>  ";
+          }
+        }
+        ?>
+
+        <?php
+        if (isset($_GET["error"])) {
+          if ($_GET["error"] == "pwdmatcherror") {
+            echo "  <div class='group'>
+                    <label style='color:red' for='description'>Passwords do not match</label>
+                    </div>  ";
+          }
+          if ($_GET["error"] == "pwdsuccess") {
+            echo "  <div class='group'>
+                    <label style='color:green' for='description'>Password changed Successfully</label>
+                    </div>  ";
+          }
+          if ($_GET["error"] == "emptypwdinput") {
+            echo "  <div class='group'>
+                    <label style='color:red' for='description'>Password cannot be empty</label>
+                    </div>  ";
+          }
+        }
+        ?>
+      </div>
+    </div>
+  </div>
+
+  <?php
   require('../../components/basic/footer.php')
   ?>
 </body>
