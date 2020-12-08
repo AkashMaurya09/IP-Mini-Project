@@ -10,17 +10,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/trainer/trainerList.css" />
     <link rel="stylesheet" href="/css/trainer/editVideo.css" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/searchTrainers.js"></script>
     <title>Trainer List</title>
 </head>
 
 <body>
-
+    <script>
+    $(document).ready(function() {
+        $.ajax({
+            type: "POST",
+            url: "../includes/searchTrainers.inc.php",
+            data: {
+                search: "Everything"
+            },
+            success: function(html) {
+                $("#display").html(html).show();
+            }
+        });
+    })
+    </script>
     <?php 
     require('../../components/basic/header.php')
   ?>
 
-  <?php
+    <?php
     if(isset($_POST['addTrainer'])){
         header("Location: ./addTrainer.php");
     }
@@ -59,40 +73,12 @@
                 <div>
                     <form class="searchArea">
                         <label>Search</label>
-                        <input type="text" placeholder="  Search Trainer" name="searchTrainer">
+                        <input id="search" type="text" placeholder="  Search Trainer" name="searchTrainer">
                     </form>
                 </div>
 
                 <div class="trainerList">
-                    <?php 
-              $admin_id = $_SESSION['admin_userid'];
-              $sql = "Select * from trainer WHERE Admin_id = $admin_id"; 
-              $result = mysqli_query($conn,$sql);
-              $resultCheck = mysqli_num_rows($result);
-            ?>
-                    <?php 
-                    if ($resultCheck > 0) {
-                      $i = 0;
-                      while($row = mysqli_fetch_array($result)) {
-                        echo '
-                        <div class="singleTrainer">
-                            <img src="../../img/img_avatar.png" alt="Avatar">
-                            <div class="detailContent">
-                                <p>' . $row['Trainer_Name'] . '</p> 
-                                <p> '. $row['Trainer_Email'] . '</p>
-                                <p>'. $row['Phone_Number'] .'</p>
-                            </div>
-                            <div class="singleTrainerButton">
-                                <button onClick="location.href=\'./editTrainer.php?Trainer_id='.$row["Trainer_id"].'\'">Edit</button>
-                                <button >Delete</button>
-                            </div>
-                            
-                        </div>
-                        ';
-                        $i = $i + 1;
-                      }
-                    }
-                  ?>
+                    <div id="display"></div>
                 </div>
             </div>
         </div>

@@ -12,28 +12,26 @@
     <link rel="stylesheet" href="/css/trainer/editVideo.css" />
     <link rel="stylesheet" href="/css/user/videoList.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/searchVideoList.js"></script>
 
     <title>Video List</title>
 </head>
 
 <body>
 <script>
-
-        $(document).ready(function() {
-            $(".disabled").attr('controls', false);
-        })
-        
-        function played(id){
-            console.log("hello world");
-            var element = document.getElementById(id);
-            console.log(element);
-            element.onplay = function(){
-                element.pause();
-                alert("You haven't bought this video"); 
+$(document).ready(function(  ) {
+            $.ajax({
+            type: "POST",
+            url: "../includes/searchTrainerVideo.inc.php",
+            data: {
+                search: "Everything"
+            },
+            success: function(html) {
+                $("#display").html(html).show();
             }
-        }
-
-    </script>
+        });
+    })
+        </script>
 
     <?php 
     require('../../components/basic/header.php')
@@ -83,39 +81,12 @@
                 <div>
                     <form class="searchArea">
                         <label>Search</label>
-                        <input type="text" placeholder="  Search Video" name="searchVideo">
+                        <input type="text" placeholder="Search Video" id="search" name="searchVideo">
                     </form>
                 </div>
 
                 <div class="trainerList">
-                    <?php 
-                        $sql = "SELECT * FROM Workout WHERE Trainer_id='$trainer_id'";
-                        $result = mysqli_query($conn,$sql);
-                        $resultCheck = mysqli_num_rows($result);
-                     ?>
-                    <?php 
-                    if ($resultCheck > 0) {
-                      $i = 0;
-                      while($row = mysqli_fetch_assoc($result)) {
-                        echo '
-                        <div class="singleTrainer">
-                            <video class="disabled" src="'. $row['location'] .'" controls width="320px" height="200px">
-                            </video>
-                            <div class="detailContent">
-                                <p>' . $row['Video_Name'] . '</p> 
-                                <p class="tag">#Weights #5minutes</p> 
-                                <p class="description">'. $row['Description'] . '</p>
-                            </div>
-                            <div class="singleTrainerButton">
-                                <button onClick="location.href=\'./editVideo.php?Video_id='.$row["Video_id"].'\'">Edit</button>
-                                <button >Delete</button>
-                            </div>
-                        </div>
-                        ';
-                        $i = $i + 1;
-                      }
-                    }
-                  ?>
+                    <div id="display"></div>
                 </div>
             </div>
         </div>
