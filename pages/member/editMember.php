@@ -10,8 +10,6 @@ include_once '../includes/dbh.inc.php';
   <link rel="stylesheet" href="../../css/trainer/editVideo.css" />
 
   <title>Edit Member</title>
-
-
 </head>
 
 <body>
@@ -82,14 +80,23 @@ include_once '../includes/dbh.inc.php';
     }
   }
 
+  if(isset($_POST['myVideo'])) {
+    header("location: ./myVideo.php");
+  }
+  if(isset($_POST['allVideo'])) {
+      header("location: ./videoList.php");
+  }
+
   ?>
 
   <div class="container">
     <div class="left profile">
-      <form class="profileForm">
-        <input type="submit" class="profileButton" name="upload" value="Your Upload" />
-        <input type="submit" + class="profileButton" name="logout" value="Logout" />
+      <form class="profileForm" method="post">
+          <input type="submit" class="profileButton" name="myVideo" value="My Videos" />
+          <input type="submit" class="profileButton" name="allVideo" value="All Videos" />
+          <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />
       </form>
+      <hr>
       <?php
       $member_id = $_SESSION['memberid'];
       $sql = "Select * from member WHERE Member_id = $member_id";
@@ -102,9 +109,8 @@ include_once '../includes/dbh.inc.php';
       ?>
 
       <div class="profileDetail">
-        <?php echo "<p><span>Name:</span> " . $row['Member_Name'] . "</p>" ?>
-        <?php echo "<p><span>Email:</span> " . $row['Member_Email'] . " </p>" ?>
-        <?php echo "<p><span>Phone Number:</span> " . $row['Phone_Number'] . " </p>" ?>
+        <?php echo "<p>" . $row['Member_Name'] . "</p>" ?>
+        <?php echo "<p>" . $row['Member_Email'] . " </p>" ?>
       </div>
       <div class="profileImage">
         <?php echo "<img class='roundImage' src=' " . $row['location'] . "' alt='Avatar' >" ?>
@@ -115,8 +121,6 @@ include_once '../includes/dbh.inc.php';
     <div class="right">
       <div class="top">
         <p>Edit Your Details</p>
-        <input style="margin-right: 20px" type="submit" value="Cancel" name="cancel" />
-        <input type="submit" value="Save" name="save" />
       </div>
       <hr style="margin: 0 20px 0 20px" />
       <div class="bottom">
@@ -146,8 +150,10 @@ include_once '../includes/dbh.inc.php';
             <label for="tag name">Member Email</label>
             <input type="text" name="email" placeholder="Email" value="<?php echo $row['Member_Email']; ?>" />
           </div>
+          <div class="submitGroup">
+            <input type="submit" name="edit_member" value="Edit Member Details">
+          </div>
 
-          <button type="submit" name="edit_member" value="Upload">Edit Member Details</button>
         </form>
         <?php
         if (isset($_GET["error"])) {
@@ -172,7 +178,9 @@ include_once '../includes/dbh.inc.php';
             <label for="description">Confirm Trainer Password</label>
             <input type="password" name="confirm-pwd" placeholder="Confirm Password" />
           </div>
-          <button type="submit" name="edit_password" value="Upload">Edit Member Password</button>
+          <div class="submitGroup">
+            <input type="submit" name="edit_password" value="Edit Member Password">
+          </div>
         </form>
         <?php
         if (isset($_GET["error"])) {
