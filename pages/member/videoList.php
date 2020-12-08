@@ -20,39 +20,20 @@
 
 <body>
 <script>
-        
         $(document).ready(function(  ) {
             $.ajax({
-            //AJAX type is "Post".
             type: "POST",
-            //Data will be sent to "ajax.php".
             url: "http://localhost/pages/includes/search.inc.php",
-            //Data, that will be sent to "ajax.php".
             data: {
-                //Assigning value of "name" into "search" variable.
                 search: "Everything"
             },
-            //If result found, this funtion will be called.
             success: function(html) {
-                //Assigning result to "display" div in "search.php" file.
                 $("#display").html(html).show();
+                $(".disabled").attr('controls', false);
             }
         });
-        
-    
     })
-
-
-        // function played(id){
-        //     console.log("hello world");
-        //     var element = document.getElementById(id);
-        //     console.log(element);
-        //     element.onplay = function(){
-        //         element.pause();
-        //         alert("You haven't bought this video"); 
-        //     }
-        // }
-
+    
     </script>
 
     <?php 
@@ -105,24 +86,19 @@
                         <input type="text" placeholder="Search Video"  id = "search" name="searchVideo">
                     </form>
                 </div>
-
                 <div class="trainerList">
-                    
-                     <div id="display">
-                     
-            </div>
-                    
+                    <div id="display"></div>   
                 </div>
             </div>
         </div>
     </div>
-<script>
-    
-    $(window).ready(function(){
-        var id=$(".disabled").attr('controls', false);
-        console.log(id)
-    });
-</script>
+
+    <script>
+        $(window).ready(function(){
+            var id=$(".disabled").attr('controls', false);
+            console.log(id);
+        });
+    </script>
 
     <?php 
         require('../../components/basic/footer.php')
