@@ -11,7 +11,8 @@ include_once '../includes/dbh.inc.php';
     <link rel="stylesheet" href="/css/trainer/editVideo.css" />
     <link rel="stylesheet" href="/css/user/videoPlay.css" />
     <link rel="stylesheet" href="/css/user/comments.css" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/comment.js"></script>
     <title>Your Workout Video</title>
 
 </head>
@@ -100,55 +101,23 @@ include_once '../includes/dbh.inc.php';
                         <p id="Comments-heading">Comments</p>
                     </div>
                 </div>
-                <?php
-                if (isset($_POST["add_comment"])) {
-                    $name = $_POST["comment"];
-                    $date = date("Y-m-d h:i:s");
-                    $query = "INSERT INTO comment(userComment,timestamp,Member_id,Video_id) VALUES('" . $name . "','" . $date . "','" . $memberid . "','" . $videoid . "')";
-
-                    mysqli_query($conn, $query);
-                }
-                ?>
                 <div class="add-comment">
-                    <form method="post" action="">
+                    <!-- <form method="post" action=""> -->
                         <textarea required placeholder="Your Comment goes here...." rows="5" name="comment" id="comment_text" cols=20 class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
-                        <input type='submit' value='Add Comment' name='add_comment'>
-                    </form>
+                        <button type='submit'  id="add_com" name='add_comment'>Add Comment</button>
+                    <!-- </form> -->
                 </div>
             </div>
             <!-- ---------------------Display Comments-------------------------- -->
-
+            <input type="hidden" value=<?php echo $video_id; ?> id="video_id"/>
             <div class="Comments-Section">
                 <div class="Content-Center">
                     <p id="Comments-heading">What did others say...</p>
 
                 </div>
             </div>
-
-            <?php
-            $comment_query = mysqli_query($conn, "SELECT * FROM comment ORDER BY timestamp DESC;");
-            while ($comment = mysqli_fetch_assoc($comment_query)) {
-                $id = $comment['Member_id'];
-                $sql = "Select * from Member WHERE Member_id = $id";
-                $result = mysqli_query($conn, $sql);
-                $resultCheck = mysqli_num_rows($result);
-    
-                if ($resultCheck > 0) {
-                    $memberId = mysqli_fetch_assoc($result);
-                }
-
-                // echo "<h2>" . print_r($memberId) . "</h2>";
-                echo "<div class='comment-card'>";
-                    echo "<img src='". $memberId['location']."' />";
-                    echo "<p ic='username'> ". $memberId['Member_Name'] ."</p>";
-                    echo "<div class='comment'>";
-                    echo "<p>". $comment['userComment'] ."</p>";
-                echo "</div>";
-                echo "<p class='time'>". $comment['timestamp'] ."</p>";
-                echo "</div>";
-            }
-            ?>
-
+            
+            <div id="display"></div>
         </div>
 
 
