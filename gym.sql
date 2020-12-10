@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2020 at 05:59 PM
+-- Generation Time: Dec 10, 2020 at 07:40 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -40,9 +40,13 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`comment_id`, `userComment`, `timestamp`, `Member_id`, `Video_id`) VALUES
-(4, 'Hello\r\n', '2020-12-07 05:41:38', 20, 1),
+(4, 'Hello', '2020-12-07 05:41:38', 20, 1),
 (13, 'This is an awesome video', '2020-12-07 05:49:30', 20, 1),
-(14, 'Order mai aayega sab', '2020-12-07 05:58:43', 20, 1);
+(14, 'Order mai aayega sab', '2020-12-07 05:58:43', 20, 1),
+(17, 'ajafjkasbdksdnasv', '2020-12-10 06:43:13', 20, 6),
+(24, 'Hello from the other side', '2020-12-10 06:51:27', 20, 6),
+(32, 'as', '2020-12-11 00:09:30', 20, 6),
+(33, 'test', '2020-12-11 00:10:12', 20, 6);
 
 -- --------------------------------------------------------
 
@@ -105,7 +109,7 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`Member_id`, `Member_Name`, `Phone_Number`, `Admin_id`, `Member_Email`, `Member_Password`, `name`, `location`) VALUES
-(20, 'Akash', 1234567890, 1, '09.akash.maurya@gmail.com', '$2y$10$Y5Fzx2H/e2ZISfTYG3dBFe8h870YxW9izT0SjxOSb4H01C2pDcSpK', 'Akash.jpg', '../profileImage/Akash.jpg');
+(20, 'Akash', 1234567890, 1, '09.akash.maurya@gmail.com', '$2y$10$F3SowH8Trn8rEQxSRhnGheBJNtcco3Nw4IlhUtCGNULY16c3TcCNG', 'Akash.jpg', '../profileImage/Akash.jpg');
 
 -- --------------------------------------------------------
 
@@ -124,7 +128,7 @@ CREATE TABLE `purchases` (
 --
 
 INSERT INTO `purchases` (`Validity`, `Member_id`, `Video_id`) VALUES
-('2021-12-04', 20, 1);
+('2020-12-17', 20, 6);
 
 -- --------------------------------------------------------
 
@@ -149,7 +153,7 @@ CREATE TABLE `trainer` (
 
 INSERT INTO `trainer` (`Trainer_id`, `Trainer_Name`, `Phone_Number`, `Admin_id`, `Trainer_Email`, `Trainer_Password`, `name`, `location`) VALUES
 (2, 'Devdatta Khoche', 1234512345, 1, '2018.devdatta.khoche@ves.ac.in', '$2y$10$kIyG8e.5unKJ3OgwDuM2YuqCNX.oO23ImrpXmQxO4m1NqVH9GgJLC', 'Dev.jpg', '../profileImage/Dev.jpg'),
-(6, 'Akash Maurya', 1234512345, 1, '09.akash.maurya@gmail.com', '$2y$10$2RIerQUP5RAqrjvJYC157Ok4VkItczZbO4TZWfArn5.oUp9fkERpO', 'Akash.jpg', '../profileImage/Akash.jpg'),
+(6, 'Akash', 1234512345, 1, '09.akash.maurya@gmail.com', '$2y$10$YfdiWGNkWwNnIIZJFqGN9eY2.YH1oqF6DdkDJhA1HyTlFz15xHqpi', 'Dev.jpg', '../profileImage/Dev.jpg'),
 (11, 'Srajan Shetty', 1234512345, 1, '2018.srajan.shetty@ves.ac.in', '$2y$10$Y9x6TYT1/7XqF2E8cjNmVOoXXgVSgr3ZadnN3iT1bFVCQ5jSthJ8.', 'srajan.jpeg', '../profileImage/srajan.jpeg');
 
 -- --------------------------------------------------------
@@ -193,10 +197,8 @@ CREATE TABLE `workout` (
 --
 
 INSERT INTO `workout` (`Video_Name`, `Video_id`, `Price`, `Trainer_id`, `name`, `location`, `Description`) VALUES
-('5 Minute Chest Workout', 1, 5000, 6, '5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', '../videos/5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', 'This is a follow along chest workout that will take you 5 minutes to LIGHT YOUR PECS ON FIRE! We all know you have at least 5 minutes in a day that you are free to get to the gains! For the best results, repeat this workout for 2-3 sets. If you can only get through it one time, that\'s no problem, keep working at it until you\'re able to knock it out the park!\r\n\r\nEspecially in today\'s world, a quarantine workout like this can give you some relief and a way to escape! I know only 5 minutes sound easy, but this will be one of the best 5 minute chest works you can knock out!'),
-('5 Minute Chest Workout', 6, 12222, 6, '5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', '../videos/5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', 'kasfmadfkksdfmkfdsmkmdfd'),
-('5 Minute Chest Workout', 7, 12344, 6, '5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', '../videos/5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', 'asffafsfdf'),
-('asaada', 8, 1234, 6, 'NO GYM FULL BODY WORKOUT .mp4', '../videos/NO GYM FULL BODY WORKOUT .mp4', 'dadasda');
+('Testuvvh', 6, 12222, 6, '5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', '../videos/5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', 'devdatta'),
+('5 Minute Chest Workout', 7, 12344, 6, '5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', '../videos/5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', 'jdabjhabfyncajfvyusguyarvucuyfgayuwgfvyu');
 
 -- --------------------------------------------------------
 
@@ -237,7 +239,7 @@ ALTER TABLE `member`
 --
 ALTER TABLE `purchases`
   ADD PRIMARY KEY (`Member_id`,`Video_id`),
-  ADD KEY `Video_id` (`Video_id`);
+  ADD KEY `fk_Video_id` (`Video_id`);
 
 --
 -- Indexes for table `trainer`
@@ -274,7 +276,7 @@ ALTER TABLE `workout_tags`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `gymadmin`
@@ -304,7 +306,7 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `workout`
 --
 ALTER TABLE `workout`
-  MODIFY `Video_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `Video_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
@@ -320,6 +322,7 @@ ALTER TABLE `member`
 -- Constraints for table `purchases`
 --
 ALTER TABLE `purchases`
+  ADD CONSTRAINT `fk_Video_id` FOREIGN KEY (`Video_id`) REFERENCES `workout` (`Video_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `purchases_ibfk_1` FOREIGN KEY (`Member_id`) REFERENCES `member` (`Member_id`),
   ADD CONSTRAINT `purchases_ibfk_2` FOREIGN KEY (`Video_id`) REFERENCES `workout` (`Video_id`);
 
