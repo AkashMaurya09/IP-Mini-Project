@@ -23,6 +23,10 @@ include_once '../includes/dbh.inc.php';
         header("Location: ./addVideo.php");
     }
 
+    if (isset($_POST['myVideo'])) {
+        header("Location: ./trainerVideoList.php");
+    }
+
     if (isset($_POST['edit_video'])) {
         $videoname = $_POST["video_name"];
         $price = $_POST["price"];
