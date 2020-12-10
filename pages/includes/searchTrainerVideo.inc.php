@@ -4,9 +4,7 @@
 <?php 
   session_start();
 ?>
-<?php 
 
-                  ?>
 <?php
 if (isset($_POST['search'])) {
 if($_POST['search'] == "Everything"){
@@ -18,7 +16,7 @@ if($_POST['search'] == "Everything"){
       $i = 0;
       while($row = mysqli_fetch_assoc($result)) {
         echo '
-        <div class="singleTrainer">
+        <div class="singleTrainer" id="delete_id'.$row["Video_id"].'">
             <video class="disabled" src="'. $row['location'] .'" controls width="320px" height="200px">
             </video>
             <div class="detailContent">
@@ -28,9 +26,27 @@ if($_POST['search'] == "Everything"){
             </div>
             <div class="singleTrainerButton">
                 <button onClick="location.href=\'./editVideo.php?Video_id='.$row["Video_id"].'\'">Edit</button>
-                <button >Delete</button>
+                <button id="delete_button'.$row["Video_id"].'">Delete</button>
             </div>
+            <input type="hidden" value='.$row["Video_id"].' id="delete'.$row["Video_id"].'"/>
         </div>
+        <script>
+        $("#delete_button'.$row["Video_id"].'").click(function () {
+          console.log("hello");
+          var delete_id = $("#delete'.$row["Video_id"].'").val();
+          $.ajax({
+            type: "POST",
+            url: "../trainer/deleteTrainerVideo.php",
+            data: {
+              delete_video_id : delete_id,
+            },
+            success: function () {
+              console.log("delete_id'.$row["Video_id"].'");
+              $("#delete_id'.$row["Video_id"].'").remove();
+            },
+          });
+        });
+        </script>
         ';
         $i = $i + 1;
       }
@@ -46,7 +62,7 @@ else{
         $i = 0;
         while($row = mysqli_fetch_assoc($result)) {
           echo '
-          <div class="singleTrainer">
+          <div class="singleTrainer" id="delete_id'.$row["Video_id"].'">
             <video class="disabled" src="'. $row['location'] .'" controls width="320px" height="200px">
             </video>
             <div class="detailContent">
@@ -56,10 +72,27 @@ else{
             </div>
             <div class="singleTrainerButton">
                 <button onClick="location.href=\'./editVideo.php?Video_id='.$row["Video_id"].'\'">Edit</button>
-                <button >Delete</button>
+                <button id="delete_button">Delete</button>
             </div>
-        </div>
-
+            <input type="hidden" value='.$row["Video_id"].' id="delete_id"/>
+          </div>
+          <script>
+          $("#delete_button").click(function () {
+            console.log("hello");
+            var delete_id = $("#delete_id").val();
+            $.ajax({
+              type: "POST",
+              url: "../trainer/deleteTrainerVideo.php",
+              data: {
+                delete_video_id : delete_id,
+              },
+              success: function () {
+                console.log("delete_id'.$row["Video_id"].'");
+                $("#delete_id'.$row["Video_id"].'").remove();
+              },
+            });
+          });
+          </script>
           ';
           $i = $i + 1;
         }
