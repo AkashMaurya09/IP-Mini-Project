@@ -2,10 +2,8 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="/css/user/aboutus.css">
     <title>Document</title>
 </head>
@@ -15,19 +13,20 @@
   require('../../components/basic/header.php')
 ?>
     <div id='main'>
-        
-            <div class = "Center-start">
-                <h1 class="Try-free-heading">ABOUT<br>BEAST FACTORY</h1>
-</div>
-<div class="Content-center">
-<img src="../../img/logo/logo_yellow_vertical.png" alt="">
 
-</div>
-                <div class = "Content-center"><p class="Try-free-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae obcaecati enim
-                    suscipit neque minima a harum est sequi labore repellat?</p></div>
-                <div class="Center-start"><button class="Try-free-Button">Try Free Workouts</button></div>
-            </div>
-        
+        <div class="Center-start">
+            <h1 class="Try-free-heading">ABOUT<br>BEAST FACTORY</h1>
+        </div>
+        <div class="Content-center">
+            <img src="../../img/logo/logo_yellow_vertical.png" alt="">
+
+        </div>
+        <div class="Content-center">
+            <p class="Try-free-text">The last three or four reps is what makes the muscle grow. This area of pain
+                divides a champion from someone who is not a champion</p>
+        </div>
+        <div class="Center-start"><button class="Try-free-Button" onClick="location.href='./workouts.php'">Try Free Workouts</button></div>
+    </div>
 
     </div>
     <div class="Content-Class">
@@ -39,7 +38,8 @@
             <!-- <br> -->
             <h1>Workouts<h2>
                     <!-- <br> -->
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, quaerat.</p>
+                    <p>The last three or four reps is what makes the muscle grow. This area of pain divides a champion
+                        from someone who is not a champion</p>
         </div>
         <div class="Workouts">
             <div class="row">
@@ -49,57 +49,44 @@
                     </div>
 
                     <div class="Workout-center">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure fugiat hic natus eaque eum,
-                            modi a officia praesentium esse voluptates et adipisci minus, consequatur consectetur
-                            nostrum soluta quia deseru!</p>
+                        <p>Working out with Whitney Simmons is like having your bestie right there with you. We’re big
+                            fans of Whit’s personal mantra, “It’s a beautiful day to be alive.” Indeed, it is,
+                            especially when you’ve got this full-body workout you can do in your pj’s.
+                        </p>
                     </div>
                     <div class="Workout-center">
-                      <button class = "Try-free-Button">Hello </button>
+                        <button class="Try-free-Button" onClick="location.href='./workouts.php'">Hello </button>
                     </div>
                     <div class="Workout-center">
                         <img src="https://picsum.photos/300/300" alt="W3Schools.com">
                     </div>
-                    <!-- <div class="Workout-center">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure fugiat hic natus eaque eum,
-                            modi a officia praesentium esse voluptates et adipisci minus, consequatur consectetur
-                            nostrum soluta quia deserunt animi earum cumque! Aperiam labore accusantium molestias
-                            laudantium quisquam quo aspernatur!</p>
-                    </div> -->
 
                 </div>
                 <div class="column">
                     <div class="Workout-center">
                         <img src="https://picsum.photos/300/300" alt="W3Schools.com">
                     </div>
-                    <!-- <div class="Workout-center">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure fugiat hic natus eaque eum,
-                            modi a officia praesentium esse voluptates et adipisci minus, consequatur consectetur
-                            nostrum soluta quia deserunt animi earum cumque! Aperiam labore accusantium molestias
-                            laudantium quisquam quo aspernatur!</p>
-                    </div> -->
-                    <!-- <div class="Workout-center">
-                        <img src="https://picsum.photos/300/300" alt="W3Schools.com">
-                    </div> -->
+
                     <div class="Workout-center">
-                        <h1>Expert Traning</h1>
+                        <h1>Workouts</h1>
                     </div>
 
                     <div class="Workout-center">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure fugiat hic natus eaque eum,
-                            modi a officia praesentium esse voluptates et adipisci minus, consequatur consectetur
-                            nostrum soluta quia deseru!</p>
+                        <p>Working out with Whitney Simmons is like having your bestie right there with you. We’re big
+                            fans of Whit’s personal mantra, “It’s a beautiful day to be alive.” Indeed, it is,
+                            especially when you’ve got this full-body workout you can do in your pj’s.
+                        </p>
                     </div>
                     <div class="Workout-center">
-                      <button class = "Try-free-Button">Hello </button>
+                        <button class="Try-free-Button" onClick="location.href='./workouts.php'">Hello </button>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
     <div class="Center-start ">
-      <h1 class="expertise">Expertise</h1>
-</div>
+        <h1 class="expertise">Expertise</h1>
+    </div>
     <?php 
   require('../../components/basic/footer.php')
 ?>

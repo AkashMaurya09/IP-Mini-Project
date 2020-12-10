@@ -18,10 +18,11 @@
         <div class="row">
             <div class="column ">
                 <h1 class="Try-free-heading">OUR WORKOUTS <br>AND COACHES</h1>
-                <p class="Try-free-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae obcaecati enim
-                    suscipit neque minima a harum est sequi labore repellat?</p>
-                <button class="Try-free-Button">About us</button>
-                <!-- <button class = "Try-free-Button">Hello</button> -->
+                <p class="Try-free-text">Our certified coaches are here to provide
+                    you with the direction, confidence, and
+                    motivation you need to achieve the
+                    results you want.</p>
+                <button class="Try-free-Button" onClick="location.href= './aboutus.php'">About us</button>
             </div>
             <div class="column video">
                 <video width="320" height="240" controls>
@@ -36,16 +37,18 @@
     </div>
     <div class="Content-Class">
         <div class="Text-Content">
-            <p><a>Workouts |</a>
-                <a> Our Coaches | </a>
-                <a> What to Expect </a>
+            <p>
+                <a href="#workout">Workouts |</a>
+                <a href="#ourCoaches"> Our Coaches | </a>
+                <a href="#expect"> What to Expect </a>
             </p>
             <!-- <br> -->
             <h1>Workouts<h2>
                     <!-- <br> -->
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem, quaerat.</p>
+                    <p>The last three or four reps is what makes the muscle grow. This area of pain divides a champion
+                        from someone who is not a champion</p>
         </div>
-        <div class="Workouts">
+        <div class="Workouts" id="workout">
             <div class="row">
                 <div class="column ">
                     <div class="Workout-center">
@@ -53,19 +56,20 @@
                     </div>
 
                     <div class="Workout-center">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure fugiat hic natus eaque eum,
-                            modi a officia praesentium esse voluptates et adipisci minus, consequatur consectetur
-                            nostrum soluta quia deserunt animi earum cumque! Aperiam labore accusantium molestias
-                            laudantium quisquam quo aspernatur!</p>
+                        <p>Instead of punching in your usual routine on a cardio machine, push yourself further by
+                            programming in short bouts of vigorous exercise. When you know the higher-intensity exercise
+                            has an end in sight, you tend to work harder, boosting calorie burn and speeding up results.
+                            It works whether you want to lose weight or get in better shape.
+                        </p>
                     </div>
                     <div class="Workout-center">
                         <img src="https://picsum.photos/300/300" alt="W3Schools.com">
                     </div>
                     <div class="Workout-center">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure fugiat hic natus eaque eum,
-                            modi a officia praesentium esse voluptates et adipisci minus, consequatur consectetur
-                            nostrum soluta quia deserunt animi earum cumque! Aperiam labore accusantium molestias
-                            laudantium quisquam quo aspernatur!</p>
+                        <p>Not only does standing around between toning exercises eat up valuable gym time, it can make
+                            your workouts less effective. To rev up your weight-room routine, try training on a circuit.
+                            This combination of cardio and resistance training forces you to work harder.
+                        </p>
                     </div>
 
                 </div>
@@ -74,31 +78,33 @@
                         <img src="https://picsum.photos/300/300" alt="W3Schools.com">
                     </div>
                     <div class="Workout-center">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure fugiat hic natus eaque eum,
-                            modi a officia praesentium esse voluptates et adipisci minus, consequatur consectetur
-                            nostrum soluta quia deserunt animi earum cumque! Aperiam labore accusantium molestias
-                            laudantium quisquam quo aspernatur!</p>
+                        <p>You can generate the most power with barbell lifts, so the standard barbell bench allows you
+                            to move the most weight. It's also an easier lift to control than pressing with heavy
+                            dumbbells. The exercise is easy to spot and relatively easy to learn (if not master), There
+                            are plenty of bench-press programs you can follow to increase your strength</p>
                     </div>
                     <div class="Workout-center">
                         <img src="https://picsum.photos/300/300" alt="W3Schools.com">
                     </div>
                     <div class="Workout-center">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure fugiat hic natus eaque eum,
-                            modi a officia praesentium esse voluptates et adipisci minus, consequatur consectetur
-                            nostrum soluta quia deserunt animi earum cumque! Aperiam labore accusantium molestias
-                            laudantium quisquam quo aspernatur!</p>
+                        <p>Most people simply won't do it. They've never trained to have a resilient mindset. We are all
+                            inherently fearful, lazy, and ignorant. Some might see that as depressing. I find it
+                            inspiring. To me it's the secret to success.Some might see that as depressing. I find it
+                            inspiring. To me it's the secret to success.
+
+                        </p>
                     </div>
 
                 </div>
             </div>
         </div>
     </div>
-    <div>
+    <div id="ourCoaches">
         <h2 class="Our-Coaches">
             Our Trainers
         </h2>
-        <p class="Our-Coaches-P">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime cupiditate, asperiores
-            esse cum sunt consequatur incidunt deleniti modi labore iusto.</p>
+        <p class="Our-Coaches-P">The last three or four reps is what makes the muscle grow. This area of pain divides a
+            champion from someone who is not a champion</p>
         <div class="row">
             <div class="column-3 ">
                 <div class="Workout-center">
@@ -145,79 +151,80 @@
     </div>
     </div>
     <div class="Sign-up-to-know-more">
-        <h2>Sign Up to Know More </h2>
+        <!-- <h2>Sign Up to Know More </h2> -->
     </div>
-    <div class="Sign-up-to-know-more">
+    <div class="Sign-up-to-know-more" id="expect">
         <h1>What to Except</h1>
-    
+
     </div>
     <div class="Sign-up-to-know-more">
-    <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores sed libero<br> unde esse soluta voluptates animi error reprehenderit porro!</blockquote>
-    
+        <blockquote>The last three or four reps is what makes the muscle grow. This area of pain divides a champion from
+            someone who is not a champion</blockquote>
+
     </div>
     <div class="row">
         <div class="column-3 ">
             <div class="Content-center">
-                <h1>Expectation#1<h1>
-                        
+                <h1>Friendly Coaches<h1>
             </div>
             <div class="Content-center">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit sit asperiores excepturi
-                            beatae architecto minus tempore officia sequi illo iste autem vero debitis consequatur
-                            deleniti ipsum ipsam, qui, veniam accusamus.
-</div>
-<div class="Content-center">
-                <h1>Expectation#2<h1>
-                        
+                <p>Our certified coaches are here to provide
+                    you with the direction, confidence, and
+                    motivation you need to achieve the
+                    results you want. Age is just a number </p>
             </div>
             <div class="Content-center">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit sit asperiores excepturi
-                            beatae architecto minus tempore officia sequi illo iste autem vero debitis consequatur
-                            deleniti ipsum ipsam, qui, veniam accusamus.
-</div>
+                <h1>Lose Weight<h1>
+            </div>
+            <div class="Content-center">
+                <p>The Exercise Coach
+                    means those long and
+                    sweaty cardio workouts
+                    aren’t your only option
+                    for weight loss anymore</p>
+            </div>
         </div>
         <div class="column-3 ">
-            
-        <div class="Content-center">
-                <h1>Expectation#3<h1>
-                        
+
+            <div class="Content-center">
+                <h1>Gain Strength<h1>
             </div>
             <div class="Content-center">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit sit asperiores excepturi
-                            beatae architecto minus tempore officia sequi illo iste autem vero debitis consequatur
-                            deleniti ipsum ipsam, qui, veniam accusamus.
-</div>
-<div class="Content-center">
-                <h1>Expectation#4<h1>
-                        
+                <p>Age is just a number. We’re here to
+                    help you get stronger, feel better,
+                    and choose the way you age. We use technology to
+                    deliver individually optimized workouts for maximum results in minimum time</p>
             </div>
             <div class="Content-center">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit sit asperiores excepturi
-                            beatae architecto minus tempore officia sequi illo iste autem vero debitis consequatur
-                            deleniti ipsum ipsam, qui, veniam accusamus.
-</div>
+                <h1>This is your online gym<h1>
+            </div>
+            <div class="Content-center">
+                <p>
+                    Are you sick of the traditional loud, crowded,
+                    and intimidating gym scene? Come and see
+                    how we’ve designed the ideal exercise
+                    atmosphere for your needs. </p>
+            </div>
         </div>
 
         <div class="column-3">
-            
-        <div class="Content-center">
-                <h1>Expectation#5<h1>
-                        
+
+            <div class="Content-center">
+                <h1>Customized Workouts<h1>
             </div>
             <div class="Content-center">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit sit asperiores excepturi
-                            beatae architecto minus tempore officia sequi illo iste autem vero debitis consequatur
-                            deleniti ipsum ipsam, qui, veniam accusamus.
-</div>
-<div class="Content-center">
-                <h1>Expectation#6<h1>
-                        
+                <p>
+                    Do you find regular fitness plans too time-consuming, body-jarring, and boring? We use technology to
+                    deliver individually optimized workouts for maximum results in minimum time </p>
             </div>
             <div class="Content-center">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit sit asperiores excepturi
-                            beatae architecto minus tempore officia sequi illo iste autem vero debitis consequatur
-                            deleniti ipsum ipsam, qui, veniam accusamus.
-</div>
+                <h1>Detailed reporting<h1>
+            </div>
+            <div class="Content-center">
+                <p>
+                    View reports of each workout session, showing how well your clients performed in every set and in
+                    each of the programs that you have created for them. </p>
+            </div>
         </div>
     </div>
 
