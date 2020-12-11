@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .center {
   margin-top: 50px;
@@ -24,6 +25,7 @@ blockquote {
   color: grey;
   quotes: "“" "”" "‘" "’";
 }
+
 input {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -33,23 +35,22 @@ input {
   width: 250px;
   height: 30px;
   margin: 5px;
-  box-shadow: 9px 9px 2px 1px rgba(0, 0, 255, .2);
-  padding-left: 10px;
+  box-shadow: 7px 7px 2px 1px rgba(0, 0, 255, .2);
   text-shadow: 20px;
   border-color: #c3c3c3;
-  
+  padding: 20px 40px 20px 20px; 
 }
 
 .center span {
   color: #e0ac1c;
   font: normal 36px "Cookie", cursive;
 }
-h3 {
-  /* color:  #ffffff; */
-  font: bold 20px sans-serif;
 
+h3 {
+  font: bold 20px sans-serif;
   margin: 0;
 }
+
 input:focus {
   outline: none;
   box-shadow: 0 0 0 0.2rem rgba(102, 99, 99, 0.25);
