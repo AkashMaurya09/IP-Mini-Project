@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2020 at 12:33 PM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.8
+-- Generation Time: Dec 11, 2020 at 12:48 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -106,7 +106,7 @@ CREATE TABLE `member` (
   `Member_Email` varchar(250) NOT NULL,
   `Member_Password` varchar(250) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `location` varchar(255) DEFAULT NULL
+  `location` varchar(255) DEFAULT '/img/img_avatar.png'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -115,7 +115,8 @@ CREATE TABLE `member` (
 
 INSERT INTO `member` (`Member_id`, `Member_Name`, `Phone_Number`, `Admin_id`, `Member_Email`, `Member_Password`, `name`, `location`) VALUES
 (20, 'Akash', 1234567890, 1, '09.akash.maurya@gmail.com', '$2y$10$F3SowH8Trn8rEQxSRhnGheBJNtcco3Nw4IlhUtCGNULY16c3TcCNG', 'Akash.jpg', '../profileImage/Akash.jpg'),
-(22, 'Akash', 930101620, 1, '2018.akash.maurya@ves.ac.in', '$2y$10$17tiZuFKDTvjj13sM/9N1On0GSowdgiFaEbLZ/mFTRn7PD8VhDrSe', NULL, NULL);
+(22, 'Akash', 930101620, 1, '2018.akash.maurya@ves.ac.in', '$2y$10$17tiZuFKDTvjj13sM/9N1On0GSowdgiFaEbLZ/mFTRn7PD8VhDrSe', NULL, NULL),
+(23, 'Srajan', 2147483647, 1, '2018.srajan.shetty@ves.ac.in', '$2y$10$upRNG4bmf6Ksn5hDVbLcJeyC7yOaXV85PYZZSpN8aSXlRSGpZO/L.', NULL, '/img/img_avatar.png	');
 
 -- --------------------------------------------------------
 
@@ -293,7 +294,7 @@ ALTER TABLE `gymadmin`
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `Member_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `Member_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `trainer`
