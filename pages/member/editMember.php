@@ -32,7 +32,7 @@ include_once '../includes/dbh.inc.php';
 
     // Valid file extensions
     $extensions_arr = array("gif", "png", "jpg", "jpeg");
-    if (empty($membername) and empty($number) and empty($memberid) and empty($email) and empty($name)) {
+    if (empty($membername) || empty($number) || empty($memberid) || empty($email) || empty($name)) {
       header("location:../member/editMember.php?error=emptyinput");
       exit();
     } else {
@@ -158,13 +158,19 @@ include_once '../includes/dbh.inc.php';
         <?php
         if (isset($_GET["error"])) {
           if ($_GET["error"] == "updateSuccess") {
-            echo "<p>Update Successfull</p>";
+            echo "  <div class='group'>
+                    <label style='color:green' for='description'>Details Update Successfully</label>
+                    </div>  ";
           }
           if ($_GET["error"] == "filechoose") {
-            echo "<p>Please select your profile image</p>";
+            echo "  <div class='group'>
+                    <label style='color:red' for='description'>Please select your profile Image</label>
+                    </div>  ";
           }
           if ($_GET["error"] == "emptyinput") {
-            echo "<p>Please fill all the fields</p>";
+            echo "  <div class='group'>
+                    <label style='color:red' for='description'>Please fill all the fields</label>
+                    </div>  ";
           }
         }
         ?>
@@ -185,13 +191,19 @@ include_once '../includes/dbh.inc.php';
         <?php
         if (isset($_GET["error"])) {
           if ($_GET["error"] == "pwdmatcherror") {
-            echo "<p>Passwords do not match</p>";
+            echo "  <div class='group'>
+                    <label style='color:red' for='description'>Passwords do not match</label>
+                    </div>  ";
           }
           if ($_GET["error"] == "pwdsuccess") {
-            echo "<p>Password changed successfully</p>";
+            echo "  <div class='group'>
+                    <label style='color:green' for='description'>Password changed Successfully</label>
+                    </div>  ";
           }
           if ($_GET["error"] == "emptypwdinput") {
-            echo "<p>Password cannot be empty</p>";
+            echo "  <div class='group'>
+                    <label style='color:red' for='description'>Password cannot be empty</label>
+                    </div>  ";
           }
         }
         ?>
