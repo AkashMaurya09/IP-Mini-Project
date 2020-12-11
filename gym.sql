@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2020 at 07:40 PM
+-- Generation Time: Dec 11, 2020 at 12:33 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -46,7 +46,12 @@ INSERT INTO `comment` (`comment_id`, `userComment`, `timestamp`, `Member_id`, `V
 (17, 'ajafjkasbdksdnasv', '2020-12-10 06:43:13', 20, 6),
 (24, 'Hello from the other side', '2020-12-10 06:51:27', 20, 6),
 (32, 'as', '2020-12-11 00:09:30', 20, 6),
-(33, 'test', '2020-12-11 00:10:12', 20, 6);
+(33, 'test', '2020-12-11 00:10:12', 20, 6),
+(34, 'helluuu', '2020-12-11 00:11:10', 20, 6),
+(35, 'test', '2020-12-11 00:12:23', 20, 6),
+(36, 'test', '2020-12-11 00:12:48', 20, 6),
+(37, 'alert haga', '2020-12-11 00:17:31', 20, 6),
+(38, 'Edit Report a Bug\nDateTime::format\nDateTimeImmutable::format\nDateTimeInterface::format\ndate_format\n(PHP 5 >= 5.2.1, PHP 7)\n\nDateTime::format -- DateTimeImmutable::format -- DateTimeInterface::format -- date_format — Returns date formatted according to given format', '2020-12-11 00:18:01', 20, 6);
 
 -- --------------------------------------------------------
 
@@ -109,7 +114,8 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`Member_id`, `Member_Name`, `Phone_Number`, `Admin_id`, `Member_Email`, `Member_Password`, `name`, `location`) VALUES
-(20, 'Akash', 1234567890, 1, '09.akash.maurya@gmail.com', '$2y$10$F3SowH8Trn8rEQxSRhnGheBJNtcco3Nw4IlhUtCGNULY16c3TcCNG', 'Akash.jpg', '../profileImage/Akash.jpg');
+(20, 'Akash', 1234567890, 1, '09.akash.maurya@gmail.com', '$2y$10$F3SowH8Trn8rEQxSRhnGheBJNtcco3Nw4IlhUtCGNULY16c3TcCNG', 'Akash.jpg', '../profileImage/Akash.jpg'),
+(22, 'Akash', 930101620, 1, '2018.akash.maurya@ves.ac.in', '$2y$10$17tiZuFKDTvjj13sM/9N1On0GSowdgiFaEbLZ/mFTRn7PD8VhDrSe', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -153,8 +159,7 @@ CREATE TABLE `trainer` (
 
 INSERT INTO `trainer` (`Trainer_id`, `Trainer_Name`, `Phone_Number`, `Admin_id`, `Trainer_Email`, `Trainer_Password`, `name`, `location`) VALUES
 (2, 'Devdatta Khoche', 1234512345, 1, '2018.devdatta.khoche@ves.ac.in', '$2y$10$kIyG8e.5unKJ3OgwDuM2YuqCNX.oO23ImrpXmQxO4m1NqVH9GgJLC', 'Dev.jpg', '../profileImage/Dev.jpg'),
-(6, 'Akash', 1234512345, 1, '09.akash.maurya@gmail.com', '$2y$10$YfdiWGNkWwNnIIZJFqGN9eY2.YH1oqF6DdkDJhA1HyTlFz15xHqpi', 'Dev.jpg', '../profileImage/Dev.jpg'),
-(11, 'Srajan Shetty', 1234512345, 1, '2018.srajan.shetty@ves.ac.in', '$2y$10$Y9x6TYT1/7XqF2E8cjNmVOoXXgVSgr3ZadnN3iT1bFVCQ5jSthJ8.', 'srajan.jpeg', '../profileImage/srajan.jpeg');
+(6, 'Akash', 1234512345, 1, '09.akash.maurya@gmail.com', '$2y$10$YfdiWGNkWwNnIIZJFqGN9eY2.YH1oqF6DdkDJhA1HyTlFz15xHqpi', 'Dev.jpg', '../profileImage/Dev.jpg');
 
 -- --------------------------------------------------------
 
@@ -276,7 +281,7 @@ ALTER TABLE `workout_tags`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `gymadmin`
@@ -288,13 +293,13 @@ ALTER TABLE `gymadmin`
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `Member_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `Member_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `trainer`
 --
 ALTER TABLE `trainer`
-  MODIFY `Trainer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `Trainer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `videos`
@@ -306,7 +311,7 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `workout`
 --
 ALTER TABLE `workout`
-  MODIFY `Video_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `Video_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
@@ -336,6 +341,7 @@ ALTER TABLE `trainer`
 -- Constraints for table `workout`
 --
 ALTER TABLE `workout`
+  ADD CONSTRAINT `Trainer_id` FOREIGN KEY (`Trainer_id`) REFERENCES `trainer` (`Trainer_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `workout_ibfk_1` FOREIGN KEY (`Trainer_id`) REFERENCES `trainer` (`Trainer_id`);
 
 --
