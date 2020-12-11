@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
     <link href="..\..\css\user\signUp.css" rel="stylesheet">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
@@ -32,8 +33,6 @@
                 <input type="text" name="uname" placeholder="Username">
                 <br />
                 <input type="number" name="number" placeholder="Phone Number">
-                <br />
-                <input type="date" name="dob" placeholder="Date of Birth">
                 <br />
                 <input type="password" name="pwd" placeholder="Password">
                 <br />
