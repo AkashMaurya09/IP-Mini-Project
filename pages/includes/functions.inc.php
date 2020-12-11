@@ -1,7 +1,7 @@
 <?php
 
-function emptyInputSignup($email,$username,$number,$dob,$password,$confirm_password) {
-    if (empty($email) || empty($username) || empty($number) || empty($dob) || empty($password) || empty($confirm_password)) {
+function emptyInputSignup($email,$username,$number,$password,$confirm_password) {
+    if (empty($email) || empty($username) || empty($number) || empty($password) || empty($confirm_password)) {
         //if true then redirect the user to signup page
         $result = true;
     }

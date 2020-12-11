@@ -4,7 +4,7 @@ $(document).ready(function () {
         if (name == "") {
             $.ajax({
                 type: "POST",
-                url: "../includes/searchTrainerVideo.inc.php",
+                url: "../includes/searchVideoList.inc.php",
                 data: {
                     search: "Everything",
                 },
@@ -16,7 +16,7 @@ $(document).ready(function () {
         } else {
             $.ajax({
                 type: "POST",
-                url: "../includes/searchTrainerVideo.inc.php",
+                url: "../includes/searchVideoList.inc.php",
                 data: {
                     search: name,
                 },

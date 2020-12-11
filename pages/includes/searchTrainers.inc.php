@@ -18,19 +18,38 @@ if($_POST['search'] == "Everything"){
     $i = 0;
     while($row = mysqli_fetch_array($result)) {
       echo '
-      <div class="singleTrainer">
-          <img src="../../img/img_avatar.png" alt="Avatar">
+      <div class="singleTrainer" id="delete_id'.$row["Trainer_id"].'">
+          <img src="' . $row['location'] . '" alt="Avatar">
           <div class="detailContent">
               <p>' . $row['Trainer_Name'] . '</p> 
               <p> '. $row['Trainer_Email'] . '</p>
               <p>'. $row['Phone_Number'] .'</p>
           </div>
           <div class="singleTrainerButton">
-              <button onClick="location.href=\'./editTrainer.php?Trainer_id='.$row["Trainer_id"].'\'">Edit</button>
-              <button >Delete</button>
-          </div>
+          <input type="hidden" />
+              <button id="delete_button'.$row["Trainer_id"].'" >Delete</button>
+          </div>   
+          <input type="hidden" value='.$row["Trainer_id"].' id="delete'.$row["Trainer_id"].'"/> 
           
       </div>
+      <script>
+      $("#delete_button'.$row["Trainer_id"].'").click(function () {
+        console.log("hello");
+        var delete_id = $("#delete'.$row["Trainer_id"].'").val();
+        $.ajax({
+          type: "POST",
+          url: "../admin/delete_trainer.php",
+          data: {
+            delete_Trainer_id : delete_id,
+          },
+          success: function () {
+            console.log("delete_id'.$row["Trainer_id"].'");
+            $("#delete_id'.$row["Trainer_id"].'").remove();
+          },
+        });
+      });
+      </script>
+
       ';
       $i = $i + 1;
     }
@@ -47,19 +66,37 @@ else{
      $i = 0;
      while($row = mysqli_fetch_array($result)) {
        echo '
-       <div class="singleTrainer">
-           <img src="../../img/img_avatar.png" alt="Avatar">
+       <div class="singleTrainer" id="delete_id'.$row["Trainer_id"].'">
+           <img src="' . $row['location'] . '" alt="Avatar">
            <div class="detailContent">
                <p>' . $row['Trainer_Name'] . '</p> 
                <p> '. $row['Trainer_Email'] . '</p>
                <p>'. $row['Phone_Number'] .'</p>
            </div>
            <div class="singleTrainerButton">
-               <button onClick="location.href=\'./editTrainer.php?Trainer_id='.$row["Trainer_id"].'\'">Edit</button>
-               <button >Delete</button>
+              <input type="hidden" />
+               <button id="delete_button'.$row["Trainer_id"].'">Delete</button>
            </div>
+           <input type="hidden" value='.$row["Trainer_id"].' id="delete'.$row["Trainer_id"].'"/> 
            
        </div>
+       <script>
+       $("#delete_button'.$row["Trainer_id"].'").click(function () {
+         console.log("hello");
+         var delete_id = $("#delete'.$row["Trainer_id"].'").val();
+         $.ajax({
+           type: "POST",
+           url: "../admin/delete_trainer.php",
+           data: {
+             delete_Trainer_id : delete_id,
+           },
+           success: function () {
+             console.log("delete_id'.$row["Trainer_id"].'");
+             $("#delete_id'.$row["Trainer_id"].'").remove();
+           },
+         });
+       });
+       </script>
        ';
        $i = $i + 1;
      }
