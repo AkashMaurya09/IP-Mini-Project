@@ -10,9 +10,8 @@
 
 #map {
     width: 100%;
-    background-color: aqua;
     margin: -10px 10px 10px 10px;
-    height: 250px;
+    min-height: 225px;
 }
 
 
@@ -117,6 +116,7 @@ p {
 
     #map {
         width: auto;
+        min-height: 100%;
     }   
 }
   

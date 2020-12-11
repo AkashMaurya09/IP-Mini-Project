@@ -103,7 +103,14 @@
                     </div>
                     <div class="row">
                         <div id="map">
-
+                            <iframe 
+                                frameborder="0"
+                                style="border:0"
+                                width=100%
+                                height=100% 
+                                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAOkVE0zosd-mMBLwREakk3DTlyfJhRVgY&q=Vivekanand+Education+Society's+Institute+Of+Technology" 
+                                allowfullscreen>
+                            </iframe>
                         </div>
                     </div>
                 </div>
@@ -125,9 +132,6 @@
     }
     </script>
 
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOkVE0zosd-mMBLwREakk3DTlyfJhRVgY&callback=initMap"
-        type="text/javascript"></script>
 
     <?php 
     require('../../components/basic/footer.php')
