@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
     <link href="..\..\css\user\signIn.css" rel="stylesheet">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
@@ -22,8 +23,9 @@
             <span> GLORY</span><br><br>
             <img src="../../img/logo/logo_yellow_vertical.png">
             <br><br>
-            <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores sed libero<br> unde esse
-                soluta voluptates animi error reprehenderit porro!</blockquote>
+            <blockquote>The last three or four reps is what makes the muscle grow.<br> This area of pain divides a champion
+                from someone who is not a champion
+            </blockquote>
             <br>
             <form action="../includes/member_login.inc.php" method="post">
                 <input type="text" name="email" placeholder="Email">
@@ -31,7 +33,6 @@
                 <input type="password" name="pwd" placeholder="Password">
                 <br />
                 <button type="submit" name="submit">Sign In</button>
-
             </form>
 
             <br>
@@ -43,20 +44,37 @@
             <?php 
                 if(isset($_GET["error"])) {
                     if ($_GET["error"] == "emptyinput") {
-                        echo "<p> Fill all the fields";
+                        echo "<script>  $(document).ready(function(){
+                            window.setTimeout(function(){
+                                alert('Fill all the fields');
+                            }, 100); 
+                          });</script>";
                     }
                     else if ($_GET["error"] == "wronglogin") {
-                        echo "<p> Invalid Login Credentials </p>";
+                        echo "<script>  $(document).ready(function(){
+                            window.setTimeout(function(){
+                                alert('Invalid Login Credentials');
+                            }, 100); 
+                          });</script>";
                     }
                     else if ($_GET["error"] == "wrongpassword") {
-                        echo "<p> Invalid Password </p>";
-                    }                    
+                        echo "<script>  $(document).ready(function(){
+                            window.setTimeout(function(){
+                                alert('Invalid Password');
+                            }, 100); 
+                          });</script>";
+                    }
+                    else if ($_GET["error"] == "none") {
+                        echo "<script>  $(document).ready(function(){
+                            window.setTimeout(function(){
+                                alert('Congratulations you have signed up Signin to get started');
+                            }, 100); 
+                          });</script>";
+                    }                     
                 }
             ?>
         </div>
     </main>
-
-
 
     <?php 
         require('../../components/basic/footer.php')

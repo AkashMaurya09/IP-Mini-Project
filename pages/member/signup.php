@@ -17,12 +17,14 @@
 
     <main>
         <div class="center">
-            
+
             <h3>SIGN UP FOR<br></h3>
             <span> GLORY</span><br><br>
             <img src="../../img/logo/logo_yellow_vertical.png">
             <br><br>
-            <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores sed libero<br> unde esse soluta voluptates animi error reprehenderit porro!</blockquote>
+            <blockquote>The last three or four reps is what makes the muscle grow.<br> This area of pain divides a champion
+                from someone who is not a champion
+            </blockquote>
             <br>
             <form action="../includes/member_signup.inc.php" method="post">
                 <input type="text" name="email" placeholder="Email">
@@ -43,27 +45,54 @@
             <?php 
                 if(isset($_GET["error"])) {
                     if ($_GET["error"] == "emptyinput") {
-                        echo "<p> Fill all the fields</p>";
+                        echo "<script>  $(document).ready(function(){
+                            window.setTimeout(function(){
+                                alert('Fill all the fields');
+                            }, 100); 
+                          });</script>";
                     }
                     else if ($_GET["error"] == "invalidusername") {
-                        echo "<p> Invalid Name </p>";
+                        echo "<script>  $(document).ready(function(){
+                            window.setTimeout(function(){
+                                alert('Invalid Name');
+                            }, 100); 
+                          });</script>";
                     }
                     else if ($_GET["error"] == "invalidemail") {
-                        echo "<p> Invalid Email </p>";
+                        echo "<script>  $(document).ready(function(){
+                            window.setTimeout(function(){
+                                alert('Invalid Email');
+                            }, 100); 
+                          });</script>";
                     }
                     else if ($_GET["error"] == "passworddontmatch") {
-                        echo "<p> Passwords do not match </p>";
+                        echo "<script>  $(document).ready(function(){
+                            window.setTimeout(function(){
+                                alert('Passwords do not match');
+                            }, 100); 
+                          });</script>";
                     }
                     else if ($_GET["error"] == "emailExists") {
-                        echo "<p> Email already exists. Try logging in </p>";
+                        echo "<script>  $(document).ready(function(){
+                            window.setTimeout(function(){
+                                alert('Email already exists. Try logging in');
+                            }, 100); 
+                          });</script>";
                     }
                     else if ($_GET["error"] == "stmtFailed") {
-                        echo "<p> Something went wrong </p>";
+                        echo "<script>  $(document).ready(function(){
+                            window.setTimeout(function(){
+                                alert('Something went wrong');
+                            }, 100); 
+                          });</script>";
                     }
                     else if ($_GET["error"] == "none") {
-                        echo "<p> Congratulations you have signed up </p>";
+                        echo "<script>  $(document).ready(function(){
+                            window.setTimeout(function(){
+                                alert('Congratulations you have signed up');
+                            }, 100); 
+                          });</script>";
                     }  
-                    
                  }
             ?>
         </div>
