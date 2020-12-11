@@ -17,7 +17,7 @@
             $phoneNumber = $_POST["phone_number"];
             $message = $_POST["message"];
 
-            $query = "INSERT INTO Contact(name,phone_number,message) VALUES('".$name."','".$phoneNumber."','".$message."');";
+            $query = "INSERT INTO contact(name,phone_number,message) VALUES('".$name."','".$phoneNumber."','".$message."');";
             mysqli_query($conn,$query);
             echo "Upload successfully.";
         }
