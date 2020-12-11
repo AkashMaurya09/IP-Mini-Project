@@ -38,6 +38,9 @@
     if(isset($_POST['addTrainer'])){
         header("Location: ./addTrainer.php");
     }
+    if(isset($_POST['logout'])){
+        header("Location: ../includes/logout.inc.php");
+    }
   ?>
 
     <div class="container">

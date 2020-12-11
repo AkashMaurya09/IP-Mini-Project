@@ -22,13 +22,16 @@
     if(isset($_POST['yourTrainer'])){
         header("Location: ./trainerList.php");
     }
-  ?>
+    if(isset($_POST['logout'])){
+        header("Location: ../includes/logout.inc.php");
+    }
+    ?>
 
     <div class="container">
         <div class="left profile">
             <form class="profileForm" method="post">
                 <input type="submit" class="profileButton" name="yourTrainer" value="Your Trainers" />
-                <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />
+                <input type="submit" class="profileButton" id="bottom-curve" name="logout" value="Logout" />
             </form>
             <hr>
             <?php 
@@ -64,10 +67,10 @@
                     enctype="multipart/form-data">
                     <div class="row">
 
-                        <div class="col group">
+                        <!-- <div class="col group">
                             <label for="Workout Video">Trainer Image</label>
                             <input type="file" name="image" />
-                        </div>
+                        </div> -->
 
                         <div class="col group">
                             <label id="Name" for="title name">Name</label>
