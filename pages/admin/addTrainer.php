@@ -25,12 +25,16 @@
     if(isset($_POST['logout'])){
         header("Location: ../includes/logout.inc.php");
     }
+    if(isset($_POST['addTrainer'])){
+        header("Location: ./addTrainer.php");
+    }
     ?>
 
     <div class="container">
         <div class="left profile">
             <form class="profileForm" method="post">
                 <input type="submit" class="profileButton" name="yourTrainer" value="Your Trainers" />
+                <input type="submit" class="profileButton active" name="addTrainer" value="Add Trainer" />
                 <input type="submit" class="profileButton" id="bottom-curve" name="logout" value="Logout" />
             </form>
             <hr>

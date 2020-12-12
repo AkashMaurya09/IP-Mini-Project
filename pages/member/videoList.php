@@ -47,11 +47,18 @@
         if(isset($_POST['myProfile'])) {
             header("location: ./editMember.php");
         }
+        if(isset($_POST['videoList'])) {
+            header("location: ./videoList.php");
+        }
+        if(isset($_POST['logout'])) {
+            header("location: ../includes/logout.inc.php");
+        }
   ?>
 
     <div class="container">
         <div class="left profile">
             <form class="profileForm" method="post">
+                <input type="submit" class="profileButton active" name="videoList" value="Video List" />
                 <input type="submit" class="profileButton" name="myVideo" value="My Video" />
                 <input type="submit" class="profileButton" name="myProfile" value="My Profile" />
                 <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />

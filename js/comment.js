@@ -6,9 +6,8 @@ setInterval(
                 type: "GET",
                 url: "../includes/comments.php?Video_id=" + video_id,
                 success: function (html) {
-                    $(".comment-card").remove();
+                    $(".trainerList").remove();
                     $(".right").append(html);
-                    // console.log(video_id);
                 },
             });
         });
