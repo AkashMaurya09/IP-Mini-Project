@@ -36,7 +36,6 @@ include_once '../includes/dbh.inc.php';
             header("location:../trainer/editVideo.php?error=emptyinput&Video_id=$video_id");
             exit();
         } else {
-            // ---------------------------yaha dikkat hai--------------------------------
             $query = "UPDATE workout SET Video_Name='$videoname',Price='$price',Description='$desc' where Video_id='$video_id';";
 
             mysqli_query($conn, $query);
@@ -50,7 +49,6 @@ include_once '../includes/dbh.inc.php';
             header("location:../trainer/editVideo.php?error=emptytag&Video_id=$video_id");
             exit();
         } else {
-            // ---------------------------yaha dikkat hai--------------------------------
             $query = "INSERT INTO Workout_tags(Tags,Video_id) VALUES('".$tag."','".$video_id."')";
 
             mysqli_query($conn, $query);

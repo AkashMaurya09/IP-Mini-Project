@@ -14,7 +14,7 @@ function emptyInputLogin($email, $password) {
 
 function emailExists($conn, $email) {
     //This statement is used to prevent SQL Injection
-    $sql = "SELECT * from gymadmin WHERE Admin_Email = ?;";
+    $sql = "SELECT * from gymAdmin WHERE Admin_Email = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location:../admin/admin_login.php?error=stmtFailed");

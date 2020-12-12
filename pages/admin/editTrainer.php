@@ -39,7 +39,7 @@
             <hr>
             <?php 
           $admin_id = $_SESSION['admin_userid'];
-          $sql = "Select * from gymadmin WHERE Admin_id = $admin_id"; 
+          $sql = "Select * from gymAdmin WHERE Admin_id = $admin_id"; 
           $result = mysqli_query($conn,$sql);
           $resultCheck = mysqli_num_rows($result);
         
