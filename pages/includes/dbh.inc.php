@@ -6,9 +6,9 @@
 // $dbName = "gym";
 
 $serveName = "remotemysql.com";
-$dbUsername = "uBjMctQTxC";
-$dbPassword = "W9oUikkyHx";
-$dbName = "uBjMctQTxC";
+$dbUsername = "fVM4QtnG9J";
+$dbPassword = "XjbHLZvrVc";
+$dbName = "fVM4QtnG9J";
 
 $conn = mysqli_connect($serveName,$dbUsername,$dbPassword,$dbName);
 
