@@ -8,6 +8,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="\css\trainer\editVideo.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 
     <title>Add Trainer</title>
 </head>
@@ -113,27 +114,54 @@
                 <?php 
                 if(isset($_GET["error"])) {
                     if ($_GET["error"] == "emptyinput") {
-                        echo "<div class='submitGroup'><p> Fill all the fields</p></div>";
+                        echo "<script>  $(document).ready(function(){
+                            window.setTimeout(function(){
+                                alert(' Fill all the fields');
+                            }, 100); 
+                          });</script>";
                     }
                     else if ($_GET["error"] == "invalidusername") {
-                        echo "<div class='submitGroup'><p> Invalid Name </p></div>";
+                        echo "<script>  $(document).ready(function(){
+                            window.setTimeout(function(){
+                                alert('Invalid Name');
+                            }, 100); 
+                          });</script>";
                     }
                     else if ($_GET["error"] == "invalidemail") {
-                        echo "<div class='submitGroup'><p> Invalid Email </p></div>";
+                        echo "<script>  $(document).ready(function(){
+                            window.setTimeout(function(){
+                                alert('Invalid Email');
+                            }, 100); 
+                          });</script>";
                     }
                     else if ($_GET["error"] == "passworddontmatch") {
-                        echo "<div class='submitGroup'><p> Passwords do not match </p></div>";
+                        echo "<script>  $(document).ready(function(){
+                            window.setTimeout(function(){
+                                alert(' Passwords do not match');
+                            }, 100); 
+                          });</script>";
                     }
                     else if ($_GET["error"] == "emailExists") {
-                        echo "<div class='submitGroup'><p> Email already exists. Try logging in </p></div>";
+                        echo "<script>  $(document).ready(function(){
+                            window.setTimeout(function(){
+                                alert(' Email already exists. Try logging in');
+                            }, 100); 
+                          });</script>";
                     }
                     else if ($_GET["error"] == "stmtFailed") {
-                        echo "<div class='submitGroup'><p> Something went wrong </p></div>";
+                        echo "<script>  $(document).ready(function(){
+                            window.setTimeout(function(){
+                                alert('Something went wrong');
+                            }, 100); 
+                          });</script>";
                     }
                     else if ($_GET["error"] == "none") {
-                        echo "<div class='submitGroup'><p> Congratulations you have successfully added the trainer</p></div>";
-                    }  
-                    
+                        echo "<script>  $(document).ready(function(){
+                            window.setTimeout(function(){
+                                alert('Congratulations you have successfully added the trainer');
+                            }, 100); 
+                          });</script>";
+                    }   
                  }
           ?>
             </div>

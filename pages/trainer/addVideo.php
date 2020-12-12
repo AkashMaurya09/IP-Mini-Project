@@ -8,6 +8,7 @@ include_once '../includes/dbh.inc.php';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../css/trainer/editVideo.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 
 
     <title>Edit Video</title>
@@ -36,20 +37,31 @@ include_once '../includes/dbh.inc.php';
 
             // Check file size
             if (($_FILES['file']['size'] >= $maxsize) || ($_FILES["file"]["size"] == 0)) {
-                echo "File too large. File must be less than 5MB.";
+                echo "<script>  $(document).ready(function(){
+                    window.setTimeout(function(){
+                        alert('File too large. File must be less than 5MB');
+                    }, 100); 
+                  });</script>";
             } else {
                 // Upload
                 if (move_uploaded_file($_FILES['file']['tmp_name'], $target_file)) {
                     // Insert record
                     $query = "INSERT INTO Workout(Video_Name,Price,Trainer_id,name,location,Description,tag) VALUES('" . $videoname . "','" . $price . "','" . $trainer_id . "','" . $name . "','" . $target_file . "','" . $desc . "','" . $tag . "')";
                     mysqli_query($conn, $query);
-                    
 
-                    echo "Upload successfully.";
+                    echo "<script>  $(document).ready(function(){
+                        window.setTimeout(function(){
+                            alert('Uploaded Successfully');
+                        }, 100); 
+                      });</script>";
                 }
             }
         } else {
-            echo "Invalid file extension.";
+            echo "<script>  $(document).ready(function(){
+                window.setTimeout(function(){
+                    alert('Invalid file extension');
+                }, 100); 
+              });</script>";
         }
     }
 
