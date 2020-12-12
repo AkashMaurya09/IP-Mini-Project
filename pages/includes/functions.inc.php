@@ -12,14 +12,7 @@ function emptyInputSignup($email,$username,$number,$password,$confirm_password) 
 }
 
 function invalidUsername($name) {
-    if ( !preg_match("/^[a-zA-Z]*$/", $name) ) {
-        //if true then redirect the user to signup page
-        $result = true;
-    }
-    else {
-        $result = false;
-    }
-    return $result;
+    return false;
 }
 
 function invalidEmail($email) {
