@@ -177,7 +177,7 @@ a {
 }
 
 .time-1 {
-    color: rgb(182, 182, 182) !important;
+    color: rgb(27, 27, 27) !important;
     margin-top: auto !important;
     margin-left: auto !important;
 }
@@ -203,7 +203,7 @@ a {
     font-family: -apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif;
     font-weight: 100;
     font-size: small;
-    color: #9b9b9b;
+    color: #3d3d3d;
 }
 
 .detailContent-2 > p:nth-child(3) {
