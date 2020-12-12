@@ -1,6 +1,5 @@
 <?php 
   include_once '../includes/dbh.inc.php';  
-  include_once '../includes/trainer_session.php';
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +34,8 @@ $(document).ready(function(  ) {
         </script>
 
     <?php 
-    require('../../components/basic/header.php')
+    require('../../components/basic/header.php');
+    include_once '../includes/trainer_session.php';
   ?>
 
     <?php

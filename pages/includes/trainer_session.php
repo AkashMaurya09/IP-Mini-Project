@@ -1,4 +1,3 @@
-
 <?php
 function User_Login(){
     if(isset($_SESSION["trainer_userid"])){
@@ -11,10 +10,7 @@ function Confirm_User_Login(){
         $_SESSION["trainer_userid"] = null;
         header("location:../trainer/trainer_login.php");
     }
-    else {
-        print_r($_SESSION["trainer_userid"]);
-    }
 }
 
-
-// Confirm_User_Login();
+Confirm_User_Login();
+?>

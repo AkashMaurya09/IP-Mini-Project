@@ -1,6 +1,5 @@
 <?php
 include_once '../includes/dbh.inc.php';
-include_once '../includes/trainer_session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +14,7 @@ include_once '../includes/trainer_session.php';
 <body>
   <?php
   require('../../components/basic/header.php');
+  include_once '../includes/trainer_session.php';
   if (isset($_POST['edit_trainer'])) {
     $maxsize = 524288000; // 510MB
     $trainername = $_POST["uname"];

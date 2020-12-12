@@ -1,6 +1,5 @@
 <?php
 include_once '../includes/dbh.inc.php';
-include_once '../includes/member_session.php';
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +21,8 @@ include_once '../includes/member_session.php';
 <body>
 
     <?php
-    require('../../components/basic/header.php')
+    require('../../components/basic/header.php');
+    include_once '../includes/member_session.php';
     ?>
 
     <?php

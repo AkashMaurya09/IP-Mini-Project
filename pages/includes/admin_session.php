@@ -12,5 +12,5 @@ function Confirm_User_Login(){
         }
 }
 
-
-// Confirm_User_Login();
+Confirm_User_Login();
+?>

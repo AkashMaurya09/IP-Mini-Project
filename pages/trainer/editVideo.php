@@ -1,6 +1,5 @@
 <?php
 include_once '../includes/dbh.inc.php';
-include_once '../includes/trainer_session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +15,7 @@ include_once '../includes/trainer_session.php';
 
     <?php
     require('../../components/basic/header.php');
+    include_once '../includes/trainer_session.php';
     $video_id = $_GET['Video_id'];
     ?>
 

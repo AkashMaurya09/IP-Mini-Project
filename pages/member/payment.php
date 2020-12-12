@@ -1,6 +1,6 @@
 <?php
 include '../includes/dbh.inc.php';
-include_once '../includes/member_session.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -117,6 +117,7 @@ button:hover {
 
     <?php 
     require('../../components/basic/header.php');
+    include_once '../includes/member_session.php';
   ?>
 
 

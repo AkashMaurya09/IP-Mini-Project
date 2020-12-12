@@ -1,6 +1,5 @@
 <?php
 include_once '../includes/dbh.inc.php';
-include_once '../includes/member_session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +16,7 @@ include_once '../includes/member_session.php';
 
     <?php
   require('../../components/basic/header.php');
+  include_once '../includes/member_session.php';
   if (isset($_POST['edit_member'])) {
     $maxsize = 524288000; // 510MB
     $membername = $_POST["uname"];

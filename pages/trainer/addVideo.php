@@ -1,6 +1,5 @@
 <?php
 include_once '../includes/dbh.inc.php';
-include_once '../includes/trainer_session.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +83,8 @@ include_once '../includes/trainer_session.php';
 <body>
 
     <?php
-    require('../../components/basic/header.php')
+    require('../../components/basic/header.php');
+    include_once '../includes/trainer_session.php';
     ?>
 
     <div class="container">

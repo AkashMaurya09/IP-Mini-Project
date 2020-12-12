@@ -4,17 +4,19 @@ include_once '../includes/member_session.php';
 ?>
 <!doctype html>
 <html>
-  <head>
+
+<head>
     <style>
-    video{
-     float: left;
+    video {
+        float: left;
     }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <div>
- 
-     <?php
+
+        <?php
      $fetchVideos = mysqli_query($conn, "SELECT location FROM Workout ORDER BY Video_id DESC");
      while($row = mysqli_fetch_assoc($fetchVideos)){
        $location = $row['location'];
@@ -24,8 +26,9 @@ include_once '../includes/member_session.php';
        echo "</div>";
      }
      ?>
- 
+
     </div>
 
-  </body>
+</body>
+
 </html>
