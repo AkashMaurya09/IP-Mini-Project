@@ -146,10 +146,10 @@ include_once '../includes/trainer_session.php';
                             <label for="Workout Video">Workout Video</label>
                             <br>
                             <?php
-                            echo "<div class='Content-Center videoStyle'>";
-                            echo "<video src='" . $video['location'] . "' controls >";
-                            echo "</div>";
-                            ?>
+                            // echo "<div class='Content-Center videoStyle'>";
+                            // echo "<video src='" . $video['location'] . "' controls >";
+                            // echo "</div>";
+                            ?> 
                             <input type='file' name='file' />
                             <div class="submitGroup">
                                 <input type="submit" name="edit_video_file" value="Edit Video">
