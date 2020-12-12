@@ -1,14 +1,14 @@
 <?php
 
-// $serveName = "localhost";
-// $dbUsername = "root";
-// $dbPassword = "";
-// $dbName = "gym";
+$serveName = "localhost";
+$dbUsername = "root";
+$dbPassword = "";
+$dbName = "gym";
 
-$serveName = "remotemysql.com";
-$dbUsername = "uBjMctQTxC";
-$dbPassword = "W9oUikkyHx";
-$dbName = "uBjMctQTxC";
+// $serveName = "remotemysql.com";
+// $dbUsername = "uBjMctQTxC";
+// $dbPassword = "W9oUikkyHx";
+// $dbName = "uBjMctQTxC";
 
 $conn = mysqli_connect($serveName,$dbUsername,$dbPassword,$dbName);
 

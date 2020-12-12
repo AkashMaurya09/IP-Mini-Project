@@ -48,7 +48,7 @@ function pwdMatch($password,$confirm_password) {
 
 function emailExists($conn, $email) {
     //This statement is used to prevent SQL Injection
-    $sql = "SELECT * from member WHERE Member_Email = ?;";
+    $sql = "SELECT * from Member WHERE Member_Email = ?;";
     $stmt = mysqli_stmt_init($conn);    
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location:../member/signup.php?error=stmtFailed");
@@ -73,7 +73,7 @@ function emailExists($conn, $email) {
 
 function createUser($conn, $name, $number, $admin_id, $email, $password) {
     //This statement is used to prevent SQL Injection
-    $sql = "INSERT INTO member (Member_Name, Phone_Number, Admin_id, Member_Email, Member_Password) VALUES (?, ?, ?, ?, ?);";
+    $sql = "INSERT INTO Member (Member_Name, Phone_Number, Admin_id, Member_Email, Member_Password) VALUES (?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location:../member/signup.php?error=insertFailed");

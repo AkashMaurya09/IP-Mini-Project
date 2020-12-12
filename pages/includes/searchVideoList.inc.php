@@ -25,7 +25,7 @@ if($_POST['search'] == "Everything"){
               </div>
               <div class="buyVideoButton">
                   <button>&#8377;'. $row['Price'] . '</button>
-                  <button onClick="location.href=\'http://localhost/pages/member/payment.php?Video_id='.$row["Video_id"].'\'">Buy Now</button>
+                  <button onClick="location.href=\'./payment.php?Video_id='.$row["Video_id"].'\'">Buy Now</button>
               </div>
           </div>
           ';
@@ -53,7 +53,7 @@ else{
               </div>
               <div class="buyVideoButton">
                   <button>&#8377;'. $row['Price'] . '</button>
-                  <button onClick="location.href=\'http://localhost/pages/member/payment.php?Video_id='.$row["Video_id"].'\'">Buy Now</button>
+                  <button onClick="location.href=\'./payment.php?Video_id='.$row["Video_id"].'\'">Buy Now</button>
               </div>
           </div>
           ';
