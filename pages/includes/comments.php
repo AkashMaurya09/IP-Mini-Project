@@ -19,10 +19,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         echo '
           <div class="singleTrainer">
               <img src="' . $memberId['location'] . '" />
-              <div class="detailContent">
+              <div class="detailContent-2">
                   <p>' . $memberId['Member_Name'] . '</p> 
-                  <p class="tag"></p> 
                   <p class="description">'. $comment['userComment'] . '</p>
+                  <p class="time-1">'. $comment['timestamp'] .'</p>      
               </div>
           </div>
           ';

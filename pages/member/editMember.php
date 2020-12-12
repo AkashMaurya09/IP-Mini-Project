@@ -5,16 +5,16 @@ include_once '../includes/dbh.inc.php';
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../../css/trainer/editVideo.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/trainer/editVideo.css" />
 
-  <title>Edit Member</title>
+    <title>Edit Member</title>
 </head>
 
 <body>
 
-  <?php
+    <?php
   require('../../components/basic/header.php');
   if (isset($_POST['edit_member'])) {
     $maxsize = 524288000; // 510MB
@@ -83,21 +83,28 @@ include_once '../includes/dbh.inc.php';
   if(isset($_POST['myVideo'])) {
     header("location: ./myVideo.php");
   }
-  if(isset($_POST['allVideo'])) {
-      header("location: ./videoList.php");
+  if(isset($_POST['myProfile'])) {
+    header("location: ./editMember.php");
   }
+  if(isset($_POST['videoList'])) {
+    header("location: ./videoList.php");
+  }
+  if(isset($_POST['logout'])) {
+    header("location: ../includes/logout.inc.php");
+}
 
   ?>
 
-  <div class="container">
-    <div class="left profile">
-      <form class="profileForm" method="post">
-          <input type="submit" class="profileButton" name="myVideo" value="My Videos" />
-          <input type="submit" class="profileButton" name="allVideo" value="All Videos" />
-          <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />
-      </form>
-      <hr>
-      <?php
+    <div class="container">
+        <div class="left profile">
+            <form class="profileForm" method="post">
+                <input type="submit" class="profileButton " name="videoList" value="Video List" />
+                <input type="submit" class="profileButton " name="myVideo" value="My Video" />
+                <input type="submit" class="profileButton active" name="myProfile" value="My Profile" />
+                <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />
+            </form>
+            <hr>
+            <?php
       $member_id = $_SESSION['memberid'];
       $sql = "Select * from Member WHERE Member_id = $member_id";
       $result = mysqli_query($conn, $sql);
@@ -108,54 +115,57 @@ include_once '../includes/dbh.inc.php';
       }
       ?>
 
-      <div class="profileDetail">
-        <?php echo "<p>" . $row['Member_Name'] . "</p>" ?>
-        <?php echo "<p>" . $row['Member_Email'] . " </p>" ?>
-      </div>
-      <div class="profileImage">
-        <?php echo "<img class='roundImage' src=' " . $row['location'] . "' alt='Avatar' >" ?>
-      </div>
-
-    </div>
-
-    <div class="right">
-      <div class="top">
-        <p>Edit Your Details</p>
-      </div>
-      <hr style="margin: 0 20px 0 20px" />
-      <div class="bottom">
-        <form class="editForm" method="post" action="" enctype='multipart/form-data'>
-          <div class="row">
-            <div class="col group">
-              <label for="Workout Video">Member Image</label>
-              <input type='file' name='file' />
+            <div class="profileDetail">
+                <?php echo "<p>" . $row['Member_Name'] . "</p>" ?>
+                <?php echo "<p>" . $row['Member_Email'] . " </p>" ?>
             </div>
-            <div class="col group">
-              <label for="title name">Name</label>
-              <input type="text" name="uname" placeholder="Name" value="<?php echo $row['Member_Name']; ?>" />
+            <div class="profileImage">
+                <?php echo "<img class='roundImage' src=' " . $row['location'] . "' alt='Avatar' >" ?>
             </div>
-          </div>
 
-          <div class="row">
-            <div class="group col">
-              <label for="title name">Phone Number</label>
-              <input type="number" name="number" placeholder="Phone Number" value="<?php echo $row['Phone_Number']; ?>" />
-            </div>
-            <div class="group col">
-              <label for="subtitle name">Member ID</label>
-              <input type="number" name="member_id" value="<?php echo $row['Member_id']; ?>" />
-            </div>
-          </div>
-          <div class="group">
-            <label for="tag name">Member Email</label>
-            <input type="text" name="email" placeholder="Email" value="<?php echo $row['Member_Email']; ?>" />
-          </div>
-          <div class="submitGroup">
-            <input type="submit" name="edit_member" value="Edit Member Details">
-          </div>
+        </div>
 
-        </form>
-        <?php
+        <div class="right">
+            <div class="top">
+                <p>Edit Your Details</p>
+            </div>
+            <hr style="margin: 0 20px 0 20px" />
+            <div class="bottom">
+                <form class="editForm" method="post" action="" enctype='multipart/form-data'>
+                    <div class="row">
+                        <div class="col group">
+                            <label for="Workout Video">Member Image</label>
+                            <input type='file' name='file' />
+                        </div>
+                        <div class="col group">
+                            <label for="title name">Name</label>
+                            <input type="text" name="uname" placeholder="Name"
+                                value="<?php echo $row['Member_Name']; ?>" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="group col">
+                            <label for="title name">Phone Number</label>
+                            <input type="number" name="number" placeholder="Phone Number"
+                                value="<?php echo $row['Phone_Number']; ?>" />
+                        </div>
+                        <div class="group col">
+                            <label for="subtitle name">Member ID</label>
+                            <input type="number" name="member_id" value="<?php echo $row['Member_id']; ?>" />
+                        </div>
+                    </div>
+                    <div class="group">
+                        <label for="tag name">Member Email</label>
+                        <input type="text" name="email" placeholder="Email"
+                            value="<?php echo $row['Member_Email']; ?>" />
+                    </div>
+                    <div class="submitGroup">
+                        <input type="submit" name="edit_member" value="Edit Member Details">
+                    </div>
+
+                </form>
+                <?php
         if (isset($_GET["error"])) {
           if ($_GET["error"] == "updateSuccess") {
             echo "  <div class='group'>
@@ -175,20 +185,20 @@ include_once '../includes/dbh.inc.php';
         }
         ?>
 
-        <form class="editForm" method="post" action="" enctype='multipart/form-data'>
-          <div class="group">
-            <label for="description">Trainer Password</label>
-            <input type="password" name="pwd" placeholder="Password" />
-          </div>
-          <div class="group">
-            <label for="description">Confirm Trainer Password</label>
-            <input type="password" name="confirm-pwd" placeholder="Confirm Password" />
-          </div>
-          <div class="submitGroup">
-            <input type="submit" name="edit_password" value="Edit Member Password">
-          </div>
-        </form>
-        <?php
+                <form class="editForm" method="post" action="" enctype='multipart/form-data'>
+                    <div class="group">
+                        <label for="description">Trainer Password</label>
+                        <input type="password" name="pwd" placeholder="Password" />
+                    </div>
+                    <div class="group">
+                        <label for="description">Confirm Trainer Password</label>
+                        <input type="password" name="confirm-pwd" placeholder="Confirm Password" />
+                    </div>
+                    <div class="submitGroup">
+                        <input type="submit" name="edit_password" value="Edit Member Password">
+                    </div>
+                </form>
+                <?php
         if (isset($_GET["error"])) {
           if ($_GET["error"] == "pwdmatcherror") {
             echo "  <div class='group'>
@@ -208,11 +218,11 @@ include_once '../includes/dbh.inc.php';
         }
         ?>
 
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <?php
+    <?php
   require('../../components/basic/footer.php')
   ?>
 </body>

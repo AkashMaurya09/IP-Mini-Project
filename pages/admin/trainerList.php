@@ -35,24 +35,28 @@
   ?>
 
     <?php
-    if(isset($_POST['addTrainer'])){
-        header("Location: ./addTrainer.php");
+    if(isset($_POST['yourTrainer'])){
+        header("Location: ./trainerList.php");
     }
     if(isset($_POST['logout'])){
         header("Location: ../includes/logout.inc.php");
+    }
+    if(isset($_POST['addTrainer'])){
+        header("Location: ./addTrainer.php");
     }
   ?>
 
     <div class="container">
         <div class="left profile">
             <form class="profileForm" method="post">
-                <input type="submit" class="profileButton" name="addTrainer" value="Add Trainer" />
+                <input type="submit" class="profileButton active" name="yourTrainer" value="My Trainers" />
+                <input type="submit" class="profileButton " name="addTrainer" value="Add Trainer" />
                 <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />
             </form>
             <hr>
             <?php 
           $admin_id = $_SESSION['admin_userid'];
-          $sql = "Select * from gymadmin WHERE Admin_id = $admin_id"; 
+          $sql = "Select * from gymAdmin WHERE Admin_id = $admin_id"; 
           $result = mysqli_query($conn,$sql);
           $resultCheck = mysqli_num_rows($result);
         

@@ -23,7 +23,7 @@ if($_POST['search'] == "Everything"){
                             </video>
                             <div class="detailContent">
                                 <p>' . $row['Video_Name'] . '</p> 
-                                <p class="tag">#Weights #5minutes</p> 
+                                <p class="tag">' . $row["tag"] . '</p>
                                 <p class="description">'. $row['Description'] . '</p>
                             </div>
                             <div class="playVideoButton">
@@ -51,7 +51,7 @@ else{
                             </video>
                             <div class="detailContent">
                                 <p>' . $row['Video_Name'] . '</p> 
-                                <p class="tag">#Weights #5minutes</p> 
+                                <p class="tag">' . $row["tag"] . '</p>
                                 <p class="description">'. $row['Description'] . '</p>
                             </div>
                             <div class="playVideoButton">

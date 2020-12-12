@@ -19,12 +19,17 @@ include_once '../includes/dbh.inc.php';
     ?>
 
     <?php
-    if (isset($_POST['addVideo'])) {
-        header("Location: ./addVideo.php");
-    }
-
     if (isset($_POST['myVideo'])) {
-        header("Location: ./trainerVideoList.php");
+        header("location: ./trainerVideoList.php");
+    }
+    if (isset($_POST['addVideo'])) {
+        header("location: ./addVideo.php");
+    }
+    if (isset($_POST['myProfile'])) {
+        header("location: ./editTrainer.php");
+    }
+    if (isset($_POST['logout'])) {
+        header("location: ../includes/logout.inc.php");
     }
 
     if (isset($_POST['edit_video'])) {
@@ -32,12 +37,12 @@ include_once '../includes/dbh.inc.php';
         $price = $_POST["price"];
         $trainer_id = $_POST["trainer_id"];
         $desc = $_POST["desc"];
-        if (empty($videoname) || empty($price) || empty($trainer_id) || empty($desc)) {
+        $tag = $_POST["tag"];
+        if (empty($videoname) || empty($price) || empty($trainer_id) || empty($desc) || empty($tag)) {
             header("location:../trainer/editVideo.php?error=emptyinput&Video_id=$video_id");
             exit();
         } else {
-            // ---------------------------yaha dikkat hai--------------------------------
-            $query = "UPDATE workout SET Video_Name='$videoname',Price='$price',Description='$desc' where Video_id='$video_id';";
+            $query = "UPDATE Workout SET Video_Name='$videoname',Price='$price',Description='$desc',tag='$tag' where Video_id='$video_id';";
 
             mysqli_query($conn, $query);
             header("location:../trainer/editVideo.php?error=videoupdateSuccess&Video_id=$video_id");
@@ -71,7 +76,7 @@ include_once '../includes/dbh.inc.php';
                     // Upload
                     if (move_uploaded_file($_FILES['file']['tmp_name'], $target_file)) {
                         // Insert record
-                        $query = "UPDATE workout SET name='$name',location='$target_file' where Video_id='$video_id';";
+                        $query = "UPDATE Workout SET name='$name',location='$target_file' where Video_id='$video_id';";
 
                         mysqli_query($conn, $query);
                         header("location:../trainer/editVideo.php?error=updateSuccess&Video_id=$video_id");
@@ -91,8 +96,9 @@ include_once '../includes/dbh.inc.php';
     <div class="container">
         <div class="left profile">
             <form class="profileForm" method="post">
-                <input type="submit" class="profileButton" name="addVideo" value="Add Video" />
-                <input type="submit" class="profileButton" name="myVideo" value="My Video" />
+                <input type="submit" class="profileButton" name="myVideo" value="My Videos" />
+                <input type="submit" class="profileButton " name="addVideo" value="Add Video" />
+                <input type="submit" class="profileButton " name="myProfile" value="My Profile" />
                 <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />
             </form>
             <hr>
@@ -122,9 +128,11 @@ include_once '../includes/dbh.inc.php';
             <hr style="margin: 0 20px 0 20px" />
             <?php
             $trainer_id = $_SESSION['trainer_userid'];
-            $sql = "Select * from workout WHERE Video_id = $video_id";
+            $sql = "Select * from Workout WHERE Video_id = $video_id";
             $result = mysqli_query($conn, $sql);
             $resultCheck = mysqli_num_rows($result);
+
+
 
             if ($resultCheck > 0) {
                 $video = mysqli_fetch_assoc($result);
@@ -150,19 +158,19 @@ include_once '../includes/dbh.inc.php';
                     </div>
                 </form>
                 <?php
-                    if (isset($_GET["error"])) {
-                        if ($_GET["error"] == "updateSuccess") {
-                            echo "  <div class='group'>
+                if (isset($_GET["error"])) {
+                    if ($_GET["error"] == "updateSuccess") {
+                        echo "  <div class='group'>
                                     <label style='color:green' for='description'>Video file Updated Successfully</label>
                                     </div>  ";
-                        }
-                        if ($_GET["error"] == "fileempty") {
-                            echo "  <div class='group'>
+                    }
+                    if ($_GET["error"] == "fileempty") {
+                        echo "  <div class='group'>
                                     <label style='color:red' for='description'>Please select your Workout VIdeo</label>
                                     </div>  ";
-                        }
                     }
-                    ?>
+                }
+                ?>
                 <form class="editForm" method="post" action="" enctype='multipart/form-data'>
                     <div class="row">
                         <div class="group col">
@@ -182,6 +190,10 @@ include_once '../includes/dbh.inc.php';
                         <label for="description">Description</label>
                         <textarea row="400" cols="20" name="desc"><?php echo $video['Description']; ?></textarea>
                     </div>
+                    <div class="group">
+                        <label for="tag name">Add Video Tag</label>
+                        <input type="text" name="tag" value="<?php echo $video['tag']; ?>" />
+                    </div>
                     <div class="submitGroup">
                         <input type="submit" name="edit_video" value="Edit Video">
                     </div>
@@ -200,6 +212,7 @@ include_once '../includes/dbh.inc.php';
                     }
                     ?>
                 </form>
+                
             </div>
         </div>
     </div>

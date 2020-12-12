@@ -169,4 +169,46 @@ a {
         margin: 3px 0 3px 0;
         text-align: center;
     }
+
+    .detailContent-2 {
+        margin: 3px 0 3px 0;
+        text-align: center;
+    }
+}
+
+.time-1 {
+    color: rgb(27, 27, 27) !important;
+    margin-top: auto !important;
+    margin-left: auto !important;
+}
+
+
+
+.detailContent-2 {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.detailContent-2 > p:nth-child(1) {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    font-size: large;
+    color: #595959;
+}
+
+.detailContent-2 > p:nth-child(2) {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif;
+    font-weight: 100;
+    font-size: small;
+    color: #3d3d3d;
+}
+
+.detailContent-2 > p:nth-child(3) {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif;
+    font-weight: 100;
+    font-size: small;
+    color: #9b9b9b;
 }
