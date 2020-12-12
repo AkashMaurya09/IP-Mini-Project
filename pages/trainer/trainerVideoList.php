@@ -38,18 +38,25 @@ $(document).ready(function(  ) {
   ?>
 
     <?php
+
+        if(isset($_POST['myVideo'])) {
+            header("location: ./trainerVideoList.php");
+        } 
         if(isset($_POST['addVideo'])) {
             header("location: ./addVideo.php");
         } 
-
         if(isset($_POST['myProfile'])) {
             header("location: ./editTrainer.php");
+        }
+        if(isset($_POST['logout'])) {
+            header("location: ../includes/logout.inc.php");
         } 
   ?>
 
     <div class="container">
         <div class="left profile">
             <form class="profileForm" method="post">
+                <input type="submit" class="profileButton active" name="myVideo" value="My Videos" />
                 <input type="submit" class="profileButton" name="addVideo" value="Add Video" />
                 <input type="submit" class="profileButton" name="myProfile" value="My Profile" />
                 <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />

@@ -52,13 +52,18 @@
        }
      } 
 
-     if(isset($_POST['profile'])){
-       header("Location: ./editTrainer.php");
-     }
-
-     if(isset($_POST['myVideo'])){
-      header("Location: ./trainerVideoList.php");
+    if(isset($_POST['myVideo'])) {
+        header("location: ./trainerVideoList.php");
+    } 
+    if(isset($_POST['addVideo'])) {
+        header("location: ./addVideo.php");
+    } 
+    if(isset($_POST['myProfile'])) {
+        header("location: ./editTrainer.php");
     }
+    if(isset($_POST['logout'])) {
+        header("location: ../includes/logout.inc.php");
+    } 
      ?>
 </head>
 
@@ -71,8 +76,9 @@
     <div class="container">
         <div class="left profile">
             <form class="profileForm" method="post">
-                <input type="submit" class="profileButton" name="myVideo" value="My Video" />
-                <input type="submit" class="profileButton" name="profile" value="My Profile" />
+                <input type="submit" class="profileButton" name="myVideo" value="My Videos" />
+                <input type="submit" class="profileButton active" name="addVideo" value="Add Video" />
+                <input type="submit" class="profileButton" name="myProfile" value="My Profile" />
                 <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />
             </form>
             <hr>

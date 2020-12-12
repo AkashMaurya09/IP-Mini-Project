@@ -292,3 +292,7 @@ textarea:focus {
     box-shadow: none !important;
     background: white;
 }
+
+.active {
+    background: #749a9b;
+}

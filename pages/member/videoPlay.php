@@ -28,10 +28,27 @@ include_once '../includes/dbh.inc.php';
     $video_id = $_GET['Video_id'];
     ?>
 
+    <?php
+        if(isset($_POST['myVideo'])) {
+            header("location: ./myVideo.php");
+          }
+          if(isset($_POST['myProfile'])) {
+            header("location: ./editMember.php");
+          }
+          if(isset($_POST['videoList'])) {
+            header("location: ./videoList.php");
+          }
+          if(isset($_POST['logout'])) {
+            header("location: ../includes/logout.inc.php");
+        }
+    ?>
+
     <div class="container">
         <div class="left profile">
-            <form class="profileForm">
-                <input type="submit" class="profileButton" name="dashboard" value="Dashboard" />
+            <form class="profileForm" method="post">
+                <input type="submit" class="profileButton " name="videoList" value="Video List" />
+                <input type="submit" class="profileButton " name="myVideo" value="My Video" />
+                <input type="submit" class="profileButton " name="myProfile" value="My Profile" />
                 <input type="submit" + class="profileButton" id="bottom-curve" name="logout" value="Logout" />
             </form>
             <hr>
