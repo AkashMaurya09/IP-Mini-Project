@@ -44,6 +44,20 @@ include_once '../includes/dbh.inc.php';
             exit();
         }
     }
+    if (isset($_POST['edit_tags'])) {
+        $tag = $_POST["tag"];
+        if (empty($tag)) {
+            header("location:../trainer/editVideo.php?error=emptytag&Video_id=$video_id");
+            exit();
+        } else {
+            // ---------------------------yaha dikkat hai--------------------------------
+            $query = "INSERT INTO Workout_tags(Tags,Video_id) VALUES('".$tag."','".$video_id."')";
+
+            mysqli_query($conn, $query);
+            header("location:../trainer/editVideo.php?error=tagsuccess&Video_id=$video_id");
+            exit();
+        }
+    }
 
     if (isset($_POST['edit_video_file'])) {
         $maxsize = 524288000; // 5MB
@@ -125,6 +139,8 @@ include_once '../includes/dbh.inc.php';
             $sql = "Select * from workout WHERE Video_id = $video_id";
             $result = mysqli_query($conn, $sql);
             $resultCheck = mysqli_num_rows($result);
+            
+
 
             if ($resultCheck > 0) {
                 $video = mysqli_fetch_assoc($result);
@@ -150,19 +166,19 @@ include_once '../includes/dbh.inc.php';
                     </div>
                 </form>
                 <?php
-                    if (isset($_GET["error"])) {
-                        if ($_GET["error"] == "updateSuccess") {
-                            echo "  <div class='group'>
+                if (isset($_GET["error"])) {
+                    if ($_GET["error"] == "updateSuccess") {
+                        echo "  <div class='group'>
                                     <label style='color:green' for='description'>Video file Updated Successfully</label>
                                     </div>  ";
-                        }
-                        if ($_GET["error"] == "fileempty") {
-                            echo "  <div class='group'>
+                    }
+                    if ($_GET["error"] == "fileempty") {
+                        echo "  <div class='group'>
                                     <label style='color:red' for='description'>Please select your Workout VIdeo</label>
                                     </div>  ";
-                        }
                     }
-                    ?>
+                }
+                ?>
                 <form class="editForm" method="post" action="" enctype='multipart/form-data'>
                     <div class="row">
                         <div class="group col">
@@ -200,6 +216,35 @@ include_once '../includes/dbh.inc.php';
                     }
                     ?>
                 </form>
+
+                <form class="editForm" method="post" action="" enctype='multipart/form-data'>
+                    <div class="row">
+                        <div class="col group">
+                            <div class="group">
+                                <label for="tag name">Add Video Tag</label>
+                                <input type="text" name="tag" value="Enter your Video tag here" />
+                            </div>
+                            <div class="submitGroup">
+                                <input type="submit" name="edit_tags" placeholder="Add Video Tag">
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+                <?php
+                    if (isset($_GET["error"])) {
+                        if ($_GET["error"] == "tagsuccess") {
+                            echo "  <div class='group'>
+                                    <label style='color:green' for='description'>Tags Added Successfully</label>
+                                    </div>  ";
+                        }
+                        if ($_GET["error"] == "emptytag") {
+                            echo "  <div class='group'>
+                                    <label style='color:red' for='description'>Please fill tags</label>
+                                    </div>  ";
+                        }
+                    }
+                    ?>
             </div>
         </div>
     </div>

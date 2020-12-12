@@ -36,9 +36,6 @@ include '../includes/dbh.inc.php';
 
   <form method="post">
     <input type="submit" name="submit" value="Buy Now">
-    <?php
-      echo print_r($oneYearOn); 
-     ?>
   </form>
   
 <?php 
