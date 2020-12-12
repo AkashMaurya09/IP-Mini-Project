@@ -1,5 +1,6 @@
 <?php
 include '../includes/dbh.inc.php';
+include_once '../includes/trainer_session.php';
 ?>
 <!doctype html>
 <html>

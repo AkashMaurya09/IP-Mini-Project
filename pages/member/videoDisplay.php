@@ -1,5 +1,6 @@
 <?php
 include '../includes/dbh.inc.php';
+include_once '../includes/member_session.php';
 ?>
 <!doctype html>
 <html>
