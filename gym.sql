@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2020 at 12:48 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.5
+-- Generation Time: Dec 12, 2020 at 12:13 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -51,7 +51,8 @@ INSERT INTO `comment` (`comment_id`, `userComment`, `timestamp`, `Member_id`, `V
 (35, 'test', '2020-12-11 00:12:23', 20, 6),
 (36, 'test', '2020-12-11 00:12:48', 20, 6),
 (37, 'alert haga', '2020-12-11 00:17:31', 20, 6),
-(38, 'Edit Report a Bug\nDateTime::format\nDateTimeImmutable::format\nDateTimeInterface::format\ndate_format\n(PHP 5 >= 5.2.1, PHP 7)\n\nDateTime::format -- DateTimeImmutable::format -- DateTimeInterface::format -- date_format — Returns date formatted according to given format', '2020-12-11 00:18:01', 20, 6);
+(38, 'Edit Report a Bug\nDateTime::format\nDateTimeImmutable::format\nDateTimeInterface::format\ndate_format\n(PHP 5 >= 5.2.1, PHP 7)\n\nDateTime::format -- DateTimeImmutable::format -- DateTimeInterface::format -- date_format — Returns date formatted according to given format', '2020-12-11 00:18:01', 20, 6),
+(39, 'nice one', '2020-12-12 16:42:24', 20, 7);
 
 -- --------------------------------------------------------
 
@@ -106,7 +107,7 @@ CREATE TABLE `member` (
   `Member_Email` varchar(250) NOT NULL,
   `Member_Password` varchar(250) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `location` varchar(255) DEFAULT '/img/img_avatar.png'
+  `location` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -115,8 +116,7 @@ CREATE TABLE `member` (
 
 INSERT INTO `member` (`Member_id`, `Member_Name`, `Phone_Number`, `Admin_id`, `Member_Email`, `Member_Password`, `name`, `location`) VALUES
 (20, 'Akash', 1234567890, 1, '09.akash.maurya@gmail.com', '$2y$10$F3SowH8Trn8rEQxSRhnGheBJNtcco3Nw4IlhUtCGNULY16c3TcCNG', 'Akash.jpg', '../profileImage/Akash.jpg'),
-(22, 'Akash', 930101620, 1, '2018.akash.maurya@ves.ac.in', '$2y$10$17tiZuFKDTvjj13sM/9N1On0GSowdgiFaEbLZ/mFTRn7PD8VhDrSe', NULL, NULL),
-(23, 'Srajan', 2147483647, 1, '2018.srajan.shetty@ves.ac.in', '$2y$10$upRNG4bmf6Ksn5hDVbLcJeyC7yOaXV85PYZZSpN8aSXlRSGpZO/L.', NULL, '/img/img_avatar.png	');
+(22, 'Akash', 930101620, 1, '2018.akash.maurya@ves.ac.in', '$2y$10$17tiZuFKDTvjj13sM/9N1On0GSowdgiFaEbLZ/mFTRn7PD8VhDrSe', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -135,7 +135,8 @@ CREATE TABLE `purchases` (
 --
 
 INSERT INTO `purchases` (`Validity`, `Member_id`, `Video_id`) VALUES
-('2020-12-17', 20, 6);
+('2020-12-17', 20, 6),
+('2021-12-12', 20, 7);
 
 -- --------------------------------------------------------
 
@@ -165,26 +166,6 @@ INSERT INTO `trainer` (`Trainer_id`, `Trainer_Name`, `Phone_Number`, `Admin_id`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `videos`
---
-
-CREATE TABLE `videos` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `location` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `videos`
---
-
-INSERT INTO `videos` (`id`, `name`, `location`) VALUES
-(1, '5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', 'videos/5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4'),
-(2, 'NO GYM FULL BODY WORKOUT .mp4', 'videos/NO GYM FULL BODY WORKOUT .mp4');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `workout`
 --
 
@@ -195,27 +176,18 @@ CREATE TABLE `workout` (
   `Trainer_id` int(10) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `location` varchar(255) NOT NULL,
-  `Description` varchar(10000) NOT NULL
+  `Description` varchar(10000) NOT NULL,
+  `tag` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `workout`
 --
 
-INSERT INTO `workout` (`Video_Name`, `Video_id`, `Price`, `Trainer_id`, `name`, `location`, `Description`) VALUES
-('Testuvvh', 6, 12222, 6, '5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', '../videos/5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', 'devdatta'),
-('5 Minute Chest Workout', 7, 12344, 6, '5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', '../videos/5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', 'jdabjhabfyncajfvyusguyarvucuyfgayuwgfvyu');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `workout_tags`
---
-
-CREATE TABLE `workout_tags` (
-  `Tags` int(11) NOT NULL,
-  `Video_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `workout` (`Video_Name`, `Video_id`, `Price`, `Trainer_id`, `name`, `location`, `Description`, `tag`) VALUES
+('Testuvvh', 6, 12222, 6, '5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', '../videos/5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', 'devdatta', '#Chest #Back'),
+('5 Minute Chest Workout', 7, 12344, 6, '5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', '../videos/5 MINUTE CHEST WORKOUT(NO EQUIPMENT).mp4', 'jdabjhabfyncajfvyusguyarvucuyfgayuwgfvyu', '#back'),
+('helluuu', 24, 5000, 6, 'test.mp4', '../videos/test.mp4', ' dvf dasf', '#Chest ');
 
 --
 -- Indexes for dumped tables
@@ -255,24 +227,11 @@ ALTER TABLE `trainer`
   ADD KEY `Admin_id` (`Admin_id`);
 
 --
--- Indexes for table `videos`
---
-ALTER TABLE `videos`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `workout`
 --
 ALTER TABLE `workout`
   ADD PRIMARY KEY (`Video_id`),
   ADD KEY `Trainer_id` (`Trainer_id`);
-
---
--- Indexes for table `workout_tags`
---
-ALTER TABLE `workout_tags`
-  ADD PRIMARY KEY (`Tags`,`Video_id`),
-  ADD KEY `Video_id` (`Video_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -282,7 +241,7 @@ ALTER TABLE `workout_tags`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `gymadmin`
@@ -294,7 +253,7 @@ ALTER TABLE `gymadmin`
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `Member_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `Member_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `trainer`
@@ -303,16 +262,10 @@ ALTER TABLE `trainer`
   MODIFY `Trainer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `videos`
---
-ALTER TABLE `videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT for table `workout`
 --
 ALTER TABLE `workout`
-  MODIFY `Video_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `Video_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Constraints for dumped tables
@@ -344,12 +297,6 @@ ALTER TABLE `trainer`
 ALTER TABLE `workout`
   ADD CONSTRAINT `Trainer_id` FOREIGN KEY (`Trainer_id`) REFERENCES `trainer` (`Trainer_id`) ON DELETE CASCADE,
   ADD CONSTRAINT `workout_ibfk_1` FOREIGN KEY (`Trainer_id`) REFERENCES `trainer` (`Trainer_id`);
-
---
--- Constraints for table `workout_tags`
---
-ALTER TABLE `workout_tags`
-  ADD CONSTRAINT `workout_tags_ibfk_1` FOREIGN KEY (`Video_id`) REFERENCES `workout` (`Video_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
