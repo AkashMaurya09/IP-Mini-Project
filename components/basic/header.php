@@ -22,7 +22,7 @@
         <input type="checkbox" id="nav-check">
         <div class="nav-header">
             <div class="nav-title">
-                <img src="/img/logo/logo_yellow_horizontal.png">
+                <img src="/img/logo/logo_yellow_horizontal.png" alt="Image not available">
             </div>
         </div>
         <div class="nav-btn">

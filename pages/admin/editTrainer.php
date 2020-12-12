@@ -53,7 +53,7 @@
             </div>
 
             <div class="profileImage">
-                <img class="roundImage" src="../../img/img_avatar.png" alt="Avatar">
+                <img class="roundImage" src="../../img/img_avatar.png" alt="Image not available">
             </div>
         </div>
 

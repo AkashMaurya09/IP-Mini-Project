@@ -22,7 +22,7 @@
 		<footer class="footer footer-distributed">
 
 			<div class="footer-left">
-          <img src="/img/logo/logo_footer.png">
+          <img src="/img/logo/logo_footer.png" alt="Image not available">
 				
 				<p class="footer-links">
 					<a href="/pages/member/home.php">Home</a>

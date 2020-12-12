@@ -21,7 +21,7 @@
 
             <h3>MEMBER SIGN IN FOR<br></h3>
             <span> GLORY</span><br><br>
-            <img src="../../img/logo/logo_yellow_vertical.png">
+            <img src="../../img/logo/logo_yellow_vertical.png" alt="Image not available">
             <br><br>
             <blockquote>The last three or four reps is what makes the muscle grow.<br> This area of pain divides a champion
                 from someone who is not a champion

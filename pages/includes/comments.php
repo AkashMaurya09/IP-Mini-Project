@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         echo '
           <div class="singleTrainer">
-              <img src="' . $memberId['location'] . '" />
+              <img src="' . $memberId['location'] . '" alt="Image not available"/>
               <div class="detailContent-2">
                   <p>' . $memberId['Member_Name'] . '</p> 
                   <p class="description">'. $comment['userComment'] . '</p>

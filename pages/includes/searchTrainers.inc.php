@@ -19,7 +19,7 @@ if($_POST['search'] == "Everything"){
     while($row = mysqli_fetch_array($result)) {
       echo '
       <div class="singleTrainer" id="delete_id'.$row["Trainer_id"].'">
-          <img src="' . $row['location'] . '" alt="Avatar">
+          <img src="' . $row['location'] . '" alt="Image not available">
           <div class="detailContent">
               <p>' . $row['Trainer_Name'] . '</p> 
               <p> '. $row['Trainer_Email'] . '</p>
@@ -67,7 +67,7 @@ else{
      while($row = mysqli_fetch_array($result)) {
        echo '
        <div class="singleTrainer" id="delete_id'.$row["Trainer_id"].'">
-           <img src="' . $row['location'] . '" alt="Avatar">
+           <img src="' . $row['location'] . '" alt="Image not available">
            <div class="detailContent">
                <p>' . $row['Trainer_Name'] . '</p> 
                <p> '. $row['Trainer_Email'] . '</p>

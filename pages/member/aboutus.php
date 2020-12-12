@@ -19,7 +19,7 @@
             <h1 class="Try-free-heading">ABOUT<br>BEAST FACTORY</h1>
         </div>
         <div class="Content-center">
-            <img src="../../img/logo/logo_yellow_vertical.png" alt="">
+            <img src="../../img/logo/logo_yellow_vertical.png" alt="Image not available">
 
         </div>
         <div class="Content-center">
@@ -59,13 +59,13 @@
                         <button class="Try-free-Button" onClick="location.href='./workouts.php'">See Coaches </button>
                     </div>
                     <div class="Workout-center">
-                        <img src="/img/home/expert1.jpg" alt="W3Schools.com">
+                        <img src="/img/home/expert1.jpg" alt="Image not available">
                     </div>
 
                 </div>
                 <div class="column">
                     <div class="Workout-center">
-                        <img src="/img/home/expert2.jpg" alt="W3Schools.com">
+                        <img src="/img/home/expert2.jpg" alt="Image not available">
                     </div>
 
                     <div class="Workout-center">

@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="column ">
                     <div class="Workout-center">
-                        <img src="\img\workouts\Intense.jpeg" alt="W3Schools.com">
+                        <img src="\img\workouts\Intense.jpeg" alt="Image not available">
                     </div>
 
                     <div class="Workout-center">
@@ -63,7 +63,7 @@
                         </p>
                     </div>
                     <div class="Workout-center">
-                        <img src="\img\workouts\circuit.jpg" alt="W3Schools.com">
+                        <img src="\img\workouts\circuit.jpg" alt="Image not available">
                     </div>
                     <div class="Workout-center">
                         <p>Not only does standing around between toning exercises eat up valuable gym time, it can make
@@ -75,7 +75,7 @@
                 </div>
                 <div class="column">
                     <div class="Workout-center">
-                        <img src="\img\workouts\Image1.jpeg" alt="W3Schools.com">
+                        <img src="\img\workouts\Image1.jpeg" alt="Image not available">
                     </div>
                     <div class="Workout-center">
                         <p>You can generate the most power with barbell lifts, so the standard barbell bench allows you
@@ -84,7 +84,7 @@
                             are plenty of bench-press programs you can follow to increase your strength</p>
                     </div>
                     <div class="Workout-center">
-                        <img src="\img\workouts\Iamdoingthis.jpg" alt="W3Schools.com">
+                        <img src="\img\workouts\Iamdoingthis.jpg" alt="Image not available">
                     </div>
                     <div class="Workout-center">
                         <p>Most people simply won't do it. They've never trained to have a resilient mindset. We are all
@@ -108,23 +108,23 @@
         <div class="row">
             <div class="column-3 ">
                 <div class="Workout-center">
-                    <img src="\img\workouts\Trainer1.jpeg" alt="W3Schools.com">
+                    <img src="\img\workouts\Trainer1.jpeg" alt="Image not available">
                 </div>
 
 
                 <div class="Workout-center">
-                    <img src="\img\workouts\Trainer2.jpeg" alt="W3Schools.com">
+                    <img src="\img\workouts\Trainer2.jpeg" alt="Image not available">
                 </div>
 
             </div>
             <div class="column-3 ">
                 <div class="Workout-center">
-                    <img src="\img\workouts\Trainer3.jpeg" alt="W3Schools.com">
+                    <img src="\img\workouts\Trainer3.jpeg" alt="Image not available">
                 </div>
 
 
                 <div class="Workout-center">
-                    <img src="\img\workouts\Trainer4.jpeg" alt="W3Schools.com">
+                    <img src="\img\workouts\Trainer4.jpeg" alt="Image not available">
                 </div>
 
                 
@@ -132,11 +132,11 @@
 
             <div class="column-3">
                 <div class="Workout-center">
-                    <img src="\img\workouts\Trainer5.jpeg" alt="W3Schools.com">
+                    <img src="\img\workouts\Trainer5.jpeg" alt="Image not available">
                 </div>
 
                 <div class="Workout-center">
-                    <img src="\img\workouts\Trainer6.jpeg" alt="W3Schools.com">
+                    <img src="\img\workouts\Trainer6.jpeg" alt="Image not available">
                 </div>
                
             </div>
