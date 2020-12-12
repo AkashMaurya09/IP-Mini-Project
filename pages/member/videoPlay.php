@@ -103,26 +103,14 @@ include_once '../includes/dbh.inc.php';
                 </div>
                 <div class="add-comment">
                     <textarea required placeholder="Your Comment goes here...." rows="5" name="comment"
-                        id="comment_text" cols=20 class="ui-autocomplete-input" autocomplete="off" role="textbox"
+                        id="comment_text" cols=10 class="ui-autocomplete-input" autocomplete="off" role="textbox"
                         aria-autocomplete="list" aria-haspopup="true"></textarea>
                     <button type='submit' id="add_com" name='add_comment'>Add Comment</button>
                 </div>
             </div>
             <!-- ---------------------Display Comments-------------------------- -->
             <input type="hidden" value=<?php echo $video_id; ?> id="video_id" />
-            <!-- <div class="Comments-Section">
-                <div >
-                    <p id="Comments-heading">What did others say...</p>
-                </div>
-            </div> -->
-<!-- 
-            <div class="trainerList">
-                <div id="display"></div>
-            </div> -->
-            
         </div>
-
-
     </div>
 
     <?php

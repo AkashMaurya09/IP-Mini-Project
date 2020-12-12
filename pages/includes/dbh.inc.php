@@ -2,7 +2,7 @@
 
 $serveName = "localhost";
 $dbUsername = "root";
-$dbPassword = "";
+$dbPassword = "vesit";
 $dbName = "gym";
 
 // $serveName = "remotemysql.com";
