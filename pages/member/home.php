@@ -5,9 +5,9 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel='shortcut icon' type='image' href='\img\logo\logo_white_vertical.png' />
     <link rel="stylesheet" href="/css/user/home.css">
-    <title>Document</title>
+    <title>Home | Beast Factory</title>
 
 </head>
 
@@ -35,9 +35,9 @@
     <div class="Content-Class">
         <div id="images">
 
-            <img src="https://picsum.photos/300/300" />
+            <img src="/img/home/Session1.jpg" height="300px" width="300px"/>
 
-            <img src="https://picsum.photos/300/300" />
+            <img src="/img/home/Session2.jpg"  height="300px" width="300px"/>
         </div>
         <div class="Text-Content">
 
@@ -91,7 +91,7 @@
             </div>
             <div class="column">
                 <div class="expert-center-1">
-                    <img src="https://picsum.photos/300/300" alt="">
+                    <img src="/img/home/expert1.jpg" alt="">
                 </div>
 
             </div>
@@ -114,7 +114,7 @@
                 </div>
                 <div class="column">
                     <div class="expert-center-2">
-                        <img src="https://picsum.photos/300/300" alt="">
+                        <img src="/img/home/expert2.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -127,43 +127,43 @@
             <div class="row">
                 <div class="column-3 ">
                     <div class="Workout-center">
-                        <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                        <img src="/img/home/Image1.jpeg" alt="W3Schools.com">
                     </div>
 
 
                     <div class="Workout-center">
-                        <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                        <img src="/img/home/Image2.jpeg" alt="W3Schools.com">
                     </div>
                     <div class="Workout-center">
-                        <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                        <img src="/img/home/Image3.jpeg" alt="W3Schools.com">
                     </div>
 
                 </div>
                 <div class="column-3 ">
                     <div class="Workout-center">
-                        <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                        <img src="/img/home/Image4.jpeg" alt="W3Schools.com">
                     </div>
 
 
                     <div class="Workout-center">
-                        <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                        <img src="/img/home/Image5.jpeg" alt="W3Schools.com">
                     </div>
 
                     <div class="Workout-center">
-                        <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                        <img src="/img/home/Image6.jpeg" alt="W3Schools.com">
                     </div>
                 </div>
 
                 <div class="column-3">
                     <div class="Workout-center">
-                        <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                        <img src="/img/home/Image7.jpeg" alt="W3Schools.com">
                     </div>
 
                     <div class="Workout-center">
-                        <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                        <img src="/img/home/Image8.jpeg" alt="W3Schools.com">
                     </div>
                     <div class="Workout-center">
-                        <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                        <img src="/img/home/Image9.jpeg" alt="W3Schools.com">
                     </div>
                 </div>
             </div>

@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='shortcut icon' type='image' href='\img\logo\logo_white_vertical.png' />
     <link rel="stylesheet" href="/css/user/aboutus.css">
-    <title>Document</title>
+    <title>About Us | Beast Factory</title>
 </head>
 
 <body>
@@ -31,12 +32,12 @@
     </div>
     <div class="Content-Class">
         <div class="Text-Content">
-            <p><a>Workouts |</a>
+            <!-- <p><a>Workouts |</a>
                 <a> Our Coaches | </a>
                 <a> What to Expect </a>
-            </p>
+            </p> -->
             <!-- <br> -->
-            <h1>Workouts<h2>
+            <h1>About Us<h2>
                     <!-- <br> -->
                     <p>The last three or four reps is what makes the muscle grow. This area of pain divides a champion
                         from someone who is not a champion</p>
@@ -55,16 +56,16 @@
                         </p>
                     </div>
                     <div class="Workout-center">
-                        <button class="Try-free-Button" onClick="location.href='./workouts.php'">Hello </button>
+                        <button class="Try-free-Button" onClick="location.href='./workouts.php'">See Coaches </button>
                     </div>
                     <div class="Workout-center">
-                        <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                        <img src="/img/home/expert1.jpg" alt="W3Schools.com">
                     </div>
 
                 </div>
                 <div class="column">
                     <div class="Workout-center">
-                        <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                        <img src="/img/home/expert2.jpg" alt="W3Schools.com">
                     </div>
 
                     <div class="Workout-center">
@@ -78,7 +79,7 @@
                         </p>
                     </div>
                     <div class="Workout-center">
-                        <button class="Try-free-Button" onClick="location.href='./workouts.php'">Hello </button>
+                        <button class="Try-free-Button" onClick="location.href='./workouts.php'">See Workouts</button>
                     </div>
                 </div>
             </div>

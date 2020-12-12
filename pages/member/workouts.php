@@ -5,9 +5,9 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel='shortcut icon' type='image' href='\img\logo\logo_white_vertical.png' />
     <link rel="stylesheet" href="/css/user/workouts.css">
-    <title>Document</title>
+    <title>Workouts | Beast Factory</title>
 </head>
 
 <body>
@@ -26,7 +26,7 @@
             </div>
             <div class="column video">
                 <video width="320" height="240" controls>
-                    <source src="http://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_20mb.mp4"
+                    <source src="\img\Best Ever 3 Minute Cardio Workout.mp4"
                         type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="column ">
                     <div class="Workout-center">
-                        <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                        <img src="\img\workouts\Intense.jpeg" alt="W3Schools.com">
                     </div>
 
                     <div class="Workout-center">
@@ -63,7 +63,7 @@
                         </p>
                     </div>
                     <div class="Workout-center">
-                        <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                        <img src="\img\workouts\circuit.jpg" alt="W3Schools.com">
                     </div>
                     <div class="Workout-center">
                         <p>Not only does standing around between toning exercises eat up valuable gym time, it can make
@@ -75,7 +75,7 @@
                 </div>
                 <div class="column">
                     <div class="Workout-center">
-                        <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                        <img src="\img\workouts\Image1.jpeg" alt="W3Schools.com">
                     </div>
                     <div class="Workout-center">
                         <p>You can generate the most power with barbell lifts, so the standard barbell bench allows you
@@ -84,7 +84,7 @@
                             are plenty of bench-press programs you can follow to increase your strength</p>
                     </div>
                     <div class="Workout-center">
-                        <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                        <img src="\img\workouts\Iamdoingthis.jpg" alt="W3Schools.com">
                     </div>
                     <div class="Workout-center">
                         <p>Most people simply won't do it. They've never trained to have a resilient mindset. We are all
@@ -108,44 +108,37 @@
         <div class="row">
             <div class="column-3 ">
                 <div class="Workout-center">
-                    <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                    <img src="\img\workouts\Trainer1.jpeg" alt="W3Schools.com">
                 </div>
 
 
                 <div class="Workout-center">
-                    <img src="https://picsum.photos/300/300" alt="W3Schools.com">
-                </div>
-                <div class="Workout-center">
-                    <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                    <img src="\img\workouts\Trainer2.jpeg" alt="W3Schools.com">
                 </div>
 
             </div>
             <div class="column-3 ">
                 <div class="Workout-center">
-                    <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                    <img src="\img\workouts\Trainer3.jpeg" alt="W3Schools.com">
                 </div>
 
 
                 <div class="Workout-center">
-                    <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                    <img src="\img\workouts\Trainer4.jpeg" alt="W3Schools.com">
                 </div>
 
-                <div class="Workout-center">
-                    <img src="https://picsum.photos/300/300" alt="W3Schools.com">
-                </div>
+                
             </div>
 
             <div class="column-3">
                 <div class="Workout-center">
-                    <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                    <img src="\img\workouts\Trainer5.jpeg" alt="W3Schools.com">
                 </div>
 
                 <div class="Workout-center">
-                    <img src="https://picsum.photos/300/300" alt="W3Schools.com">
+                    <img src="\img\workouts\Trainer6.jpeg" alt="W3Schools.com">
                 </div>
-                <div class="Workout-center">
-                    <img src="https://picsum.photos/300/300" alt="W3Schools.com">
-                </div>
+               
             </div>
         </div>
     </div>

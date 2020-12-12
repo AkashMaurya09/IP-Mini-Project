@@ -10,7 +10,7 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
     <link rel="stylesheet" href="/css/user/contact.css">
-    <title>Contact</title>
+    <title>Contact Us | Beast Factory</title>
     <?php 
         if(isset($_POST['submit'])){
             $name = $_POST["name"];
