@@ -1,26 +1,20 @@
 .Comments-Section{
-    border-top: 1px solid black;
-    border-bottom:1px solid black; 
+    border-bottom:1.5px solid #d3d3d3; 
+    width: 90%;
+    margin: 0px auto;
 }
 
 #Comments-heading{
-    margin: 10px;
-    font-weight: bolder;
-    letter-spacing: 1.5px;
+    margin: 10px 0px 5px 0px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .add-comment{
     max-width: 90%;
     margin : 40px;
-    /* border : 1px solid; */
     border-radius: 10px;
-    
 }
-
-/* .add-comment:hover{
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-} */
 
 textarea{
     width: 100%;
@@ -28,8 +22,6 @@ textarea{
     border: none;
     background-color: #d3d3d3;
     border-radius: 10px;
-    /* margin-top: 10px; */
-    /* margin-left: 50px; */
     -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
@@ -55,8 +47,8 @@ textarea:hover{
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
+
 .textarea:focus{
-    
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
@@ -68,6 +60,7 @@ textarea:hover{
     box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
     0 5px 15px 0 rgba(0, 0, 0, 0.08) !important;
 }
+
 .comment-card p{
     letter-spacing: 2px;
     font-family: cursive;
@@ -76,15 +69,16 @@ textarea:hover{
     display: inline;
     vertical-align: middle;
 }
+
 .comment-card img{
     vertical-align: middle;
     margin-left: 20px;
     margin-top: 20px;
     border-radius: 75%;
     height :50px;
-    width: 50px;
-    
+    width: 50px; 
 }
+
 .time {
     padding-bottom: 10px;
     padding-right: 10px;
@@ -96,11 +90,13 @@ textarea:hover{
     letter-spacing: 2px;
     font-weight: 600;
 }
+
 .comment{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .comment p{
     letter-spacing: 2px;
     line-height: 20px;
@@ -111,6 +107,14 @@ textarea:hover{
     font-family: system-ui;
     max-width: 60ch;
 }
+
+/* ----------------------------------------------------------------------- */
+
+.singleTrainer:last-child {
+    border-bottom:0px;
+}
+
+/* ----------------------------------------------------------------------- */
 
 @media screen and (max-width: 600px) {
     .comment p{
@@ -123,4 +127,4 @@ textarea:hover{
         font-family: system-ui;
         max-width: 30ch;
     }   
-  }
+}
