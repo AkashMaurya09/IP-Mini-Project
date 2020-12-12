@@ -23,16 +23,15 @@
 
 			<div class="footer-left">
           <img src="/img/logo/logo_footer.png">
-				<!-- <h3>Gym <span>Webiste</span></h3> -->
-
+				
 				<p class="footer-links">
-					<a href="#">Home</a>
+					<a href="/pages/member/home.php">Home</a>
 					|
-					<a href="#">Workouts</a>
+					<a href="/pages/member/workouts.php">Workouts</a>
 					|
-					<a href="#">About</a>
+					<a href="/pages/member/contact.php">About</a>
 					|
-					<a href="#">Contact</a>
+					<a href="/pages/member/aboutus.php">Contact</a>
 				</p>
 
 				<p class="footer-company-name">© 2020 Internet Programming project Ltd</p>
@@ -58,11 +57,11 @@
 					<span>About the company</span>
 					We offer training and skill based on varirety of workouts and provide specialisation in most parts of bodybuilding.</p>
 				<div class="footer-icons">
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-instagram"></i></a>
-					<a href="#"><i class="fa fa-linkedin"></i></a>
-					<a href="#"><i class="fa fa-youtube"></i></a>
+					<a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+					<a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a>
+					<a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+					<a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a>
+					<a href="https://www.youtube.com"><i class="fa fa-youtube"></i></a>
 				</div>
 			</div>
 		</footer>

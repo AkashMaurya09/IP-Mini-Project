@@ -83,10 +83,10 @@
                         <div class="right-top">
                             <h1>Address</h1>
                             <div class="list">
-                                <p>Adelaide Showroom</p>
-                                <p>6/224 Main North Road, Prospect SA 5082</p>
+                                <p>14-A10,Hajiali Govt Colony,</p>
+                                <p>Dr. Anne Besant Road, Mahalaxmi</p>
                                 <p>sales@gymandfitness.com.au </p>
-                                <p>Phone: 1800 614 491</p>
+                                <p>Phone: 9145253235</p>
 
                                 <hr>
 
@@ -108,7 +108,7 @@
                                 style="border:0"
                                 width=100%
                                 height=100% 
-                                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAOkVE0zosd-mMBLwREakk3DTlyfJhRVgY&q=Vivekanand+Education+Society's+Institute+Of+Technology" 
+                                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAOkVE0zosd-mMBLwREakk3DTlyfJhRVgY&q=Lala+College+Hajiali+Government+Colony" 
                                 allowfullscreen>
                             </iframe>
                         </div>
