@@ -22,21 +22,8 @@ if($_POST['search'] == "Everything"){
                             <video src="'. $row['location'] .'" controls width="320px" height="200px">
                             </video>
                             <div class="detailContent">
-                                <p>' . $row['Video_Name'] . '</p> ';
-                                $vid_id = $row["Video_id"];
-                                $tag = "SELECT * FROM Workout_tags WHERE Video_id='$vid_id'";
-                                $resulttag = mysqli_query($conn, $tag);
-                                $resultChecktag = mysqli_num_rows($resulttag);
-                                if ($resultChecktag > 0) {
-                                  $i = 0;
-                                  while ($rowtag = mysqli_fetch_assoc($resulttag)) {
-                                    echo '<p class="tag">#' . $rowtag["Tags"] . '</p>';
-                                    $i = $i + 1;
-                                  }
-                                }
-
-
-                                echo '
+                                <p>' . $row['Video_Name'] . '</p> 
+                                <p class="tag">' . $row["tag"] . '</p>
                                 <p class="description">'. $row['Description'] . '</p>
                             </div>
                             <div class="playVideoButton">
@@ -63,21 +50,8 @@ else{
                             <video src="'. $row['location'] .'" controls width="320px" height="200px">
                             </video>
                             <div class="detailContent">
-                                <p>' . $row['Video_Name'] . '</p> ';
-                                $vid_id = $row["Video_id"];
-                                $tag = "SELECT * FROM Workout_tags WHERE Video_id='$vid_id'";
-                                $resulttag = mysqli_query($conn, $tag);
-                                $resultChecktag = mysqli_num_rows($resulttag);
-                                if ($resultChecktag > 0) {
-                                  $i = 0;
-                                  while ($rowtag = mysqli_fetch_assoc($resulttag)) {
-                                    echo '<p class="tag">#' . $rowtag["Tags"] . '</p>';
-                                    $i = $i + 1;
-                                  }
-                                }
-
-
-                                echo '
+                                <p>' . $row['Video_Name'] . '</p> 
+                                <p class="tag">' . $row["tag"] . '</p>
                                 <p class="description">'. $row['Description'] . '</p>
                             </div>
                             <div class="playVideoButton">

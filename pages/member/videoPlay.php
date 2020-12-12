@@ -104,7 +104,7 @@ include_once '../includes/dbh.inc.php';
                         while ($_videoRow = mysqli_fetch_array($fetchVideos)) {
                             $location = $_videoRow['location'];
                             $videoid = $_videoRow['Video_id'];
-                            echo "<span id='Video-Tags'>#Full Body #Myworkout</span>";
+                            echo "<span id='Video-Tags'>" . $_videoRow['tag'] . "</span>";
                             echo "<h2 id='Description'>" . $_videoRow['Description'] . "</h2>";
                         }
                         ?>

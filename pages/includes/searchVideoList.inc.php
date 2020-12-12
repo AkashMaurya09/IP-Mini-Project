@@ -15,31 +15,19 @@ if (isset($_POST['search'])) {
       $i = 0;
       while ($row = mysqli_fetch_assoc($result)) {
         echo '
-          <div class="singleTrainer">
-              <video class="disabled" src="' . $row['location'] . '" controls width="320px" height="200px">
-              </video>
-              <div class="detailContent">
-                  <p>' . $row['Video_Name'] . '</p> ';
-                  $vid_id = $row["Video_id"];
-                  $tag = "SELECT * FROM Workout_tags WHERE Video_id='$vid_id'";
-                  $resulttag = mysqli_query($conn, $tag);
-                  $resultChecktag = mysqli_num_rows($resulttag);
-                  if ($resultChecktag > 0) {
-                    $i = 0;
-                    while ($rowtag = mysqli_fetch_assoc($resulttag)) {
-                      echo '<p class="tag">#' . $rowtag["Tags"] . '</p>';
-                      $i = $i + 1;
-                    }
-                  }
-
-
-        echo '                  <p class="description">' . $row['Description'] . '</p>
-              </div>
-              <div class="buyVideoButton">
-                  <button>&#8377;' . $row['Price'] . '</button>
-                  <button onClick="location.href=\'./payment.php?Video_id=' . $row["Video_id"] . '\'">Buy Now</button>
-              </div>
-          </div>
+        <div class="singleTrainer">
+        <video class="disabled" src="' . $row['location'] . '" controls width="320px" height="200px">
+        </video>
+        <div class="detailContent">
+            <p>' . $row['Video_Name'] . '</p> 
+            <p class="tag">' . $row["tag"] . '</p>
+            <p class="description">' . $row['Description'] . '</p>
+        </div>
+        <div class="buyVideoButton">
+            <button>&#8377;' . $row['Price'] . '</button>
+            <button onClick="location.href=\'./payment.php?Video_id=' . $row["Video_id"] . '\'">Buy Now</button>
+        </div>
+    </div>
           ';
         $i = $i + 1;
       }
@@ -58,21 +46,9 @@ if (isset($_POST['search'])) {
               <video class="disabled" src="' . $row['location'] . '" controls width="320px" height="200px">
               </video>
               <div class="detailContent">
-                  <p>' . $row['Video_Name'] . '</p> ';
-                  $vid_id = $row["Video_id"];
-                  $tag = "SELECT * FROM Workout_tags WHERE Video_id='$vid_id'";
-                  $resulttag = mysqli_query($conn, $tag);
-                  $resultChecktag = mysqli_num_rows($resulttag);
-                  if ($resultChecktag > 0) {
-                    $i = 0;
-                    while ($rowtag = mysqli_fetch_assoc($resulttag)) {
-                      echo '<p class="tag">#' . $rowtag["Tags"] . '</p>';
-                      $i = $i + 1;
-                    }
-                  }
-
-
-        echo '                  <p class="description">' . $row['Description'] . '</p>
+                  <p>' . $row['Video_Name'] . '</p> 
+                  <p class="tag">' . $row["tag"] . '</p>
+                  <p class="description">' . $row['Description'] . '</p>
               </div>
               <div class="buyVideoButton">
                   <button>&#8377;' . $row['Price'] . '</button>
