@@ -36,7 +36,7 @@ include_once '../includes/dbh.inc.php';
             header("location:../trainer/editVideo.php?error=emptyinput&Video_id=$video_id");
             exit();
         } else {
-            $query = "UPDATE workout SET Video_Name='$videoname',Price='$price',Description='$desc' where Video_id='$video_id';";
+            $query = "UPDATE Workout SET Video_Name='$videoname',Price='$price',Description='$desc' where Video_id='$video_id';";
 
             mysqli_query($conn, $query);
             header("location:../trainer/editVideo.php?error=videoupdateSuccess&Video_id=$video_id");
@@ -83,7 +83,7 @@ include_once '../includes/dbh.inc.php';
                     // Upload
                     if (move_uploaded_file($_FILES['file']['tmp_name'], $target_file)) {
                         // Insert record
-                        $query = "UPDATE workout SET name='$name',location='$target_file' where Video_id='$video_id';";
+                        $query = "UPDATE Workout SET name='$name',location='$target_file' where Video_id='$video_id';";
 
                         mysqli_query($conn, $query);
                         header("location:../trainer/editVideo.php?error=updateSuccess&Video_id=$video_id");
@@ -134,7 +134,7 @@ include_once '../includes/dbh.inc.php';
             <hr style="margin: 0 20px 0 20px" />
             <?php
             $trainer_id = $_SESSION['trainer_userid'];
-            $sql = "Select * from workout WHERE Video_id = $video_id";
+            $sql = "Select * from Workout WHERE Video_id = $video_id";
             $result = mysqli_query($conn, $sql);
             $resultCheck = mysqli_num_rows($result);
             
