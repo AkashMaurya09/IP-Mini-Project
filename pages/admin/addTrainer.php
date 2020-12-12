@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../css/Trainer/editVideo.css" />
+    <link rel="stylesheet" href="\css\trainer\editVideo.css" />
 
     <title>Add Trainer</title>
 </head>
@@ -36,7 +36,7 @@
             <hr>
             <?php 
           $admin_id = $_SESSION['admin_userid'];
-          $sql = "Select * from gymAdmin WHERE Admin_id = $admin_id"; 
+          $sql = "Select * from gymadmin WHERE Admin_id = $admin_id"; 
           $result = mysqli_query($conn,$sql);
           $resultCheck = mysqli_num_rows($result);
         

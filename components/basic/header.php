@@ -51,7 +51,7 @@
               echo "<a href='../includes/logout.inc.php'>Logout</a>";
             }
             else {
-              echo "<a href='../member/signin.php'>Login</a>";
+              echo "<a href='../member/signIn.php'>Login</a>";
             }
           ?>
         </div>
