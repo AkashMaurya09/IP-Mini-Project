@@ -10,6 +10,7 @@ $(document).ready(function () {
                 },
                 success: function (html) {
                     $("#display").html(html).show();
+                    $(".disabled").attr('controls', false);
 
                 },
             });
@@ -22,6 +23,7 @@ $(document).ready(function () {
                 },
                 success: function (html) {
                     $("#display").html(html).show();
+                    $(".disabled").attr('controls', false);
 
                 },
             });
