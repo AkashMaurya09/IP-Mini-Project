@@ -56,7 +56,7 @@ if (isset($_POST['search'])) {
   } else {
     $trainer_id = $_SESSION["trainer_userid"];
     $Name =  $_POST['search'];
-    $sql = "SELECT * FROM Workout WHERE Trainer_id='$trainer_id' AND Video_Name like '%$Name%'";
+    $sql = "SELECT * FROM Workout WHERE Trainer_id='$trainer_id' AND (Video_Name like '%$Name%' OR tag like '%$Name%')";
     $result = mysqli_query($conn, $sql);
     $resultCheck = mysqli_num_rows($result);
     if ($resultCheck > 0) {

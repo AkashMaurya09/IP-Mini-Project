@@ -35,7 +35,7 @@ if (isset($_POST['search'])) {
   } else {
     $memberid = $_SESSION['memberid'];
     $Name =  $_POST['search'];
-    $sql = "SELECT * FROM Workout WHERE Video_id NOT IN (SELECT  Video_id From purchases Where Member_id='$memberid') AND Video_Name like '%$Name%'";
+    $sql = "SELECT * FROM Workout WHERE Video_id NOT IN (SELECT  Video_id From purchases Where Member_id='$memberid') AND (Video_Name like '%$Name%' OR tag like '%$Name%')";
     $result = mysqli_query($conn, $sql);
     $resultCheck = mysqli_num_rows($result);
     if ($resultCheck > 0) {
